@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>StudentEnterClass</title>
+    <!-- Bootstrap core CSS-->
+    <link href="./recourse/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template-->
+    <link href="./recourse/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Custom styles for this template-->
+    <link href="./recourse/css/sb-admin.css" rel="stylesheet">
+    <link href="./recourse/css/LK.css" rel="stylesheet">
+    <!-- Js Scanner-->
+    <script type="text/javascript" src="./recourse/js/jsqrscanner.nocache.js"></script>
+    <link href="./recourse/css/JsQRScanner.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="bg-info">
+
+<div class="container">
+    <div class="card card-login mx-auto mt-5">
+        <div class="card-header">掃描投影機之 QCODE 或輸入 PIN CODE</div>
+        <div class="card-body">
+            <center>
+                <div class="col-md-6">
+                     <div id="scanner"> 
+                    </div>
+                </div>
+            </center>
+			<form class="navbar-form pull-center" action="./waitingpage" method="POST">
+                <div class="form-group" style="margin-top:40px;">
+                    <label>輸入PIN CODE</label>
+                    <input class="text" id="scannedTextMemo" type="text" placeholder="Enter PINCODE" name="pin">
+                </div>
+                <input class="btn btn-primary btn-block" type='submit' value='Enter' id='butt'/>
+			</form>
+        </div>
+    </div>
+</div>
+<!-- Bootstrap core JavaScript-->
+<script src="./recourse/vendor/jquery/jquery.min.js"></script>
+<script src="./recourse/vendor/popper/popper.min.js"></script>
+<script src="./recourse/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!-- Core plugin JavaScript-->
+<script src="./recourse/vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- Scanner -->
+<script type="text/javascript" src="./recourse/js/JsScanner.js"></script>
+<!-- Submit -->
+<script type="text/javascript">
+   <!-- <!--  $('#butt').click(function () { -->
+        <!-- $.ajax({ -->
+            <!-- url: "GetInClass/waitingPage", -->
+            <!-- type: "POST", -->
+            <!-- datatype: "text", -->
+            <!-- data: {pin: $("#scannedTextMemo").val()} -->
+        <!-- }) -->
+    <!-- }); --> -->
+</script>
+</body>
+
+</html>

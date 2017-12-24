@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Newquiz</title>
+  <!-- Bootstrap core CSS-->
+  <link href="./recourse/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="./recourse/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Page level plugin CSS-->
+  <link href="./recourse/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+  <!-- Custom styles for this template-->
+  <link href="./recourse/css/sb-admin.css" rel="stylesheet">
+</head>
+
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="TeacherHome.html">FOUNDCLASS</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" href="./teacherhome">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">首頁</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+          <a class="nav-link" href="charts.html">
+            <i class="fa fa-fw fa-area-chart"></i>
+            <span class="nav-link-text">測驗分析</span>
+          </a>
+        </li>
+    <!--    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+          <a class="nav-link" href="tables.html">
+            <i class="fa fa-fw fa-table"></i>
+            <span class="nav-link-text">Tables</span>
+          </a>
+        </li>
+	-->	
+	<!--
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-file"></i>
+            <span class="nav-link-text">Example Pages</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseExamplePages">
+            <li>
+              <a href="login.html">Login Page</a>
+            </li>
+            <li>
+              <a href="register.html">Registration Page</a>
+            </li>
+            <li>
+              <a href="forgot-password.html">Forgot Password Page</a>
+            </li>
+            <li>
+              <a href="blank.html">Blank Page</a>
+            </li>
+          </ul>
+        </li>
+	-->	
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-sitemap"></i>
+            <span class="nav-link-text">個人題庫</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseMulti">
+            <li>
+              <a href="./newquestion">新增題目</a>
+            </li>
+            <li>
+              <a href="./editquestion">題目整理</a>
+            </li>
+            <li>
+              <a href="./newquiz">設計測驗</a>
+            </li>
+         <!--   <li>
+              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">Third Level</a>
+              <ul class="sidenav-third-level collapse" id="collapseMulti2">
+                <li>
+                  <a href="#">Third Level Item</a>
+                </li>
+                <li>
+                  <a href="#">Third Level Item</a>
+                </li>
+                <li>
+                  <a href="#">Third Level Item</a>
+                </li>
+              </ul>
+            </li>
+		-->	
+          </ul>
+        </li>
+		
+		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+          <a class="nav-link" href="./openclass">
+            <i class="fa fa-fw fa-area-chart"></i>
+            <span class="nav-link-text">開啟教室</span>
+          </a>
+        </li>
+		
+		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-wrench"></i>
+            <span class="nav-link-text">頁面環境設置</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseComponents">
+            <li>
+              <a href="navbar.html">頁面簡化</a>
+            </li>
+            <li>
+              <a href="cards.html">Cards</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+          <a class="nav-link" href="#">
+            <i class="fa fa-fw fa-link"></i>
+            <span class="nav-link-text">Link</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+            <i class="fa fa-fw fa-angle-left"></i>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-fw fa-envelope"></i>
+            <span class="d-lg-none">Messages
+              <span class="badge badge-pill badge-primary">12 New</span>
+            </span>
+            <span class="indicator text-primary d-none d-lg-block">
+              <i class="fa fa-fw fa-circle"></i>
+            </span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="messagesDropdown">
+            <h6 class="dropdown-header">New Messages:</h6>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <strong>蔡秉成</strong>
+              <span class="small float-right text-muted">11:21 AM</span>
+              <div class="dropdown-message small">Hey there! This new version of SB Admin is pretty awesome! These messages clip off when they reach the end of the box so they don't overflow over to the sides!</div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <strong>吳光晉</strong>
+              <span class="small float-right text-muted">11:21 AM</span>
+              <div class="dropdown-message small">I was wondering if you could meet for an appointment at 3:00 instead of 4:00. Thanks!</div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <strong>許博智</strong>
+              <span class="small float-right text-muted">11:21 AM</span>
+              <div class="dropdown-message small">I've sent the final files over to you for review. When you're able to sign off of them let me know and we can discuss distribution.</div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item small" href="#">View all messages</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-fw fa-bell"></i>
+            <span class="d-lg-none">Alerts
+              <span class="badge badge-pill badge-warning">6 New</span>
+            </span>
+            <span class="indicator text-warning d-none d-lg-block">
+              <i class="fa fa-fw fa-circle"></i>
+            </span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="alertsDropdown">
+            <h6 class="dropdown-header">New Alerts:</h6>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <span class="text-success">
+                <strong>
+                  <i class="fa fa-long-arrow-up fa-fw"></i>Status Update</strong>
+              </span>
+              <span class="small float-right text-muted">11:21 AM</span>
+              <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <span class="text-danger">
+                <strong>
+                  <i class="fa fa-long-arrow-down fa-fw"></i>Status Update</strong>
+              </span>
+              <span class="small float-right text-muted">11:21 AM</span>
+              <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <span class="text-success">
+                <strong>
+                  <i class="fa fa-long-arrow-up fa-fw"></i>Status Update</strong>
+              </span>
+              <span class="small float-right text-muted">11:21 AM</span>
+              <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item small" href="#">View all alerts</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="./teacherhome" id="teaname"></a>
+        </li>
+        <li class="breadcrumb-item active">新增測驗</li>
+      </ol>
+		  <div class="container">
+		  <div class="row">
+		  <div class="col-md-6">
+    	<div class="row">
+		    <span id="insertlession"></span>
+				
+			<span id="insertTag"></span>
+			<select class="selectpicker" id="selectQuestionType" title="選擇題型">
+			  <option value="1">單選題</option>
+			  <option value="2">多選題</option>
+			  <option value="3">是非題</option>
+			</select>
+			<button class="btn btn-default" type="submit" id="submit">
+			  <i class="fa fa-search" aria-hidden="true"></i>
+			</button>
+		</div>
+		<div class="row">
+			<p id="totalrow"></p>
+		</div>
+		<div class="row">
+			<div class="well" style="max-height: 300px;overflow: auto;">
+        		<ul class="list-group" data-toggle="items" id="searchresult">
+                  <li class="list-group-item disabled" >題目 <span class="badge badge-secondary">使用次數</span></li>
+				  <span id="insertHere"></span>
+                </ul>
+            </div>
+		</div>
+		</div>
+		<div class="col-md-6">
+			<div class="row">
+			<p id="sum">目前選擇的總題數 : <span id="totalselectquestion">0題</span></p>
+			</div>
+			<div class="row">
+			<p>選擇計分方式 : </p>
+			<select class="select">
+			  <option >不倒扣</option>
+			  <option >倒扣</option>
+			  <option >搶答</option>
+			</select>
+			</div>
+			<div class="row">
+			<p></p>
+			</div>
+			<div class="row">
+			<div class="input-group">
+			  <span class="input-group-addon" id="basic-addon3">測驗名:</span>
+			  <input type="text" class="form-control" id="quizname" aria-describedby="basic-addon3">
+			</div>
+			</div>
+			<div class="row">
+			<p></p>
+			</div>
+			<div class="row">
+			<div class="input-group">
+			  <span class="input-group-addon" id="basic-addon3">作答時間:</span>
+			  <input type="text" class="form-control" id="anstime" aria-describedby="basic-addon3">
+			</div>
+			</div>
+			<div class="row">
+			<p></p>
+			</div>
+			<input type="button" value="儲存" id="save">
+			</div>
+		</div>
+	</div>
+    </div>
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          <small>Copyright © FOUNDCLASS 2017</small>
+        </div>
+      </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="../recourse/vendor/jquery/jquery.min.js"></script>
+    <script src="../recourse/vendor/popper/popper.min.js"></script>
+    <script src="../recourse/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="../recourse/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="../recourse/vendor/chart.js/Chart.min.js"></script>
+    <script src="../recourse/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="../recourse/vendor/datatables/dataTables.bootstrap4.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="../recourse/js/sb-admin.min.js"></script>
+    <!-- Custom scripts for this page-->
+    <script src="../recourse/js/sb-admin-datatables.min.js"></script>
+    <script src="../recourse/js/sb-admin-charts.min.js"></script>
+    <script src="../recourse/js/listgroup.min.js"></script>
+	<script type="text/javascript">
+	var tmp;
+	var questionidtotal='q';
+	var items = document.getElementsByClassName("list-group-item active");
+	$("#submit").click(function(){
+	$.ajax({
+		url : "question/editfindquestion",
+		type : "POST",
+        dataType : "json",
+		data : { question_Types : $("#selectQuestionType").val(), question_Chapter : $("#chapter").val(), question_Lession : $("#lesson").val(), user_Id : 9},	
+		success : function($res){
+			tmp = $res;
+			document.getElementById("totalrow").innerHTML ="以"+$("#lesson").val()+"，"+$("#chapter").val()+"搜尋 結果共"+tmp.length+"件";
+			var el = document.getElementById('insertHere');
+			el.innerHTML ="";
+			for(var i = 0 ; i< tmp.length ;i++){
+
+				questioncontent =tmp[i]['question_Content'];
+				//$questionoption=tmp[i]['questionoptiona'];
+				used_Times =tmp[i]['used_Times'];
+				ID=tmp[i]['question_Id'];
+					
+				//-display the result of the array
+				var el = document.getElementById('insertHere');
+				el.innerHTML =el.innerHTML +"<li class=\"list-group-item\" id="+ ID +" onclick=\"displayTotal()\">" + questioncontent +"<span class=\"badge badge-secondary\">"+ used_Times +"</span> </li>\n";
+				
+			}
+		},
+		error : function(){
+			alert("fa");
+			}
+            })
+		});
+	$("#save").click(function(){
+	//var items = document.getElementsByClassName("list-group-item active");
+	for(var j = 0 ; j< items.length ;j++){
+		questionidtotal = questionidtotal +'_'+items[j].id;
+	}
+	$.ajax({
+		url : "question/newquiz",
+		type : "POST",
+        dataType : "text",
+		data : { quiz_Name : $("#quizname").val(), irs_Quiz_QuestionI_Id : questionidtotal, quiz_Time : $("#anstime").val(), user_Id : 9},
+		success :	function($res){
+		alert('su');
+		}		
+	})
+	});
+	function displayTotal(){
+	setTimeout(function () {
+           document.getElementById("totalselectquestion").innerHTML = items.length+"題";
+        }, 1);
+	document.getElementById("totalselectquestion").innerHTML = items.length+"題";
+	};
+	
+	$.ajax(
+			{
+				type: 'POST',
+				url: 'question/loadlessonandchapter',
+				dataType : 'text',
+				success: function(data){
+					var el = document.getElementById('insertlession');
+					el.innerHTML = data;
+				},
+				error : function(){
+					alert("fa");
+				}
+			}
+		);
+		function loadTag(courseName){	
+				$.ajax(
+					{
+						type: 'POST',
+						url: 'question/loadquestiontag',
+						dataType : 'text',
+						data : {course_Name : courseName },
+						success: function(data){
+							var el = document.getElementById('insertTag');
+							el.innerHTML = data;
+						},
+						error : function(){
+							alert("fa");
+						}
+					}
+				);
+			};
+	
+			$.ajax({
+					type: "POST",
+					url: "teacherhome/infotohtml",
+					dataType: "json",
+					data: {
+									 
+					},
+					success: function(res) {
+						if (res) {
+							document.getElementById("teaname").innerHTML=res;
+						}                 
+					},
+					error: function(jqXHR) {
+						alert("發生錯誤: " + jqXHR.status);
+					}
+				});
+	</script>
+</body>
+
+</html>
