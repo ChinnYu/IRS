@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Newquestion</title>
+  <!-- Bootstrap core CSS-->
+  <link href="./recourse/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="./recourse/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Page level plugin CSS-->
+  <link href="./recourse/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+  <!-- Custom styles for this template-->
+  <link href="./recourse/css/sb-admin.css" rel="stylesheet">
+</head>
+
+<body class="fixed-nav sticky-footer bg-dark" id="page-top" >
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="TeacherHome.html">FOUNDCLASS</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" href="./teacherhome">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">首頁</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+          <a class="nav-link" href="charts.html">
+            <i class="fa fa-fw fa-area-chart"></i>
+            <span class="nav-link-text">測驗分析</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-sitemap"></i>
+            <span class="nav-link-text">個人題庫</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseMulti">
+            <li>
+              <a href="./newquestion">新增題目</a>
+            </li>
+            <li>
+              <a href="./editquestion">題目整理</a>
+            </li>
+            <li>
+              <a href="./newquiz">設計測驗</a>
+            </li>
+          </ul>
+        </li>
+		
+		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+          <a class="nav-link" href="./openclass">
+            <i class="fa fa-fw fa-area-chart"></i>
+            <span class="nav-link-text">開啟教室</span>
+          </a>
+        </li>
+		
+		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-wrench"></i>
+            <span class="nav-link-text">頁面環境設置</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseComponents">
+            <li>
+              <a href="navbar.html">頁面簡化</a>
+            </li>
+            <li>
+              <a href="cards.html">Cards</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+          <a class="nav-link" href="#">
+            <i class="fa fa-fw fa-link"></i>
+            <span class="nav-link-text">Link</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+            <i class="fa fa-fw fa-angle-left"></i>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-fw fa-envelope"></i>
+            <span class="d-lg-none">Messages
+              <span class="badge badge-pill badge-primary">12 New</span>
+            </span>
+            <span class="indicator text-primary d-none d-lg-block">
+              <i class="fa fa-fw fa-circle"></i>
+            </span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="messagesDropdown">
+            <h6 class="dropdown-header">New Messages:</h6>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <strong>蔡秉成</strong>
+              <span class="small float-right text-muted">11:21 AM</span>
+              <div class="dropdown-message small">Hey there! This new version of SB Admin is pretty awesome! These messages clip off when they reach the end of the box so they don't overflow over to the sides!</div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <strong>吳光晉</strong>
+              <span class="small float-right text-muted">11:21 AM</span>
+              <div class="dropdown-message small">I was wondering if you could meet for an appointment at 3:00 instead of 4:00. Thanks!</div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <strong>許博智</strong>
+              <span class="small float-right text-muted">11:21 AM</span>
+              <div class="dropdown-message small">I've sent the final files over to you for review. When you're able to sign off of them let me know and we can discuss distribution.</div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item small" href="#">View all messages</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-fw fa-bell"></i>
+            <span class="d-lg-none">Alerts
+              <span class="badge badge-pill badge-warning">6 New</span>
+            </span>
+            <span class="indicator text-warning d-none d-lg-block">
+              <i class="fa fa-fw fa-circle"></i>
+            </span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="alertsDropdown">
+            <h6 class="dropdown-header">New Alerts:</h6>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <span class="text-success">
+                <strong>
+                  <i class="fa fa-long-arrow-up fa-fw"></i>Status Update</strong>
+              </span>
+              <span class="small float-right text-muted">11:21 AM</span>
+              <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <span class="text-danger">
+                <strong>
+                  <i class="fa fa-long-arrow-down fa-fw"></i>Status Update</strong>
+              </span>
+              <span class="small float-right text-muted">11:21 AM</span>
+              <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <span class="text-success">
+                <strong>
+                  <i class="fa fa-long-arrow-up fa-fw"></i>Status Update</strong>
+              </span>
+              <span class="small float-right text-muted">11:21 AM</span>
+              <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item small" href="#">View all alerts</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="./teacherhome" id="teaname"></a>
+        </li>
+        <li class="breadcrumb-item active">新增問題</li>
+      </ol>
+	   <div class="container">
+	  	<div class="row">
+		  	<div class="col-md-6">
+			    <div class="row">
+					<div class="container" >
+					  <select class="selectpicker" id="select1" >
+					  	<option value="" selected disabled>選擇題型</option>
+					    <option value="single">單選題</option>
+					    <option value="mult">多選題</option>
+					    <option value="TorF">是非題</option>
+					  </select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12" id="single" style="display:none">
+						<ul class="list-group">
+						  <li class="list-group-item">
+						  	<div class="row">
+						  		<div class="col-md-5">題目</div><div class="col-md-2">答案</div>
+						  	</div>
+						  	<div class="row">
+						  		<div class="col-md-12"><textarea rows="5" id="comment" onchange="preview(this.value,'demo1')"></textarea></div>	
+							</div>		  
+						  </li>
+						  <li class="list-group-item">
+						  	<div class="row">
+						  		<div class="col-md-5">選項一</div><div class="col-md-2"></div>
+						  	</div>
+						  	<div class="row">
+						  		<div class="col-md-5"><textarea rows="5" id="comment" onchange="previewinput(this.value,'singler1option')"></textarea></div>
+						  		<div class="col-md-2">
+						  			<div class="radio">
+						  				<label><input type="radio" name="optradio" value="1"></label>
+									</div>
+							    </div>
+							</div>		  
+						  </li><li class="list-group-item">
+						  	<div class="row">
+						  		<div class="col-md-5">選項二</div><div class="col-md-2"></div>
+						  	</div>
+						  	<div class="row">
+						  		<div class="col-md-5"><textarea rows="5" id="comment" onchange="previewinput(this.value,'singler2option')"></textarea></div>
+						  		<div class="col-md-2">
+						  			<div class="radio">
+						  				<label><input type="radio" name="optradio" value="2"></label>
+									</div>
+							    </div>
+							</div>		  
+						  </li><li class="list-group-item">
+						  	<div class="row">
+						  		<div class="col-md-5">選項三</div><div class="col-md-2"></div>
+						  	</div>
+						  	<div class="row">
+						  		<div class="col-md-5"><textarea rows="5" id="comment" onchange="previewinput(this.value,'singler3option')"></textarea></div>
+						  		<div class="col-md-2">
+						  			<div class="radio">
+						  				<label><input type="radio" name="optradio" value="4"></label>
+									</div>
+							    </div>
+							</div>		  
+						  </li><li class="list-group-item">
+						  	<div class="row">
+						  		<div class="col-md-5">選項四</div><div class="col-md-2"></div>
+						  	</div>
+						  	<div class="row">
+						  		<div class="col-md-5"><textarea rows="5" id="comment" onchange="previewinput(this.value,'singler4option')"></textarea></div>
+						  		<div class="col-md-2">
+						  			<div class="radio">
+						  				<label><input type="radio" name="optradio" value="8"></label>
+									</div>
+							    </div>
+							</div>		  
+						  </li>
+						</ul>
+						<div class="row">
+							作答時間<input type="text" size="2" id="singleAnstime">分鐘
+							<input type="button" value="儲存" id="singlesubmit">
+						</div>
+					</div>
+					<div class="col-md-12" id="mult" style="display:none">
+					<ul class="list-group">
+						  <li class="list-group-item">
+						  	<div class="row">
+						  		<div class="col-md-5">題目</div><div class="col-md-2">答案</div>
+						  	</div>
+						  	<div class="row">
+						  		<div class="col-md-12"><textarea rows="5" id="comment" onchange="preview(this.value,'demo2')"></textarea></div>	
+							</div>		  
+						  </li>
+						  <li class="list-group-item">
+						  	<div class="row">
+						  		<div class="col-md-5">選項一</div><div class="col-md-2"></div>
+						  	</div>
+						  	<div class="row">
+						  		<div class="col-md-5"><textarea rows="5" id="comment" onchange="previewinput(this.value,'multr1option')"></textarea></div>
+						  		<div class="col-md-2">
+						  			<div class="radio">
+						  				<label><input type="checkbox" name="multOption" value="1"></label>
+									</div>
+							    </div>
+							</div>		  
+						  </li><li class="list-group-item">
+						  	<div class="row">
+						  		<div class="col-md-5">選項二</div><div class="col-md-2"></div>
+						  	</div>
+						  	<div class="row">
+						  		<div class="col-md-5"><textarea rows="5" id="comment" onchange="previewinput(this.value,'multr2option')"></textarea></div>
+						  		<div class="col-md-2">
+						  			<div class="radio">
+						  				<label><input type="checkbox" name="multOption" value="2"></label>
+									</div>
+							    </div>
+							</div>		  
+						  </li><li class="list-group-item">
+						  	<div class="row">
+						  		<div class="col-md-5">選項三</div><div class="col-md-2"></div>
+						  	</div>
+						  	<div class="row">
+						  		<div class="col-md-5"><textarea rows="5" id="comment" onchange="previewinput(this.value,'multr3option')"></textarea></div>
+						  		<div class="col-md-2">
+						  			<div class="radio">
+						  				<label><input type="checkbox" name="multOption" value="4"></label>
+									</div>
+							    </div>
+							</div>		  
+						  </li><li class="list-group-item">
+						  	<div class="row">
+						  		<div class="col-md-5">選項四</div><div class="col-md-2"></div>
+						  	</div>
+						  	<div class="row">
+						  		<div class="col-md-5"><textarea rows="5" id="comment" onchange="previewinput(this.value,'multr4option')"></textarea></div>
+						  		<div class="col-md-2">
+						  			<div class="radio">
+						  				<label><input type="checkbox" name="multOption" value="8"></label>
+									</div>
+							    </div>
+							</div>		  
+						  </li>
+						</ul>
+						<div class="row">
+							作答時間<input type="text" size="2" id="multAnstime">分鐘
+							<input type="button" value="儲存" id="multsubmit">
+						</div>
+					</div>
+					<div class="col-md-12" id="TorF" style="display:none">
+					<ul class="list-group">
+						  <li class="list-group-item">
+						  	<div class="row">
+						  		<div class="col-md-5">題目</div><div class="col-md-2">答案</div>
+						  	</div>
+						  	<div class="row">
+						  		<div class="col-md-12"><textarea rows="5" id="comment" onchange="preview(this.value,'demo3')"></textarea></div>	
+							</div>		  
+						  </li>
+						  <li class="list-group-item">
+						  	<div class="row">
+						  		<div class="col-md-5">選項一</div><div class="col-md-2"></div>
+						  	</div>
+						  	<div class="row">
+						  		<div class="col-md-5"><textarea rows="5" id="comment" onchange="previewinput(this.value,'TorFr1option')"></textarea></div>
+						  		<div class="col-md-2">
+						  			<div class="radio">
+						  				<label><input type="radio" name="TorFoptradio" value="1"></label>
+									</div>
+							    </div>
+							</div>		  
+						  </li><li class="list-group-item">
+						  	<div class="row">
+						  		<div class="col-md-5">選項二</div><div class="col-md-2"></div>
+						  	</div>
+						  	<div class="row">
+						  		<div class="col-md-5"><textarea rows="5" id="comment" onchange="previewinput(this.value,'TorFr2option')"></textarea></div>
+						  		<div class="col-md-2">
+						  			<div class="radio">
+						  				<label><input type="radio" name="TorFoptradio" value="2"></label>
+									</div>
+							    </div>
+							</div>		  
+						  </li>
+						</ul>
+						<div class="row">
+							作答時間<input type="text" size="2" id="TorFAnstime">分鐘
+							<input type="button" value="儲存" id="TorFsubmit">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				
+				  <span id="insertHere"></span>
+				
+				  <span id="insertTag"></span>
+				<div class="container" id="singlepreview" style="display:none">
+				<p id="demo1">尚未輸入題目</p>
+				<p id="questionTypePreview1"></p>
+				<form >
+					<input type="radio" id="questionOption1" name="radioOption" ><label for="radioOption1" id="singler1option">無選項描述</label><br>
+					<input type="radio" id="questionOption2" name="radioOption" ><label for="radioOption2" id="singler2option">無選項描述</label><br>
+					<input type="radio" id="questionOption3" name="radioOption" ><label for="radioOption3" id="singler3option">無選項描述</label><br>
+					<input type="radio" id="questionOption4" name="radioOption" ><label for="radioOption4" id="singler4option">無選項描述</label><br>
+				</form>
+				</div>
+				<div class="container" id="multpreview" style="display:none">
+				<p id="demo2">尚未輸入題目</p>
+				<p id="questionTypePreview2"></p>
+				<form >
+					<input type="checkbox" id="questionOption1"  name="multOptiondemo"><label for="radioOption1" id="multr1option">無選項描述</label><br>
+					<input type="checkbox" id="questionOption2"  name="multOptiondemo"><label for="radioOption2" id="multr2option">無選項描述</label><br>
+					<input type="checkbox" id="questionOption3"  name="multOptiondemo"><label for="radioOption3" id="multr3option">無選項描述</label><br>
+					<input type="checkbox" id="questionOption4"  name="multOptiondemo"><label for="radioOption4" id="multr4option">無選項描述</label><br>
+				</form>
+				</div>
+				<div class="container" id="TorFpreview" style="display:none">
+				<p id="demo3">尚未輸入題目</p>
+				<p id="questionTypePreview3"></p>
+				<form >
+					<input type="radio" id="questionOption1" name="radioOption" ><label for="radioOption1" id="TorFr1option">無選項描述</label><br>
+					<input type="radio" id="questionOption2" name="radioOption" ><label for="radioOption2" id="TorFr2option">無選項描述</label>
+				</form>
+				</div>
+			</div>
+			
+		</div>
+	  </div>
+    </div>
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+    <footer class="sticky-footer" >
+      <div class="container">
+        <div class="text-center">
+          <small>Copyright © FOUNDCLASS 2017</small>
+        </div>
+      </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="../recourse/vendor/jquery/jquery.min.js"></script>
+    <script src="../recourse/vendor/popper/popper.min.js"></script>
+    <script src="../recourse/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="../recourse/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="./recourse/vendor/chart.js/Chart.min.js"></script>
+    <script src="./recourse/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="./recourse/vendor/datatables/dataTables.bootstrap4.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="./recourse/js/sb-admin.min.js"></script>
+    <!-- Custom scripts for this page-->
+    <script src="./recourse/js/sb-admin-datatables.min.js"></script>
+    <script src="./recourse/js/sb-admin-charts.min.js"></script>
+    <script type="text/javascript">
+    $('.selectpicker').change(function () {
+    	var slecteditem= $(this).find("option:selected").val();    
+    	if(slecteditem == "single"){
+    		document.getElementById("questionTypePreview1").innerHTML = "單選題"
+    		document.getElementById("single").style.display ="block";
+    		document.getElementById("singlepreview").style.display ="block";
+    		document.getElementById("mult").style.display ="none";
+    		document.getElementById("multpreview").style.display ="none";
+    		document.getElementById("TorF").style.display ="none";
+    		document.getElementById("TorFpreview").style.display ="none";
+    	}
+    	if(slecteditem == "mult"){
+    		document.getElementById("questionTypePreview2").innerHTML = "多選題"
+    		document.getElementById("mult").style.display ="block";
+    		document.getElementById("multpreview").style.display ="block";
+    		document.getElementById("single").style.display ="none";
+    		document.getElementById("singlepreview").style.display ="none";
+    		document.getElementById("TorF").style.display ="none";
+    		document.getElementById("TorFpreview").style.display ="none";
+    	}
+    	if(slecteditem == "TorF"){
+    		document.getElementById("questionTypePreview3").innerHTML = "是非題"
+    		document.getElementById("TorF").style.display ="block";
+    		document.getElementById("TorFpreview").style.display ="block";
+    		document.getElementById("mult").style.display ="none";
+    		document.getElementById("multpreview").style.display ="none";
+    		document.getElementById("single").style.display ="none";
+    		document.getElementById("singlepreview").style.display ="none";
+    	}
+    });
+    
+    function preview(val,previewitem) {
+        document.getElementById(previewitem).innerHTML = val;
+    }
+    function previewinput(val,previewitem) {
+    	var label = document.getElementById(previewitem);
+    	label.innerHTML = val;
+    }
+	
+	$("#singlesubmit").click(function(){
+		//alert($('input[name=optradio]:checked').val());
+		var slecteditem= $('.selectpicker').find("option:selected").val();   
+		if(slecteditem == "single"){
+	    $.ajax({
+		url : "question/newquestion",
+		type : "POST",
+                dataType : "text",
+		data : {question_Content : document.getElementById("demo1").innerHTML , question_Optiona : document.getElementById("singler1option").innerHTML, question_Optionb : document.getElementById("singler2option").innerHTML, question_Optionc : document.getElementById("singler3option").innerHTML, question_Optiond : document.getElementById("singler4option").innerHTML, question_Types : 1, question_Chapter : $("#chapter").val(), question_Lession : $("#lesson").val(), user_Id : 9, question_Time : document.getElementById("singleAnstime").value, question_Answer : $('input[name=optradio]:checked').val()},	
+		success : function(question_Content){
+			location.reload();
+		},
+		error : function(){
+		alert("fa");
+			location.reload();
+			}
+            })
+        }
+		});
+	$("#multsubmit").click(function(){
+	var slecteditem= $('.selectpicker').find("option:selected").val();
+	if(slecteditem == "mult"){
+	var selected=0;
+	$("[name=multOption]:checkbox:checked").each(function(){
+			selected= selected+parseInt($(this).val());
+	   });
+	$.ajax({
+	url : "question/newquestion",
+	type : "POST",
+			dataType : "text",
+	data : {question_Content : document.getElementById("demo2").innerHTML , question_Optiona : document.getElementById("multr1option").innerHTML, question_Optionb : document.getElementById("multr2option").innerHTML, question_Optionc : document.getElementById("multr3option").innerHTML, question_Optiond : document.getElementById("multr4option").innerHTML, question_Types : 2, question_Chapter : $("#chapter").val(), question_Lession : $("#lesson").val(), user_Id : 9, question_Time : document.getElementById("multAnstime").value, question_Answer : selected},	
+	success : function(question_Content){
+		location.reload();
+	},
+	error : function(){
+		location.reload();
+		}
+		})
+	  }   
+	});
+	$("#TorFsubmit").click(function(){
+		//alert($('input[name=optradio]:checked').val());
+		var slecteditem= $('.selectpicker').find("option:selected").val();   
+		if(slecteditem == "TorF"){
+	    $.ajax({
+		url : "question/newquestion",
+		type : "POST",
+                dataType : "text",
+		data : {question_Content : document.getElementById("demo3").innerHTML , question_Optiona : document.getElementById("TorFr1option").innerHTML, question_Optionb : document.getElementById("TorFr2option").innerHTML, question_Types : 3, question_Chapter : $("#chapter").val(), question_Lession : $("#lesson").val(), user_Id : 9, question_Time : document.getElementById("TorFAnstime").value, question_Answer : $('input[name=TorFoptradio]:checked').val()},	
+		success : function(question_Content){
+			location.reload();
+		},
+		error : function(){
+		alert("fa");
+			location.reload();
+			}
+            })
+        }
+		});	
+		
+		$.ajax(
+			{
+				type: 'POST',
+				url: 'question/loadlessonandchapter',
+				dataType : 'text',
+				success: function(data){
+					var el = document.getElementById('insertHere');
+					el.innerHTML = data;
+				},
+				error : function(){
+					alert("fa");
+				}
+			}
+		);
+function loadTag(courseName){	
+		$.ajax(
+			{
+				type: 'POST',
+				url: 'question/loadquestiontag',
+				dataType : 'text',
+				data : {course_Name : courseName },
+				success: function(data){
+					var el = document.getElementById('insertTag');
+					el.innerHTML = data;
+				},
+				error : function(){
+					alert("fa");
+				}
+			}
+		);
+	};
+	
+	$.ajax({
+					type: "POST",
+					url: "teacherhome/infotohtml",
+					dataType: "json",
+					data: {
+									 
+					},
+					success: function(res) {
+						if (res) {
+							document.getElementById("teaname").innerHTML=res;
+						}                 
+					},
+					error: function(jqXHR) {
+						alert("發生錯誤: " + jqXHR.status);
+					}
+				})
+    </script>
+  </div>
+</body>
+
+</html>
