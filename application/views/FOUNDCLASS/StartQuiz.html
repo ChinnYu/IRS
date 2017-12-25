@@ -2,118 +2,117 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <title>StartQuiz</title>
-  <!-- Bootstrap core CSS-->
-  <link href="./recourse/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom fonts for this template-->
-  <link href="./recourse/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <!-- Custom styles for this template-->
-  <link href="./recourse/css/sb-admin.css" rel="stylesheet">
-  <link href="./recourse/css/LK.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>StartQuiz</title>
+    <!-- Bootstrap core CSS-->
+    <link href="./recourse/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template-->
+    <link href="./recourse/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Custom styles for this template-->
+    <link href="./recourse/css/sb-admin.css" rel="stylesheet">
+    <link href="./recourse/css/LK.css" rel="stylesheet">
 </head>
 
 <body class="bg-info">
-  <div class="container">
+<div class="container">
     <div class="card card-login mx-auto mt-5">
-      <div class="card-header">開啟測驗</div>
-      <div class="card-body">
-        <form class="navbar-form pull-center" action="./" method="POST">		
-		  <div class="form-group"style="margin-top:20px;">
-            <h3>選擇已儲存之測驗:</h3>
-            <select class="form-control nav" name="YourCourse" id="Quizbox">
-			</select>
-			<!-- 可用來傳quiz_Id -->
-			<input type="hidden" name="Quiz_text" id="text_content" value="" />
-			<h3 style="margin-top:20px;">設定測驗時間:</h3>
-            <select class="form-control nav" name="YourClass" id="Timebox">
-			</select>
-			 <!-- 可用來傳輸入時間 -->
-			<input type="hidden" name="Time_text" id="Time_choose" value="" />  
-			<h3 style="margin-top:20px;">題目每人選項隨機的模式:</h3>
-            <select class="form-control nav" name="YourClass" id="Classbox">
-				<option value="0">無</option>
-				<option value="1">隨機</option>
-			</select>
-          </div>
-		  <input class="btn btn-primary btn-block" type="submit" value="隨機抽點" id="randombutt"  title="隨機選擇學生回答" style="margin-top:20px;" />
-		  <input class="btn btn-primary btn-block" type="submit" value="開啟" id="creatbutt" />
-        </form>
-      </div>
+        <div class="card-header">開啟測驗</div>
+        <div class="card-body">
+            <form class="navbar-form pull-center" action="./" method="POST">
+                <div class="form-group" style="margin-top:20px;">
+                    <h3>選擇已儲存之測驗:</h3>
+                    <select class="form-control nav" name="YourCourse" id="Quizbox">
+                    </select>
+                    <!-- 可用來傳quiz_Id -->
+                    <input type="hidden" name="Quiz_text" id="text_content" value=""/>
+                    <h3 style="margin-top:20px;">設定測驗時間:</h3>
+                    <select class="form-control nav" name="YourClass" id="Timebox">
+                    </select>
+                    <!-- 可用來傳輸入時間 -->
+                    <input type="hidden" name="Time_text" id="Time_choose" value=""/>
+                    <h3 style="margin-top:20px;">題目每人選項隨機的模式:</h3>
+                    <select class="form-control nav" name="YourClass" id="Classbox">
+                        <option value="0">無</option>
+                        <option value="1">隨機</option>
+                    </select>
+                </div>
+                <input class="btn btn-primary btn-block" type="submit" value="隨機抽點" id="randombutt" title="隨機選擇學生回答"
+                       style="margin-top:20px;"/>
+                <input class="btn btn-primary btn-block" type="submit" value="開啟" id="creatbutt"/>
+            </form>
+        </div>
     </div>
-  </div>
-  <!-- Bootstrap core JavaScript-->
-  <script src="./recourse/vendor/jquery/jquery.min.js"></script>
-  <script src="./recourse/vendor/popper/popper.min.js"></script>
-  <script src="./recourse/vendor/bootstrap/js/bootstrap.min.js"></script>
-  <!-- Core plugin JavaScript-->
-  <script src="./recourse/vendor/jquery-easing/jquery.easing.min.js"></script>
-  
-  <script type="text/JavaScript">
-	var temp;
-	var changetime='<option value="1">5 minutes</option>'+
-					'<option value="2">10 minutes</option>'+
-					'<option value="2">15 minutes</option>'+
-					'<option value="4">20 minutes</option>'+
-					'<option value="5">25 minutes</option>'+
-					'<option value="6">30 minutes</option>';
-	$.ajax({
-		type: "POST",
-		url: "openclass/getQuizinfo",
-		dataType: "json",
-		data: {
-							 
-		},
-		success: function(res) {
-			if (res) {
-				var quizoption='';
-				temp=res;
-				for(var i=0;i<res.length/3;i++){
-					quizoption+="<option value="+i+">"+res[res.length-(i+1)*3+1]+"</option>";
-				}
-				document.getElementById('Quizbox').innerHTML=quizoption;
-				var defaulttime="<option value="+0+">"+temp[temp.length-1]+'秒-預設時間-'+"</option>";
-				defaulttime+=changetime;
-				document.getElementById('Timebox').innerHTML=defaulttime;
-				document.getElementById("text_content").value=res[res.length-3];
-				document.getElementById('Time_choose').value=temp[temp.length-1];
-			}                 
-		},
-		error: function(jqXHR) {
-			alert("發生錯誤: " + jqXHR.status);
-		}
-	});
-				
-	$('#Quizbox').change(function () {
-		var slecteditem= $('#Quizbox').val();
-		var num=parseInt(slecteditem);
-		var defaulttime="<option value="+0+">"+temp[temp.length-(num+1)*3+2]+'秒-預設時間-'+"</option>";
-		defaulttime+=changetime;
-		document.getElementById('Timebox').innerHTML=defaulttime;
-		document.getElementById('Time_choose').value=temp[temp.length-(num+1)*3+2];
-		document.getElementById("text_content").value=temp[temp.length-(num+1)*3];
-		
-	});
-	
-	$('#Timebox').change(function () {
-		var slecteditem= $('#Timebox').val();
-		var slectedquiz= $('#Quizbox').val();
-		var quiznum=parseInt(slectedquiz);
-		var num=parseInt(slecteditem);
-		if(num!=0){
-			document.getElementById('Time_choose').value=num*5;
-		}
-		else{
-			document.getElementById('Time_choose').value=temp[temp.length-(quiznum+1)*3+2];
-		}
-	});
+</div>
+<!-- Bootstrap core JavaScript-->
+<script src="./recourse/vendor/jquery/jquery.min.js"></script>
+<script src="./recourse/vendor/popper/popper.min.js"></script>
+<script src="./recourse/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!-- Core plugin JavaScript-->
+<script src="./recourse/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  </script>
-  
+<script type="text/JavaScript">
+    var temp;
+    var changetime = '<option value="1">5 minutes</option>' +
+        '<option value="2">10 minutes</option>' +
+        '<option value="2">15 minutes</option>' +
+        '<option value="4">20 minutes</option>' +
+        '<option value="5">25 minutes</option>' +
+        '<option value="6">30 minutes</option>';
+    $.ajax({
+        type: "POST",
+        url: "openclass/getQuizinfo",
+        dataType: "json",
+        data: {},
+        success: function (res) {
+            if (res) {
+                var quizoption = '';
+                temp = res;
+                for (var i = 0; i < res.length / 3; i++) {
+                    quizoption += "<option value=" + i + ">" + res[res.length - (i + 1) * 3 + 1] + "</option>";
+                }
+                document.getElementById('Quizbox').innerHTML = quizoption;
+                var defaulttime = "<option value=" + 0 + ">" + temp[temp.length - 1] + '秒-預設時間-' + "</option>";
+                defaulttime += changetime;
+                document.getElementById('Timebox').innerHTML = defaulttime;
+                document.getElementById("text_content").value = res[res.length - 3];
+                document.getElementById('Time_choose').value = temp[temp.length - 1];
+            }
+        },
+        error: function (jqXHR) {
+            alert("發生錯誤: " + jqXHR.status);
+        }
+    });
+
+    $('#Quizbox').change(function () {
+        var slecteditem = $('#Quizbox').val();
+        var num = parseInt(slecteditem);
+        var defaulttime = "<option value=" + 0 + ">" + temp[temp.length - (num + 1) * 3 + 2] + '秒-預設時間-' + "</option>";
+        defaulttime += changetime;
+        document.getElementById('Timebox').innerHTML = defaulttime;
+        document.getElementById('Time_choose').value = temp[temp.length - (num + 1) * 3 + 2];
+        document.getElementById("text_content").value = temp[temp.length - (num + 1) * 3];
+
+    });
+
+    $('#Timebox').change(function () {
+        var slecteditem = $('#Timebox').val();
+        var slectedquiz = $('#Quizbox').val();
+        var quiznum = parseInt(slectedquiz);
+        var num = parseInt(slecteditem);
+        if (num != 0) {
+            document.getElementById('Time_choose').value = num * 5;
+        }
+        else {
+            document.getElementById('Time_choose').value = temp[temp.length - (quiznum + 1) * 3 + 2];
+        }
+    });
+
+</script>
+
 </body>
 
 </html>
