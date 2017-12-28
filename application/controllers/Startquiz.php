@@ -11,6 +11,9 @@
 		
 		public function getQuizinfo(){
 			if($_SESSION['user']['user_Identity']==0){
+				//var_dump($_SESSION['course']);
+				//$this->load->model('Quiz_model','quiz');
+				//$this->load->model('Question_model','question');
 				$this->load->library('MP_Cache');
 				$data=array(
 					'quiz_Id'=>(int)$_SESSION['course']['quiz_Id'],
@@ -28,21 +31,50 @@
 				}
 				$cdata_name=$_SESSION['course']['class_Id'].'_'.$data['quiz_Id'];
 				$cdata = $this->mp_cache->set_name($cdata_name)->get();
-				if ($cdata === false){
+				if ($cdata === false)
+				{
+					// example model-function that generates your $data variable
 					$cdata = $cdata_set;
 					$this->mp_cache->write($cdata,$cdata_name,7200);
 				}
 				
 				$cdata_name=$_SESSION['course']['class_Id'].'_'.$data['quiz_Id'].'_'.'ans';
 				$cdata = $this->mp_cache->set_name($cdata_name)->get();
-				if ($cdata === false){
+				if ($cdata === false)
+				{
+					// example model-function that generates your $data variable
 					$cdata = $cdata_ans_set;
 					$this->mp_cache->write($cdata,$cdata_name,7200);
 				}
+				
+				//var_dump($_SESSION['course']);
+				//$this->db->cache_on();
+				//var_dump($data);
+				/* $this->db->cache_on();
+				$res=$this->quiz->findknowedquiz($data);
+				$this->db->cache_off();
+				//var_dump($res);
+				$question_array=explode('/',$res[0]['irs_Quiz_Question_Id']);
+				//var_dump($question_array);
+				$data_question=array();
+				foreach($question_array as $a){
+					if($a!='')
+						array_push($data_question,$a);
+				}
+				//var_dump($data_question);
+				$this->db->cache_on();
+				$result=$this->question->findselectQuestion($data_question);
+				$this->db->cache_off();
+				$data_return=array();
+				foreach($result as $b){
+					array_push($data_return,$b["question_Content"],$b["question_Optiona"],$b["question_Optionb"],$b["question_Optionc"],$b["question_Optiond"],$b["question_Answer"],$b["question_Time"]);
+				}
+				var_dump($data_return); */
+				//var_dump($data_return);
 				echo json_encode($data_return);
-
-			}
-			else if($_SESSION['user']['user_Identity']==1){
+				
+				
+			}else if($_SESSION['user']['user_Identity']==1){
 				$this->load->library('MP_Cache');
 				$cdata_name=$_SESSION['classandquiz']['class_Id'].'_'.$_SESSION['classandquiz']['quiz_Id'];
 				$cdata = $this->mp_cache->get($cdata_name);
@@ -54,7 +86,7 @@
 			$this->load->model('Quiz_model','quiz');
 			$this->load->model('Question_model','question');
 			$res=$this->quiz->findknowedquiz($data);
-			$question_array=explode('/',$res[0]['irs_Quiz_Question_Id']);
+			$question_array=explode('_',$res[0]['irs_Quiz_Question_Id']);
 			$data_question=array();
 			foreach($question_array as $a){
 				if($a!='')
