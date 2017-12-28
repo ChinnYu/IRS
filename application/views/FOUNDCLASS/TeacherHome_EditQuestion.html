@@ -2,307 +2,327 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <title>TeacherHome</title>
-  <!-- Bootstrap core CSS-->
-  <link href="./recourse/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom fonts for this template-->
-  <link href="./recourse/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <!-- Page level plugin CSS-->
-  <link href="./recourse/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
-  <!-- Custom styles for this template-->
-  <link href="./recourse/css/sb-admin.css" rel="stylesheet">
-  <link href="./recourse/css/collpse.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>TeacherHome</title>
+    <!-- Bootstrap core CSS-->
+    <link href="./recourse/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template-->
+    <link href="./recourse/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Page level plugin CSS-->
+    <link href="./recourse/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="./recourse/css/sb-admin.css" rel="stylesheet">
+    <link href="./recourse/css/collpse.css" rel="stylesheet">
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
-  <!-- Navigation-->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <a class="navbar-brand" href="TeacherHome.html">FOUNDCLASS</a>
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+            data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="./teacherhome">
-            <i class="fa fa-fw fa-dashboard"></i>
-            <span class="nav-link-text">首頁</span>
-          </a>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-          <a class="nav-link" href="charts.html">
-            <i class="fa fa-fw fa-area-chart"></i>
-            <span class="nav-link-text">測驗分析</span>
-          </a>
-        </li>
-    <!--    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="tables.html">
-            <i class="fa fa-fw fa-table"></i>
-            <span class="nav-link-text">Tables</span>
-          </a>
-        </li>
-	-->	
-	<!--
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-file"></i>
-            <span class="nav-link-text">Example Pages</span>
-          </a>
-          <ul class="sidenav-second-level collapse" id="collapseExamplePages">
-            <li>
-              <a href="login.html">Login Page</a>
+        <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                <a class="nav-link" href="./teacherhome">
+                    <i class="fa fa-fw fa-dashboard"></i>
+                    <span class="nav-link-text">首頁</span>
+                </a>
             </li>
-            <li>
-              <a href="register.html">Registration Page</a>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+                <a class="nav-link" href="charts.html">
+                    <i class="fa fa-fw fa-area-chart"></i>
+                    <span class="nav-link-text">測驗分析</span>
+                </a>
             </li>
-            <li>
-              <a href="forgot-password.html">Forgot Password Page</a>
-            </li>
-            <li>
-              <a href="blank.html">Blank Page</a>
-            </li>
-          </ul>
-        </li>
-	-->	
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-sitemap"></i>
-            <span class="nav-link-text">個人題庫</span>
-          </a>
-          <ul class="sidenav-second-level collapse" id="collapseMulti">
-            <li>
-              <a href="./newquestion">新增題目</a>
-            </li>
-            <li>
-              <a href="./editquestion">題目整理</a>
-            </li>
-            <li>
-              <a href="./newquiz">設計測驗</a>
-            </li>
-         <!--   <li>
-              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">Third Level</a>
-              <ul class="sidenav-third-level collapse" id="collapseMulti2">
-                <li>
-                  <a href="#">Third Level Item</a>
+            <!--    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+                  <a class="nav-link" href="tables.html">
+                    <i class="fa fa-fw fa-table"></i>
+                    <span class="nav-link-text">Tables</span>
+                  </a>
                 </li>
-                <li>
-                  <a href="#">Third Level Item</a>
+            -->
+            <!--
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+                  <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
+                    <i class="fa fa-fw fa-file"></i>
+                    <span class="nav-link-text">Example Pages</span>
+                  </a>
+                  <ul class="sidenav-second-level collapse" id="collapseExamplePages">
+                    <li>
+                      <a href="login.html">Login Page</a>
+                    </li>
+                    <li>
+                      <a href="register.html">Registration Page</a>
+                    </li>
+                    <li>
+                      <a href="forgot-password.html">Forgot Password Page</a>
+                    </li>
+                    <li>
+                      <a href="blank.html">Blank Page</a>
+                    </li>
+                  </ul>
                 </li>
-                <li>
-                  <a href="#">Third Level Item</a>
-                </li>
-              </ul>
+            -->
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti"
+                   data-parent="#exampleAccordion">
+                    <i class="fa fa-fw fa-sitemap"></i>
+                    <span class="nav-link-text">個人題庫</span>
+                </a>
+                <ul class="sidenav-second-level collapse" id="collapseMulti">
+                    <li>
+                        <a href="./newquestion">新增題目</a>
+                    </li>
+                    <li>
+                        <a href="./editquestion">題目整理</a>
+                    </li>
+                    <li>
+                        <a href="./newquiz">設計測驗</a>
+                    </li>
+                    <!--   <li>
+                         <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">Third Level</a>
+                         <ul class="sidenav-third-level collapse" id="collapseMulti2">
+                           <li>
+                             <a href="#">Third Level Item</a>
+                           </li>
+                           <li>
+                             <a href="#">Third Level Item</a>
+                           </li>
+                           <li>
+                             <a href="#">Third Level Item</a>
+                           </li>
+                         </ul>
+                       </li>
+                   -->
+                </ul>
             </li>
-		-->	
-          </ul>
-        </li>
-		
-		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-          <a class="nav-link" href="./openclass">
-            <i class="fa fa-fw fa-area-chart"></i>
-            <span class="nav-link-text">開啟教室</span>
-          </a>
-        </li>
-		
-		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-wrench"></i>
-            <span class="nav-link-text">頁面環境設置</span>
-          </a>
-          <ul class="sidenav-second-level collapse" id="collapseComponents">
-            <li>
-              <a href="navbar.html">頁面簡化</a>
+
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+                <a class="nav-link" href="./openclass">
+                    <i class="fa fa-fw fa-area-chart"></i>
+                    <span class="nav-link-text">開啟教室</span>
+                </a>
             </li>
-            <li>
-              <a href="cards.html">Cards</a>
+
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents"
+                   data-parent="#exampleAccordion">
+                    <i class="fa fa-fw fa-wrench"></i>
+                    <span class="nav-link-text">頁面環境設置</span>
+                </a>
+                <ul class="sidenav-second-level collapse" id="collapseComponents">
+                    <li>
+                        <a href="navbar.html">頁面簡化</a>
+                    </li>
+                    <li>
+                        <a href="cards.html">Cards</a>
+                    </li>
+                </ul>
             </li>
-          </ul>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
-          <a class="nav-link" href="#">
-            <i class="fa fa-fw fa-link"></i>
-            <span class="nav-link-text">Link</span>
-          </a>
-        </li>
-      </ul>
-      <ul class="navbar-nav sidenav-toggler">
-        <li class="nav-item">
-          <a class="nav-link text-center" id="sidenavToggler">
-            <i class="fa fa-fw fa-angle-left"></i>
-          </a>
-        </li>
-      </ul>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fa fa-fw fa-envelope"></i>
-            <span class="d-lg-none">Messages
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+                <a class="nav-link" href="#">
+                    <i class="fa fa-fw fa-link"></i>
+                    <span class="nav-link-text">Link</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="navbar-nav sidenav-toggler">
+            <li class="nav-item">
+                <a class="nav-link text-center" id="sidenavToggler">
+                    <i class="fa fa-fw fa-angle-left"></i>
+                </a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-fw fa-envelope"></i>
+                    <span class="d-lg-none">Messages
               <span class="badge badge-pill badge-primary">12 New</span>
             </span>
-            <span class="indicator text-primary d-none d-lg-block">
+                    <span class="indicator text-primary d-none d-lg-block">
               <i class="fa fa-fw fa-circle"></i>
             </span>
-          </a>
-          <div class="dropdown-menu" aria-labelledby="messagesDropdown">
-            <h6 class="dropdown-header">New Messages:</h6>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">
-              <strong>蔡秉成</strong>
-              <span class="small float-right text-muted">11:21 AM</span>
-              <div class="dropdown-message small">Hey there! This new version of SB Admin is pretty awesome! These messages clip off when they reach the end of the box so they don't overflow over to the sides!</div>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">
-              <strong>吳光晉</strong>
-              <span class="small float-right text-muted">11:21 AM</span>
-              <div class="dropdown-message small">I was wondering if you could meet for an appointment at 3:00 instead of 4:00. Thanks!</div>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">
-              <strong>許博智</strong>
-              <span class="small float-right text-muted">11:21 AM</span>
-              <div class="dropdown-message small">I've sent the final files over to you for review. When you're able to sign off of them let me know and we can discuss distribution.</div>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item small" href="#">View all messages</a>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fa fa-fw fa-bell"></i>
-            <span class="d-lg-none">Alerts
+                </a>
+                <div class="dropdown-menu" aria-labelledby="messagesDropdown">
+                    <h6 class="dropdown-header">New Messages:</h6>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">
+                        <strong>蔡秉成</strong>
+                        <span class="small float-right text-muted">11:21 AM</span>
+                        <div class="dropdown-message small">Hey there! This new version of SB Admin is pretty awesome!
+                            These messages clip off when they reach the end of the box so they don't overflow over to
+                            the sides!
+                        </div>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">
+                        <strong>吳光晉</strong>
+                        <span class="small float-right text-muted">11:21 AM</span>
+                        <div class="dropdown-message small">I was wondering if you could meet for an appointment at 3:00
+                            instead of 4:00. Thanks!
+                        </div>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">
+                        <strong>許博智</strong>
+                        <span class="small float-right text-muted">11:21 AM</span>
+                        <div class="dropdown-message small">I've sent the final files over to you for review. When
+                            you're able to sign off of them let me know and we can discuss distribution.
+                        </div>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item small" href="#">View all messages</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-fw fa-bell"></i>
+                    <span class="d-lg-none">Alerts
               <span class="badge badge-pill badge-warning">6 New</span>
             </span>
-            <span class="indicator text-warning d-none d-lg-block">
+                    <span class="indicator text-warning d-none d-lg-block">
               <i class="fa fa-fw fa-circle"></i>
             </span>
-          </a>
-          <div class="dropdown-menu" aria-labelledby="alertsDropdown">
-            <h6 class="dropdown-header">New Alerts:</h6>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">
+                </a>
+                <div class="dropdown-menu" aria-labelledby="alertsDropdown">
+                    <h6 class="dropdown-header">New Alerts:</h6>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">
               <span class="text-success">
                 <strong>
                   <i class="fa fa-long-arrow-up fa-fw"></i>Status Update</strong>
               </span>
-              <span class="small float-right text-muted">11:21 AM</span>
-              <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">
+                        <span class="small float-right text-muted">11:21 AM</span>
+                        <div class="dropdown-message small">This is an automated server response message. All systems
+                            are online.
+                        </div>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">
               <span class="text-danger">
                 <strong>
                   <i class="fa fa-long-arrow-down fa-fw"></i>Status Update</strong>
               </span>
-              <span class="small float-right text-muted">11:21 AM</span>
-              <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">
+                        <span class="small float-right text-muted">11:21 AM</span>
+                        <div class="dropdown-message small">This is an automated server response message. All systems
+                            are online.
+                        </div>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">
               <span class="text-success">
                 <strong>
                   <i class="fa fa-long-arrow-up fa-fw"></i>Status Update</strong>
               </span>
-              <span class="small float-right text-muted">11:21 AM</span>
-              <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item small" href="#">View all alerts</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
-        </li>
-      </ul>
+                        <span class="small float-right text-muted">11:21 AM</span>
+                        <div class="dropdown-message small">This is an automated server response message. All systems
+                            are online.
+                        </div>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item small" href="#">View all alerts</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+                    <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+            </li>
+        </ul>
     </div>
-  </nav>
-  <div class="content-wrapper">
+</nav>
+<div class="content-wrapper">
     <div class="container-fluid">
-      <!-- Breadcrumbs-->
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a href="TeacherHome.html" id="teaname"></a>
-        </li>
-        <li class="breadcrumb-item active">編輯問題</li>
-      </ol>
-		  <div class="container">
-	    	<div class="row">
-			    <span id="insertlesson"></span>
-				
-				<span id="insertTag"></span>
-				<select class="select" id="selectQuestionType" title="選擇題型">
-				
-				  <option value="1">單選題</option>
-				  <option value="2">多選題</option>
-				  <option value="3">是非題</option>
-				</select>
-				<button class="btn btn-default" type="submit" id="submit">
-			      <i class="fa fa-search" aria-hidden="true"></i>
-			    </button>
-			</div>
-			<div class="row">
-				<p id="totalrow"></p>
-			</div>
-			<div class="row">
-				<div class="col-md-12" id="searchresult">
-					<ul class="list-group">
-					  <li class="list-group-item" id="item1">題目 <span class="badge badge-secondary">使用次數</span></li>
-					  <span id="insertHere"></span>
-					</ul>
-				</div>	
-			</div>
-			<div class="row">
-			<p></p>
-			</div>
-			<div class="row">
-			<form>
-				<label for="share_question">分享給:</label>
-			    <div class="input-group">
-			      <input type="text" class="form-control" id="share_question" placeholder="example@mail.com">
-			      <span class="input-group-btn">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="TeacherHome.html" id="teaname"></a>
+            </li>
+            <li class="breadcrumb-item active">編輯問題</li>
+        </ol>
+        <div class="container">
+            <div class="row">
+                <span id="insertlesson"></span>
+
+                <span id="insertTag"></span>
+                <select class="select" id="selectQuestionType" title="選擇題型">
+
+                    <option value="1">單選題</option>
+                    <option value="2">多選題</option>
+                    <option value="3">是非題</option>
+                </select>
+                <button class="btn btn-default" type="submit" id="submit">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="row">
+                <p id="totalrow"></p>
+            </div>
+            <div class="row">
+                <div class="col-md-12" id="searchresult">
+                    <ul class="list-group">
+                        <li class="list-group-item" id="item1">題目 <span class="badge badge-secondary">使用次數</span></li>
+                        <span id="insertHere"></span>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <p></p>
+            </div>
+            <div class="row">
+                <form>
+                    <label for="share_question">分享給:</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="share_question" placeholder="example@mail.com">
+                        <span class="input-group-btn">
 			        <button class="btn btn-secondary" type="button">分享</button>
 			      </span>
-			    </div>
-			</form>
-			</div>
-		</div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
     <!-- /.container-fluid-->
     <!-- /.content-wrapper-->
     <footer class="sticky-footer">
-      <div class="container">
-        <div class="text-center">
-          <small>Copyright © FOUNDCLASS 2017</small>
+        <div class="container">
+            <div class="text-center">
+                <small>Copyright © FOUNDCLASS 2017</small>
+            </div>
         </div>
-      </div>
     </footer>
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fa fa-angle-up"></i>
+        <i class="fa fa-angle-up"></i>
     </a>
     <!-- Logout Modal-->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
-          </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
     <!-- Bootstrap core JavaScript-->
     <script src="./recourse/vendor/jquery/jquery.min.js"></script>
@@ -319,370 +339,387 @@
     <!-- Custom scripts for this page-->
     <script src="./recourse/js/sb-admin-datatables.min.js"></script>
     <script src="./recourse/js/sb-admin-charts.min.js"></script>
-	<script type="text/javascript">
-	//實作問題搜尋
-	var tmp;
-	$("#submit").click(function(){
-	$.ajax({
-		url : "question/editfindquestion",
-		type : "POST",
-        dataType : "json",
-		data : { question_Types : $("#selectQuestionType").val(), question_Chapter : $("#chapter").val(), question_Lession : $("#lesson").val(), user_Id : 9},	
-		success : function($res){
-			tmp = $res;
-			document.getElementById("totalrow").innerHTML ="以"+$("#lesson").val()+"，"+$("#chapter").val()+"搜尋 結果共"+tmp.length+"件";
-			var el = document.getElementById('insertHere');
-			el.innerHTML ="";
-			for(var i = 0 ; i< tmp.length ;i++){
-				if(tmp[i]['question_Types']!=3){
-					questioncontent =tmp[i]['question_Content'];
-					questionoptiona =tmp[i]['question_Optiona'];
-					questionoptionb =tmp[i]['question_Optionb'];
-					questionoptionc =tmp[i]['question_Optionc'];
-					questionoptiond =tmp[i]['question_Optiond'];
-					questiontime =tmp[i]['question_Time'];
-					questionans =tmp[i]['question_Answer'];
-					questiontitle =tmp[i]['question_Content'].slice(0, 20);
-					ID=tmp[i]['question_Id'];
-					//判斷答案組合
-						<!-- switch(questionans) { -->
-							<!-- case '1': -->
-								<!-- questionans = [0]; -->
-								<!-- break; -->
-							<!-- case '2': -->
-								<!-- questionans = [1]; -->
-								<!-- break; -->
-							<!-- case '3': -->
-								<!-- questionans = [0,1]; -->
-								<!-- break; -->
-							<!-- case '4': -->
-								<!-- questionans = [2]; -->
-								<!-- break; -->
-							<!-- case '5': -->
-								<!-- questionans = [0,2]; -->
-								<!-- break; -->
-							<!-- case '6': -->
-								<!-- questionans = [1,2]; -->
-								<!-- break; -->
-							<!-- case '7': -->
-								<!-- questionans = [0,1,2]; -->
-								<!-- break; -->
-							<!-- case '8': -->
-								<!-- questionans = [3]; -->
-								<!-- break; -->
-							<!-- case '9': -->
-								<!-- questionans = [0,3]; -->
-								<!-- break; -->
-							<!-- case '10': -->
-								<!-- questionans = [1,3]; -->
-								<!-- break; -->
-							<!-- case '11': -->
-								<!-- questionans = [0,1,3]; -->
-								<!-- break; -->
-							<!-- case '12': -->
-								<!-- questionans = [2,3]; -->
-								<!-- break; -->
-							<!-- case '13': -->
-								<!-- questionans = [0,2,3]; -->
-								<!-- break; -->
-							<!-- case '14': -->
-								<!-- questionans = [1,2,3]; -->
-								<!-- break; -->
-							<!-- case '15': -->
-								<!-- questionans = [0,1,2,3]; -->
-								<!-- break; -->
-						<!-- } -->
-					//-display the result of the array
-					var el = document.getElementById('insertHere');
-					//顯示題目
-					if(tmp[i]['question_Types']==1)
-					//el.innerHTML =el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo"+ i +"\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo"+ i +"\" href=\"#collapseFour"+ i +"\">" + questiontitle +"</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour"+ i +"\"> <div class=\"panel-body\"><span id=\"questioncontent"+ i +"\" contenteditable=\"true\">"+ questioncontent +"</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption\" ><span id=\"questionoptiona"+ i +"\" contenteditable=\"true\">"+ questionoptiona +"</span></li> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption\" ><span id=\"questionoptionb"+ i +"\" contenteditable=\"true\">"+ questionoptionb +"</span></li> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption\" ><span id=\"questionoptionc"+ i +"\" contenteditable=\"true\">"+ questionoptionc +"</span></li> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption\" ><span id=\"questionoptiond"+ i +"\" contenteditable=\"true\">"+ questionoptiond +"</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime"+ i +"\" contenteditable=\"true\">"+ questiontime +"</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave"+ i +"\" value=\""+ ID +"\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew"+ i +"\">另存為新題目</button></li></div> </div> </div> </div>";
-					{switch(questionans) {
-							case '1':
-								el.innerHTML =el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo"+ i +"\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo"+ i +"\" href=\"#collapseFour"+ i +"\">" + questiontitle +"</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour"+ i +"\"> <div class=\"panel-body\"><span id=\"questioncontent"+ i +"\" contenteditable=\"true\">"+ questioncontent +"</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption"+ i +"\" value=\"1\" checked><span id=\"questionoptiona"+ i +"\" contenteditable=\"true\">"+ questionoptiona +"</span></li> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption"+ i +"\" value=\"2\"><span id=\"questionoptionb"+ i +"\" contenteditable=\"true\">"+ questionoptionb +"</span></li> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption"+ i +"\" value=\"4\"><span id=\"questionoptionc"+ i +"\" contenteditable=\"true\">"+ questionoptionc +"</span></li> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption"+ i +"\" value=\"8\"><span id=\"questionoptiond"+ i +"\" contenteditable=\"true\">"+ questionoptiond +"</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime"+ i +"\" contenteditable=\"true\">"+ questiontime +"</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave"+ i +"\" value=\""+ ID +"\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew"+ i +"\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete"+ i +"\" value=\""+ ID +"\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
-								break;
-							case '2':
-								el.innerHTML =el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo"+ i +"\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo"+ i +"\" href=\"#collapseFour"+ i +"\">" + questiontitle +"</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour"+ i +"\"> <div class=\"panel-body\"><span id=\"questioncontent"+ i +"\" contenteditable=\"true\">"+ questioncontent +"</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption"+ i +"\" value=\"1\"><span id=\"questionoptiona"+ i +"\" contenteditable=\"true\">"+ questionoptiona +"</span></li> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption"+ i +"\" value=\"2\" checked><span id=\"questionoptionb"+ i +"\" contenteditable=\"true\">"+ questionoptionb +"</span></li> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption"+ i +"\" value=\"4\"><span id=\"questionoptionc"+ i +"\" contenteditable=\"true\">"+ questionoptionc +"</span></li> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption"+ i +"\" value=\"8\"><span id=\"questionoptiond"+ i +"\" contenteditable=\"true\">"+ questionoptiond +"</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime"+ i +"\" contenteditable=\"true\">"+ questiontime +"</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave"+ i +"\" value=\""+ ID +"\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew"+ i +"\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete"+ i +"\" value=\""+ ID +"\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
-								break;
-							case '4':
-								el.innerHTML =el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo"+ i +"\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo"+ i +"\" href=\"#collapseFour"+ i +"\">" + questiontitle +"</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour"+ i +"\"> <div class=\"panel-body\"><span id=\"questioncontent"+ i +"\" contenteditable=\"true\">"+ questioncontent +"</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption"+ i +"\" value=\"1\"><span id=\"questionoptiona"+ i +"\" contenteditable=\"true\">"+ questionoptiona +"</span></li> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption"+ i +"\" value=\"2\"><span id=\"questionoptionb"+ i +"\" contenteditable=\"true\">"+ questionoptionb +"</span></li> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption"+ i +"\" value=\"4\" checked><span id=\"questionoptionc"+ i +"\" contenteditable=\"true\">"+ questionoptionc +"</span></li> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption"+ i +"\" value=\"8\"><span id=\"questionoptiond"+ i +"\" contenteditable=\"true\">"+ questionoptiond +"</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime"+ i +"\" contenteditable=\"true\">"+ questiontime +"</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave"+ i +"\" value=\""+ ID +"\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew"+ i +"\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete"+ i +"\" value=\""+ ID +"\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
-								break;
-							case '8':
-								el.innerHTML =el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo"+ i +"\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo"+ i +"\" href=\"#collapseFour"+ i +"\">" + questiontitle +"</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour"+ i +"\"> <div class=\"panel-body\"><span id=\"questioncontent"+ i +"\" contenteditable=\"true\">"+ questioncontent +"</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption"+ i +"\" value=\"1\"><span id=\"questionoptiona"+ i +"\" contenteditable=\"true\">"+ questionoptiona +"</span></li> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption"+ i +"\" value=\"2\"><span id=\"questionoptionb"+ i +"\" contenteditable=\"true\">"+ questionoptionb +"</span></li> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption"+ i +"\" value=\"4\"><span id=\"questionoptionc"+ i +"\" contenteditable=\"true\">"+ questionoptionc +"</span></li> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption"+ i +"\" value=\"8\" checked><span id=\"questionoptiond"+ i +"\" contenteditable=\"true\">"+ questionoptiond +"</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime"+ i +"\" contenteditable=\"true\">"+ questiontime +"</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave"+ i +"\" value=\""+ ID +"\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew"+ i +"\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete"+ i +"\" value=\""+ ID +"\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
-								break;
-						}
-					}
-					if(tmp[i]['question_Types']==2)
-					//el.innerHTML =el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo"+ i +"\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo"+ i +"\" href=\"#collapseFour"+ i +"\">" + questiontitle +"</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour"+ i +"\"> <div class=\"panel-body\"><span id=\"questioncontent"+ i +"\" contenteditable=\"true\">"+ questioncontent +"</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\"><span id=\"questionoptiona"+ i +"\" contenteditable=\"true\">"+ questionoptiona +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\"><span id=\"questionoptionb"+ i +"\" contenteditable=\"true\">"+ questionoptionb +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\"><span id=\"questionoptionc"+ i +"\" contenteditable=\"true\">"+ questionoptionc +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\"><span id=\"questionoptiond"+ i +"\" contenteditable=\"true\">"+ questionoptiond +"</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime"+ i +"\" contenteditable=\"true\">"+ questiontime +"</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave"+ i +"\" value=\""+ ID +"\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew"+ i +"\">另存為新題目</button></li></div> </div> </div> </div>";
-					{switch(questionans) {
-							case '1':
-								el.innerHTML =el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo"+ i +"\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo"+ i +"\" href=\"#collapseFour"+ i +"\">" + questiontitle +"</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour"+ i +"\"> <div class=\"panel-body\"><span id=\"questioncontent"+ i +"\" contenteditable=\"true\">"+ questioncontent +"</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"1\" checked><span id=\"questionoptiona"+ i +"\" contenteditable=\"true\">"+ questionoptiona +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"2\"><span id=\"questionoptionb"+ i +"\" contenteditable=\"true\">"+ questionoptionb +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"4\"><span id=\"questionoptionc"+ i +"\" contenteditable=\"true\">"+ questionoptionc +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"8\"><span id=\"questionoptiond"+ i +"\" contenteditable=\"true\">"+ questionoptiond +"</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime"+ i +"\" contenteditable=\"true\">"+ questiontime +"</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave"+ i +"\" value=\""+ ID +"\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew"+ i +"\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete"+ i +"\" value=\""+ ID +"\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
-								break;
-							case '2':
-								el.innerHTML =el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo"+ i +"\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo"+ i +"\" href=\"#collapseFour"+ i +"\">" + questiontitle +"</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour"+ i +"\"> <div class=\"panel-body\"><span id=\"questioncontent"+ i +"\" contenteditable=\"true\">"+ questioncontent +"</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"1\"><span id=\"questionoptiona"+ i +"\" contenteditable=\"true\">"+ questionoptiona +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"2\" checked><span id=\"questionoptionb"+ i +"\" contenteditable=\"true\">"+ questionoptionb +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"4\"><span id=\"questionoptionc"+ i +"\" contenteditable=\"true\">"+ questionoptionc +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"8\"><span id=\"questionoptiond"+ i +"\" contenteditable=\"true\">"+ questionoptiond +"</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime"+ i +"\" contenteditable=\"true\">"+ questiontime +"</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave"+ i +"\" value=\""+ ID +"\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew"+ i +"\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete"+ i +"\" value=\""+ ID +"\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
-								break;
-							case '3':
-								el.innerHTML =el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo"+ i +"\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo"+ i +"\" href=\"#collapseFour"+ i +"\">" + questiontitle +"</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour"+ i +"\"> <div class=\"panel-body\"><span id=\"questioncontent"+ i +"\" contenteditable=\"true\">"+ questioncontent +"</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"1\" checked><span id=\"questionoptiona"+ i +"\" contenteditable=\"true\">"+ questionoptiona +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"2\" checked><span id=\"questionoptionb"+ i +"\" contenteditable=\"true\">"+ questionoptionb +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"4\"><span id=\"questionoptionc"+ i +"\" contenteditable=\"true\">"+ questionoptionc +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"8\"><span id=\"questionoptiond"+ i +"\" contenteditable=\"true\">"+ questionoptiond +"</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime"+ i +"\" contenteditable=\"true\">"+ questiontime +"</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave"+ i +"\" value=\""+ ID +"\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew"+ i +"\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete"+ i +"\" value=\""+ ID +"\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
-								break;
-							case '4':
-								el.innerHTML =el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo"+ i +"\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo"+ i +"\" href=\"#collapseFour"+ i +"\">" + questiontitle +"</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour"+ i +"\"> <div class=\"panel-body\"><span id=\"questioncontent"+ i +"\" contenteditable=\"true\">"+ questioncontent +"</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"1\"><span id=\"questionoptiona"+ i +"\" contenteditable=\"true\">"+ questionoptiona +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"2\"><span id=\"questionoptionb"+ i +"\" contenteditable=\"true\">"+ questionoptionb +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"4\" checked><span id=\"questionoptionc"+ i +"\" contenteditable=\"true\">"+ questionoptionc +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"8\"><span id=\"questionoptiond"+ i +"\" contenteditable=\"true\">"+ questionoptiond +"</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime"+ i +"\" contenteditable=\"true\">"+ questiontime +"</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave"+ i +"\" value=\""+ ID +"\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew"+ i +"\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete"+ i +"\" value=\""+ ID +"\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
-								break;
-							case '5':
-								el.innerHTML =el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo"+ i +"\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo"+ i +"\" href=\"#collapseFour"+ i +"\">" + questiontitle +"</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour"+ i +"\"> <div class=\"panel-body\"><span id=\"questioncontent"+ i +"\" contenteditable=\"true\">"+ questioncontent +"</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"1\" checked><span id=\"questionoptiona"+ i +"\" contenteditable=\"true\">"+ questionoptiona +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"2\"><span id=\"questionoptionb"+ i +"\" contenteditable=\"true\">"+ questionoptionb +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"4\" checked><span id=\"questionoptionc"+ i +"\" contenteditable=\"true\">"+ questionoptionc +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"8\"><span id=\"questionoptiond"+ i +"\" contenteditable=\"true\">"+ questionoptiond +"</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime"+ i +"\" contenteditable=\"true\">"+ questiontime +"</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave"+ i +"\" value=\""+ ID +"\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew"+ i +"\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete"+ i +"\" value=\""+ ID +"\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
-								break;
-							case '6':
-								el.innerHTML =el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo"+ i +"\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo"+ i +"\" href=\"#collapseFour"+ i +"\">" + questiontitle +"</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour"+ i +"\"> <div class=\"panel-body\"><span id=\"questioncontent"+ i +"\" contenteditable=\"true\">"+ questioncontent +"</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\"value=\"1\" ><span id=\"questionoptiona"+ i +"\" contenteditable=\"true\">"+ questionoptiona +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"2\" checked><span id=\"questionoptionb"+ i +"\" contenteditable=\"true\">"+ questionoptionb +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"4\" checked><span id=\"questionoptionc"+ i +"\" contenteditable=\"true\">"+ questionoptionc +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"8\"><span id=\"questionoptiond"+ i +"\" contenteditable=\"true\">"+ questionoptiond +"</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime"+ i +"\" contenteditable=\"true\">"+ questiontime +"</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave"+ i +"\" value=\""+ ID +"\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew"+ i +"\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete"+ i +"\" value=\""+ ID +"\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
-								break;
-							case '7':
-								el.innerHTML =el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo"+ i +"\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo"+ i +"\" href=\"#collapseFour"+ i +"\">" + questiontitle +"</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour"+ i +"\"> <div class=\"panel-body\"><span id=\"questioncontent"+ i +"\" contenteditable=\"true\">"+ questioncontent +"</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"1\" checked><span id=\"questionoptiona"+ i +"\" contenteditable=\"true\">"+ questionoptiona +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"2\" checked><span id=\"questionoptionb"+ i +"\" contenteditable=\"true\">"+ questionoptionb +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"4\" checked><span id=\"questionoptionc"+ i +"\" contenteditable=\"true\">"+ questionoptionc +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"8\"><span id=\"questionoptiond"+ i +"\" contenteditable=\"true\">"+ questionoptiond +"</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime"+ i +"\" contenteditable=\"true\">"+ questiontime +"</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave"+ i +"\" value=\""+ ID +"\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew"+ i +"\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete"+ i +"\" value=\""+ ID +"\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
-								break;
-							case '8':
-								el.innerHTML =el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo"+ i +"\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo"+ i +"\" href=\"#collapseFour"+ i +"\">" + questiontitle +"</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour"+ i +"\"> <div class=\"panel-body\"><span id=\"questioncontent"+ i +"\" contenteditable=\"true\">"+ questioncontent +"</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"1\"><span id=\"questionoptiona"+ i +"\" contenteditable=\"true\">"+ questionoptiona +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"2\"><span id=\"questionoptionb"+ i +"\" contenteditable=\"true\">"+ questionoptionb +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"4\"><span id=\"questionoptionc"+ i +"\" contenteditable=\"true\">"+ questionoptionc +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"8\" checked><span id=\"questionoptiond"+ i +"\" contenteditable=\"true\">"+ questionoptiond +"</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime"+ i +"\" contenteditable=\"true\">"+ questiontime +"</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave"+ i +"\" value=\""+ ID +"\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew"+ i +"\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete"+ i +"\" value=\""+ ID +"\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
-								break;
-							case '9':
-								el.innerHTML =el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo"+ i +"\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo"+ i +"\" href=\"#collapseFour"+ i +"\">" + questiontitle +"</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour"+ i +"\"> <div class=\"panel-body\"><span id=\"questioncontent"+ i +"\" contenteditable=\"true\">"+ questioncontent +"</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"1\" checked><span id=\"questionoptiona"+ i +"\" contenteditable=\"true\">"+ questionoptiona +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"2\"><span id=\"questionoptionb"+ i +"\" contenteditable=\"true\">"+ questionoptionb +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"4\"><span id=\"questionoptionc"+ i +"\" contenteditable=\"true\">"+ questionoptionc +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"8\" checked><span id=\"questionoptiond"+ i +"\" contenteditable=\"true\">"+ questionoptiond +"</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime"+ i +"\" contenteditable=\"true\">"+ questiontime +"</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave"+ i +"\" value=\""+ ID +"\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew"+ i +"\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete"+ i +"\" value=\""+ ID +"\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
-								break;
-							case '10':
-								el.innerHTML =el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo"+ i +"\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo"+ i +"\" href=\"#collapseFour"+ i +"\">" + questiontitle +"</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour"+ i +"\"> <div class=\"panel-body\"><span id=\"questioncontent"+ i +"\" contenteditable=\"true\">"+ questioncontent +"</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"1\"><span id=\"questionoptiona"+ i +"\" contenteditable=\"true\">"+ questionoptiona +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"2\" checked><span id=\"questionoptionb"+ i +"\" contenteditable=\"true\">"+ questionoptionb +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"4\"><span id=\"questionoptionc"+ i +"\" contenteditable=\"true\">"+ questionoptionc +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"8\" checked><span id=\"questionoptiond"+ i +"\" contenteditable=\"true\">"+ questionoptiond +"</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime"+ i +"\" contenteditable=\"true\">"+ questiontime +"</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave"+ i +"\" value=\""+ ID +"\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew"+ i +"\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete"+ i +"\" value=\""+ ID +"\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
-								break;
-							case '11':
-								el.innerHTML =el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo"+ i +"\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo"+ i +"\" href=\"#collapseFour"+ i +"\">" + questiontitle +"</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour"+ i +"\"> <div class=\"panel-body\"><span id=\"questioncontent"+ i +"\" contenteditable=\"true\">"+ questioncontent +"</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"1\" checked><span id=\"questionoptiona"+ i +"\" contenteditable=\"true\">"+ questionoptiona +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"2\" checked><span id=\"questionoptionb"+ i +"\" contenteditable=\"true\">"+ questionoptionb +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"4\"><span id=\"questionoptionc"+ i +"\" contenteditable=\"true\">"+ questionoptionc +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"8\" checked><span id=\"questionoptiond"+ i +"\" contenteditable=\"true\">"+ questionoptiond +"</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime"+ i +"\" contenteditable=\"true\">"+ questiontime +"</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave"+ i +"\" value=\""+ ID +"\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew"+ i +"\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete"+ i +"\" value=\""+ ID +"\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
-								break;
-							case '12':
-								el.innerHTML =el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo"+ i +"\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo"+ i +"\" href=\"#collapseFour"+ i +"\">" + questiontitle +"</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour"+ i +"\"> <div class=\"panel-body\"><span id=\"questioncontent"+ i +"\" contenteditable=\"true\">"+ questioncontent +"</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"1\"><span id=\"questionoptiona"+ i +"\" contenteditable=\"true\">"+ questionoptiona +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"2\"><span id=\"questionoptionb"+ i +"\" contenteditable=\"true\">"+ questionoptionb +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"4\" checked><span id=\"questionoptionc"+ i +"\" contenteditable=\"true\">"+ questionoptionc +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"8\" checked><span id=\"questionoptiond"+ i +"\" contenteditable=\"true\">"+ questionoptiond +"</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime"+ i +"\" contenteditable=\"true\">"+ questiontime +"</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave"+ i +"\" value=\""+ ID +"\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew"+ i +"\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete"+ i +"\" value=\""+ ID +"\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
-								break;
-							case '13':
-								el.innerHTML =el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo"+ i +"\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo"+ i +"\" href=\"#collapseFour"+ i +"\">" + questiontitle +"</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour"+ i +"\"> <div class=\"panel-body\"><span id=\"questioncontent"+ i +"\" contenteditable=\"true\">"+ questioncontent +"</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"1\" checked><span id=\"questionoptiona"+ i +"\" contenteditable=\"true\">"+ questionoptiona +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"2\"><span id=\"questionoptionb"+ i +"\" contenteditable=\"true\">"+ questionoptionb +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"4\" checked><span id=\"questionoptionc"+ i +"\" contenteditable=\"true\">"+ questionoptionc +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"8\" checked><span id=\"questionoptiond"+ i +"\" contenteditable=\"true\">"+ questionoptiond +"</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime"+ i +"\" contenteditable=\"true\">"+ questiontime +"</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave"+ i +"\" value=\""+ ID +"\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew"+ i +"\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete"+ i +"\" value=\""+ ID +"\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
-								break;
-							case '14':
-								el.innerHTML =el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo"+ i +"\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo"+ i +"\" href=\"#collapseFour"+ i +"\">" + questiontitle +"</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour"+ i +"\"> <div class=\"panel-body\"><span id=\"questioncontent"+ i +"\" contenteditable=\"true\">"+ questioncontent +"</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"1\"><span id=\"questionoptiona"+ i +"\" contenteditable=\"true\">"+ questionoptiona +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"2\" checked><span id=\"questionoptionb"+ i +"\" contenteditable=\"true\">"+ questionoptionb +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"4\" checked><span id=\"questionoptionc"+ i +"\" contenteditable=\"true\">"+ questionoptionc +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"8\" checked><span id=\"questionoptiond"+ i +"\" contenteditable=\"true\">"+ questionoptiond +"</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime"+ i +"\" contenteditable=\"true\">"+ questiontime +"</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave"+ i +"\" value=\""+ ID +"\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew"+ i +"\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete"+ i +"\" value=\""+ ID +"\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
-								break;
-							case '15':
-								el.innerHTML =el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo"+ i +"\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo"+ i +"\" href=\"#collapseFour"+ i +"\">" + questiontitle +"</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour"+ i +"\"> <div class=\"panel-body\"><span id=\"questioncontent"+ i +"\" contenteditable=\"true\">"+ questioncontent +"</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"1\" checked><span id=\"questionoptiona"+ i +"\" contenteditable=\"true\">"+ questionoptiona +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"2\" checked><span id=\"questionoptionb"+ i +"\" contenteditable=\"true\">"+ questionoptionb +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"4\" checked><span id=\"questionoptionc"+ i +"\" contenteditable=\"true\">"+ questionoptionc +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\" value=\"8\" checked><span id=\"questionoptiond"+ i +"\" contenteditable=\"true\">"+ questionoptiond +"</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime"+ i +"\" contenteditable=\"true\">"+ questiontime +"</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave"+ i +"\" value=\""+ ID +"\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew"+ i +"\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete"+ i +"\" value=\""+ ID +"\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
-								break;
-						}
-					}
-				}else{
-					questioncontent =tmp[i]['question_Content'];
-					questionoptiona =tmp[i]['question_Optiona'];
-					questionoptionb =tmp[i]['question_Optionb'];
-					questionans =tmp[i]['question_Answer'];
-					questiontime =tmp[i]['question_Time'];
-					questiontitle =tmp[i]['question_Content'].slice(0, 20);
-					ID=tmp[i]['question_Id'];
-					//-display the result of the array
-					var el = document.getElementById('insertHere');
-					//el.innerHTML =el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo"+ i +"\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo"+ i +"\" href=\"#collapseFour"+ i +"\">" + questiontitle +"</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour"+ i +"\"> <div class=\"panel-body\"><span id=\"questioncontent"+ i +"\" contenteditable=\"true\">"+ questioncontent +"</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><span id=\"questionoptiona"+ i +"\" contenteditable=\"true\">"+ questionoptiona +"</span></li> <li class=\"list-group-item\"><span id=\"questionoptionb"+ i +"\" contenteditable=\"true\">"+ questionoptionb +"</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime"+ i +"\" contenteditable=\"true\">"+ questiontime +"</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" name=\"editsave\">儲存</button> <button class=\"btn\" type=\"button\" name=\"saveasnew\">另存為新題目</button></li></div> </div> </div> </div>";
-					{switch(questionans) {
-							case '1':
-								el.innerHTML =el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo"+ i +"\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo"+ i +"\" href=\"#collapseFour"+ i +"\">" + questiontitle +"</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour"+ i +"\"> <div class=\"panel-body\"><span id=\"questioncontent"+ i +"\" contenteditable=\"true\">"+ questioncontent +"</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption"+ i +"\" value=\"1\" checked><span id=\"questionoptiona"+ i +"\" contenteditable=\"true\">"+ questionoptiona +"</span></li> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption"+ i +"\" value=\"2\"><span id=\"questionoptionb"+ i +"\" contenteditable=\"true\">"+ questionoptionb +"</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime"+ i +"\" contenteditable=\"true\">"+ questiontime +"</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave"+ i +"\" value=\""+ ID +"\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew"+ i +"\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete"+ i +"\" value=\""+ ID +"\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
-								break;
-							case '2':
-								el.innerHTML =el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo"+ i +"\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo"+ i +"\" href=\"#collapseFour"+ i +"\">" + questiontitle +"</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour"+ i +"\"> <div class=\"panel-body\"><span id=\"questioncontent"+ i +"\" contenteditable=\"true\">"+ questioncontent +"</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption"+ i +"\" value=\"1\"><span id=\"questionoptiona"+ i +"\" contenteditable=\"true\">"+ questionoptiona +"</span></li> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption"+ i +"\" value=\"2\" checked><span id=\"questionoptionb"+ i +"\" contenteditable=\"true\">"+ questionoptionb +"</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime"+ i +"\" contenteditable=\"true\">"+ questiontime +"</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave"+ i +"\" value=\""+ ID +"\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew"+ i +"\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete"+ i +"\" value=\""+ ID +"\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
-								break;
-						}
-					}
-				}
-			}
-		},
-		error : function(){
-			alert("fa");
-			}
+    <script type="text/javascript">
+        //實作問題搜尋
+        var tmp;
+        $("#submit").click(function () {
+            $.ajax({
+                url: "question/editfindquestion",
+                type: "POST",
+                dataType: "json",
+                data: {
+                    question_Types: $("#selectQuestionType").val(),
+                    question_Chapter: $("#chapter").val(),
+                    question_Lession: $("#lesson").val(),
+                    user_Id: 9
+                },
+                success: function ($res) {
+                    tmp = $res;
+                    document.getElementById("totalrow").innerHTML = "以" + $("#lesson").val() + "，" + $("#chapter").val() + "搜尋 結果共" + tmp.length + "件";
+                    var el = document.getElementById('insertHere');
+                    el.innerHTML = "";
+                    for (var i = 0; i < tmp.length; i++) {
+                        if (tmp[i]['question_Types'] != 3) {
+                            questioncontent = tmp[i]['question_Content'];
+                            questionoptiona = tmp[i]['question_Optiona'];
+                            questionoptionb = tmp[i]['question_Optionb'];
+                            questionoptionc = tmp[i]['question_Optionc'];
+                            questionoptiond = tmp[i]['question_Optiond'];
+                            questiontime = tmp[i]['question_Time'];
+                            questionans = tmp[i]['question_Answer'];
+                            questiontitle = tmp[i]['question_Content'].slice(0, 20);
+                            ID = tmp[i]['question_Id'];
+                            //判斷答案組合
+                            <!-- switch(questionans) { -->
+                            <!-- case '1': -->
+                            <!-- questionans = [0]; -->
+                            <!-- break; -->
+                            <!-- case '2': -->
+                            <!-- questionans = [1]; -->
+                            <!-- break; -->
+                            <!-- case '3': -->
+                            <!-- questionans = [0,1]; -->
+                            <!-- break; -->
+                            <!-- case '4': -->
+                            <!-- questionans = [2]; -->
+                            <!-- break; -->
+                            <!-- case '5': -->
+                            <!-- questionans = [0,2]; -->
+                            <!-- break; -->
+                            <!-- case '6': -->
+                            <!-- questionans = [1,2]; -->
+                            <!-- break; -->
+                            <!-- case '7': -->
+                            <!-- questionans = [0,1,2]; -->
+                            <!-- break; -->
+                            <!-- case '8': -->
+                            <!-- questionans = [3]; -->
+                            <!-- break; -->
+                            <!-- case '9': -->
+                            <!-- questionans = [0,3]; -->
+                            <!-- break; -->
+                            <!-- case '10': -->
+                            <!-- questionans = [1,3]; -->
+                            <!-- break; -->
+                            <!-- case '11': -->
+                            <!-- questionans = [0,1,3]; -->
+                            <!-- break; -->
+                            <!-- case '12': -->
+                            <!-- questionans = [2,3]; -->
+                            <!-- break; -->
+                            <!-- case '13': -->
+                            <!-- questionans = [0,2,3]; -->
+                            <!-- break; -->
+                            <!-- case '14': -->
+                            <!-- questionans = [1,2,3]; -->
+                            <!-- break; -->
+                            <!-- case '15': -->
+                            <!-- questionans = [0,1,2,3]; -->
+                            <!-- break; -->
+                            <!-- } -->
+                            //-display the result of the array
+                            var el = document.getElementById('insertHere');
+                            //顯示題目
+                            if (tmp[i]['question_Types'] == 1)
+                            //el.innerHTML =el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo"+ i +"\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo"+ i +"\" href=\"#collapseFour"+ i +"\">" + questiontitle +"</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour"+ i +"\"> <div class=\"panel-body\"><span id=\"questioncontent"+ i +"\" contenteditable=\"true\">"+ questioncontent +"</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption\" ><span id=\"questionoptiona"+ i +"\" contenteditable=\"true\">"+ questionoptiona +"</span></li> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption\" ><span id=\"questionoptionb"+ i +"\" contenteditable=\"true\">"+ questionoptionb +"</span></li> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption\" ><span id=\"questionoptionc"+ i +"\" contenteditable=\"true\">"+ questionoptionc +"</span></li> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption\" ><span id=\"questionoptiond"+ i +"\" contenteditable=\"true\">"+ questionoptiond +"</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime"+ i +"\" contenteditable=\"true\">"+ questiontime +"</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave"+ i +"\" value=\""+ ID +"\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew"+ i +"\">另存為新題目</button></li></div> </div> </div> </div>";
+                            {
+                                switch (questionans) {
+                                    case '1':
+                                        el.innerHTML = el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo" + i + "\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo" + i + "\" href=\"#collapseFour" + i + "\">" + questiontitle + "</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour" + i + "\"> <div class=\"panel-body\"><span id=\"questioncontent" + i + "\" contenteditable=\"true\">" + questioncontent + "</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption" + i + "\" value=\"1\" checked><span id=\"questionoptiona" + i + "\" contenteditable=\"true\">" + questionoptiona + "</span></li> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption" + i + "\" value=\"2\"><span id=\"questionoptionb" + i + "\" contenteditable=\"true\">" + questionoptionb + "</span></li> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption" + i + "\" value=\"4\"><span id=\"questionoptionc" + i + "\" contenteditable=\"true\">" + questionoptionc + "</span></li> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption" + i + "\" value=\"8\"><span id=\"questionoptiond" + i + "\" contenteditable=\"true\">" + questionoptiond + "</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime" + i + "\" contenteditable=\"true\">" + questiontime + "</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave" + i + "\" value=\"" + ID + "\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew" + i + "\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete" + i + "\" value=\"" + ID + "\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
+                                        break;
+                                    case '2':
+                                        el.innerHTML = el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo" + i + "\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo" + i + "\" href=\"#collapseFour" + i + "\">" + questiontitle + "</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour" + i + "\"> <div class=\"panel-body\"><span id=\"questioncontent" + i + "\" contenteditable=\"true\">" + questioncontent + "</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption" + i + "\" value=\"1\"><span id=\"questionoptiona" + i + "\" contenteditable=\"true\">" + questionoptiona + "</span></li> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption" + i + "\" value=\"2\" checked><span id=\"questionoptionb" + i + "\" contenteditable=\"true\">" + questionoptionb + "</span></li> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption" + i + "\" value=\"4\"><span id=\"questionoptionc" + i + "\" contenteditable=\"true\">" + questionoptionc + "</span></li> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption" + i + "\" value=\"8\"><span id=\"questionoptiond" + i + "\" contenteditable=\"true\">" + questionoptiond + "</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime" + i + "\" contenteditable=\"true\">" + questiontime + "</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave" + i + "\" value=\"" + ID + "\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew" + i + "\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete" + i + "\" value=\"" + ID + "\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
+                                        break;
+                                    case '4':
+                                        el.innerHTML = el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo" + i + "\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo" + i + "\" href=\"#collapseFour" + i + "\">" + questiontitle + "</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour" + i + "\"> <div class=\"panel-body\"><span id=\"questioncontent" + i + "\" contenteditable=\"true\">" + questioncontent + "</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption" + i + "\" value=\"1\"><span id=\"questionoptiona" + i + "\" contenteditable=\"true\">" + questionoptiona + "</span></li> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption" + i + "\" value=\"2\"><span id=\"questionoptionb" + i + "\" contenteditable=\"true\">" + questionoptionb + "</span></li> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption" + i + "\" value=\"4\" checked><span id=\"questionoptionc" + i + "\" contenteditable=\"true\">" + questionoptionc + "</span></li> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption" + i + "\" value=\"8\"><span id=\"questionoptiond" + i + "\" contenteditable=\"true\">" + questionoptiond + "</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime" + i + "\" contenteditable=\"true\">" + questiontime + "</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave" + i + "\" value=\"" + ID + "\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew" + i + "\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete" + i + "\" value=\"" + ID + "\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
+                                        break;
+                                    case '8':
+                                        el.innerHTML = el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo" + i + "\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo" + i + "\" href=\"#collapseFour" + i + "\">" + questiontitle + "</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour" + i + "\"> <div class=\"panel-body\"><span id=\"questioncontent" + i + "\" contenteditable=\"true\">" + questioncontent + "</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption" + i + "\" value=\"1\"><span id=\"questionoptiona" + i + "\" contenteditable=\"true\">" + questionoptiona + "</span></li> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption" + i + "\" value=\"2\"><span id=\"questionoptionb" + i + "\" contenteditable=\"true\">" + questionoptionb + "</span></li> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption" + i + "\" value=\"4\"><span id=\"questionoptionc" + i + "\" contenteditable=\"true\">" + questionoptionc + "</span></li> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption" + i + "\" value=\"8\" checked><span id=\"questionoptiond" + i + "\" contenteditable=\"true\">" + questionoptiond + "</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime" + i + "\" contenteditable=\"true\">" + questiontime + "</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave" + i + "\" value=\"" + ID + "\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew" + i + "\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete" + i + "\" value=\"" + ID + "\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
+                                        break;
+                                }
+                            }
+                            if (tmp[i]['question_Types'] == 2)
+                            //el.innerHTML =el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo"+ i +"\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo"+ i +"\" href=\"#collapseFour"+ i +"\">" + questiontitle +"</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour"+ i +"\"> <div class=\"panel-body\"><span id=\"questioncontent"+ i +"\" contenteditable=\"true\">"+ questioncontent +"</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\"><span id=\"questionoptiona"+ i +"\" contenteditable=\"true\">"+ questionoptiona +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\"><span id=\"questionoptionb"+ i +"\" contenteditable=\"true\">"+ questionoptionb +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\"><span id=\"questionoptionc"+ i +"\" contenteditable=\"true\">"+ questionoptionc +"</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo"+ i +"\"><span id=\"questionoptiond"+ i +"\" contenteditable=\"true\">"+ questionoptiond +"</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime"+ i +"\" contenteditable=\"true\">"+ questiontime +"</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave"+ i +"\" value=\""+ ID +"\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew"+ i +"\">另存為新題目</button></li></div> </div> </div> </div>";
+                            {
+                                switch (questionans) {
+                                    case '1':
+                                        el.innerHTML = el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo" + i + "\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo" + i + "\" href=\"#collapseFour" + i + "\">" + questiontitle + "</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour" + i + "\"> <div class=\"panel-body\"><span id=\"questioncontent" + i + "\" contenteditable=\"true\">" + questioncontent + "</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"1\" checked><span id=\"questionoptiona" + i + "\" contenteditable=\"true\">" + questionoptiona + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"2\"><span id=\"questionoptionb" + i + "\" contenteditable=\"true\">" + questionoptionb + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"4\"><span id=\"questionoptionc" + i + "\" contenteditable=\"true\">" + questionoptionc + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"8\"><span id=\"questionoptiond" + i + "\" contenteditable=\"true\">" + questionoptiond + "</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime" + i + "\" contenteditable=\"true\">" + questiontime + "</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave" + i + "\" value=\"" + ID + "\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew" + i + "\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete" + i + "\" value=\"" + ID + "\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
+                                        break;
+                                    case '2':
+                                        el.innerHTML = el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo" + i + "\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo" + i + "\" href=\"#collapseFour" + i + "\">" + questiontitle + "</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour" + i + "\"> <div class=\"panel-body\"><span id=\"questioncontent" + i + "\" contenteditable=\"true\">" + questioncontent + "</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"1\"><span id=\"questionoptiona" + i + "\" contenteditable=\"true\">" + questionoptiona + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"2\" checked><span id=\"questionoptionb" + i + "\" contenteditable=\"true\">" + questionoptionb + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"4\"><span id=\"questionoptionc" + i + "\" contenteditable=\"true\">" + questionoptionc + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"8\"><span id=\"questionoptiond" + i + "\" contenteditable=\"true\">" + questionoptiond + "</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime" + i + "\" contenteditable=\"true\">" + questiontime + "</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave" + i + "\" value=\"" + ID + "\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew" + i + "\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete" + i + "\" value=\"" + ID + "\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
+                                        break;
+                                    case '3':
+                                        el.innerHTML = el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo" + i + "\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo" + i + "\" href=\"#collapseFour" + i + "\">" + questiontitle + "</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour" + i + "\"> <div class=\"panel-body\"><span id=\"questioncontent" + i + "\" contenteditable=\"true\">" + questioncontent + "</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"1\" checked><span id=\"questionoptiona" + i + "\" contenteditable=\"true\">" + questionoptiona + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"2\" checked><span id=\"questionoptionb" + i + "\" contenteditable=\"true\">" + questionoptionb + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"4\"><span id=\"questionoptionc" + i + "\" contenteditable=\"true\">" + questionoptionc + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"8\"><span id=\"questionoptiond" + i + "\" contenteditable=\"true\">" + questionoptiond + "</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime" + i + "\" contenteditable=\"true\">" + questiontime + "</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave" + i + "\" value=\"" + ID + "\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew" + i + "\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete" + i + "\" value=\"" + ID + "\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
+                                        break;
+                                    case '4':
+                                        el.innerHTML = el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo" + i + "\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo" + i + "\" href=\"#collapseFour" + i + "\">" + questiontitle + "</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour" + i + "\"> <div class=\"panel-body\"><span id=\"questioncontent" + i + "\" contenteditable=\"true\">" + questioncontent + "</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"1\"><span id=\"questionoptiona" + i + "\" contenteditable=\"true\">" + questionoptiona + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"2\"><span id=\"questionoptionb" + i + "\" contenteditable=\"true\">" + questionoptionb + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"4\" checked><span id=\"questionoptionc" + i + "\" contenteditable=\"true\">" + questionoptionc + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"8\"><span id=\"questionoptiond" + i + "\" contenteditable=\"true\">" + questionoptiond + "</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime" + i + "\" contenteditable=\"true\">" + questiontime + "</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave" + i + "\" value=\"" + ID + "\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew" + i + "\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete" + i + "\" value=\"" + ID + "\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
+                                        break;
+                                    case '5':
+                                        el.innerHTML = el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo" + i + "\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo" + i + "\" href=\"#collapseFour" + i + "\">" + questiontitle + "</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour" + i + "\"> <div class=\"panel-body\"><span id=\"questioncontent" + i + "\" contenteditable=\"true\">" + questioncontent + "</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"1\" checked><span id=\"questionoptiona" + i + "\" contenteditable=\"true\">" + questionoptiona + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"2\"><span id=\"questionoptionb" + i + "\" contenteditable=\"true\">" + questionoptionb + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"4\" checked><span id=\"questionoptionc" + i + "\" contenteditable=\"true\">" + questionoptionc + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"8\"><span id=\"questionoptiond" + i + "\" contenteditable=\"true\">" + questionoptiond + "</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime" + i + "\" contenteditable=\"true\">" + questiontime + "</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave" + i + "\" value=\"" + ID + "\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew" + i + "\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete" + i + "\" value=\"" + ID + "\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
+                                        break;
+                                    case '6':
+                                        el.innerHTML = el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo" + i + "\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo" + i + "\" href=\"#collapseFour" + i + "\">" + questiontitle + "</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour" + i + "\"> <div class=\"panel-body\"><span id=\"questioncontent" + i + "\" contenteditable=\"true\">" + questioncontent + "</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\"value=\"1\" ><span id=\"questionoptiona" + i + "\" contenteditable=\"true\">" + questionoptiona + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"2\" checked><span id=\"questionoptionb" + i + "\" contenteditable=\"true\">" + questionoptionb + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"4\" checked><span id=\"questionoptionc" + i + "\" contenteditable=\"true\">" + questionoptionc + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"8\"><span id=\"questionoptiond" + i + "\" contenteditable=\"true\">" + questionoptiond + "</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime" + i + "\" contenteditable=\"true\">" + questiontime + "</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave" + i + "\" value=\"" + ID + "\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew" + i + "\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete" + i + "\" value=\"" + ID + "\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
+                                        break;
+                                    case '7':
+                                        el.innerHTML = el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo" + i + "\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo" + i + "\" href=\"#collapseFour" + i + "\">" + questiontitle + "</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour" + i + "\"> <div class=\"panel-body\"><span id=\"questioncontent" + i + "\" contenteditable=\"true\">" + questioncontent + "</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"1\" checked><span id=\"questionoptiona" + i + "\" contenteditable=\"true\">" + questionoptiona + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"2\" checked><span id=\"questionoptionb" + i + "\" contenteditable=\"true\">" + questionoptionb + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"4\" checked><span id=\"questionoptionc" + i + "\" contenteditable=\"true\">" + questionoptionc + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"8\"><span id=\"questionoptiond" + i + "\" contenteditable=\"true\">" + questionoptiond + "</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime" + i + "\" contenteditable=\"true\">" + questiontime + "</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave" + i + "\" value=\"" + ID + "\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew" + i + "\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete" + i + "\" value=\"" + ID + "\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
+                                        break;
+                                    case '8':
+                                        el.innerHTML = el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo" + i + "\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo" + i + "\" href=\"#collapseFour" + i + "\">" + questiontitle + "</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour" + i + "\"> <div class=\"panel-body\"><span id=\"questioncontent" + i + "\" contenteditable=\"true\">" + questioncontent + "</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"1\"><span id=\"questionoptiona" + i + "\" contenteditable=\"true\">" + questionoptiona + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"2\"><span id=\"questionoptionb" + i + "\" contenteditable=\"true\">" + questionoptionb + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"4\"><span id=\"questionoptionc" + i + "\" contenteditable=\"true\">" + questionoptionc + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"8\" checked><span id=\"questionoptiond" + i + "\" contenteditable=\"true\">" + questionoptiond + "</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime" + i + "\" contenteditable=\"true\">" + questiontime + "</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave" + i + "\" value=\"" + ID + "\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew" + i + "\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete" + i + "\" value=\"" + ID + "\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
+                                        break;
+                                    case '9':
+                                        el.innerHTML = el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo" + i + "\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo" + i + "\" href=\"#collapseFour" + i + "\">" + questiontitle + "</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour" + i + "\"> <div class=\"panel-body\"><span id=\"questioncontent" + i + "\" contenteditable=\"true\">" + questioncontent + "</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"1\" checked><span id=\"questionoptiona" + i + "\" contenteditable=\"true\">" + questionoptiona + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"2\"><span id=\"questionoptionb" + i + "\" contenteditable=\"true\">" + questionoptionb + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"4\"><span id=\"questionoptionc" + i + "\" contenteditable=\"true\">" + questionoptionc + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"8\" checked><span id=\"questionoptiond" + i + "\" contenteditable=\"true\">" + questionoptiond + "</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime" + i + "\" contenteditable=\"true\">" + questiontime + "</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave" + i + "\" value=\"" + ID + "\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew" + i + "\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete" + i + "\" value=\"" + ID + "\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
+                                        break;
+                                    case '10':
+                                        el.innerHTML = el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo" + i + "\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo" + i + "\" href=\"#collapseFour" + i + "\">" + questiontitle + "</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour" + i + "\"> <div class=\"panel-body\"><span id=\"questioncontent" + i + "\" contenteditable=\"true\">" + questioncontent + "</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"1\"><span id=\"questionoptiona" + i + "\" contenteditable=\"true\">" + questionoptiona + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"2\" checked><span id=\"questionoptionb" + i + "\" contenteditable=\"true\">" + questionoptionb + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"4\"><span id=\"questionoptionc" + i + "\" contenteditable=\"true\">" + questionoptionc + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"8\" checked><span id=\"questionoptiond" + i + "\" contenteditable=\"true\">" + questionoptiond + "</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime" + i + "\" contenteditable=\"true\">" + questiontime + "</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave" + i + "\" value=\"" + ID + "\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew" + i + "\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete" + i + "\" value=\"" + ID + "\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
+                                        break;
+                                    case '11':
+                                        el.innerHTML = el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo" + i + "\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo" + i + "\" href=\"#collapseFour" + i + "\">" + questiontitle + "</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour" + i + "\"> <div class=\"panel-body\"><span id=\"questioncontent" + i + "\" contenteditable=\"true\">" + questioncontent + "</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"1\" checked><span id=\"questionoptiona" + i + "\" contenteditable=\"true\">" + questionoptiona + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"2\" checked><span id=\"questionoptionb" + i + "\" contenteditable=\"true\">" + questionoptionb + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"4\"><span id=\"questionoptionc" + i + "\" contenteditable=\"true\">" + questionoptionc + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"8\" checked><span id=\"questionoptiond" + i + "\" contenteditable=\"true\">" + questionoptiond + "</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime" + i + "\" contenteditable=\"true\">" + questiontime + "</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave" + i + "\" value=\"" + ID + "\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew" + i + "\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete" + i + "\" value=\"" + ID + "\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
+                                        break;
+                                    case '12':
+                                        el.innerHTML = el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo" + i + "\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo" + i + "\" href=\"#collapseFour" + i + "\">" + questiontitle + "</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour" + i + "\"> <div class=\"panel-body\"><span id=\"questioncontent" + i + "\" contenteditable=\"true\">" + questioncontent + "</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"1\"><span id=\"questionoptiona" + i + "\" contenteditable=\"true\">" + questionoptiona + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"2\"><span id=\"questionoptionb" + i + "\" contenteditable=\"true\">" + questionoptionb + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"4\" checked><span id=\"questionoptionc" + i + "\" contenteditable=\"true\">" + questionoptionc + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"8\" checked><span id=\"questionoptiond" + i + "\" contenteditable=\"true\">" + questionoptiond + "</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime" + i + "\" contenteditable=\"true\">" + questiontime + "</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave" + i + "\" value=\"" + ID + "\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew" + i + "\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete" + i + "\" value=\"" + ID + "\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
+                                        break;
+                                    case '13':
+                                        el.innerHTML = el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo" + i + "\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo" + i + "\" href=\"#collapseFour" + i + "\">" + questiontitle + "</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour" + i + "\"> <div class=\"panel-body\"><span id=\"questioncontent" + i + "\" contenteditable=\"true\">" + questioncontent + "</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"1\" checked><span id=\"questionoptiona" + i + "\" contenteditable=\"true\">" + questionoptiona + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"2\"><span id=\"questionoptionb" + i + "\" contenteditable=\"true\">" + questionoptionb + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"4\" checked><span id=\"questionoptionc" + i + "\" contenteditable=\"true\">" + questionoptionc + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"8\" checked><span id=\"questionoptiond" + i + "\" contenteditable=\"true\">" + questionoptiond + "</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime" + i + "\" contenteditable=\"true\">" + questiontime + "</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave" + i + "\" value=\"" + ID + "\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew" + i + "\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete" + i + "\" value=\"" + ID + "\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
+                                        break;
+                                    case '14':
+                                        el.innerHTML = el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo" + i + "\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo" + i + "\" href=\"#collapseFour" + i + "\">" + questiontitle + "</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour" + i + "\"> <div class=\"panel-body\"><span id=\"questioncontent" + i + "\" contenteditable=\"true\">" + questioncontent + "</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"1\"><span id=\"questionoptiona" + i + "\" contenteditable=\"true\">" + questionoptiona + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"2\" checked><span id=\"questionoptionb" + i + "\" contenteditable=\"true\">" + questionoptionb + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"4\" checked><span id=\"questionoptionc" + i + "\" contenteditable=\"true\">" + questionoptionc + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"8\" checked><span id=\"questionoptiond" + i + "\" contenteditable=\"true\">" + questionoptiond + "</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime" + i + "\" contenteditable=\"true\">" + questiontime + "</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave" + i + "\" value=\"" + ID + "\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew" + i + "\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete" + i + "\" value=\"" + ID + "\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
+                                        break;
+                                    case '15':
+                                        el.innerHTML = el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo" + i + "\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo" + i + "\" href=\"#collapseFour" + i + "\">" + questiontitle + "</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour" + i + "\"> <div class=\"panel-body\"><span id=\"questioncontent" + i + "\" contenteditable=\"true\">" + questioncontent + "</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"1\" checked><span id=\"questionoptiona" + i + "\" contenteditable=\"true\">" + questionoptiona + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"2\" checked><span id=\"questionoptionb" + i + "\" contenteditable=\"true\">" + questionoptionb + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"4\" checked><span id=\"questionoptionc" + i + "\" contenteditable=\"true\">" + questionoptionc + "</span></li> <li class=\"list-group-item\"><input type=\"checkbox\" id=\"questionOption1\"  name=\"multOptiondemo" + i + "\" value=\"8\" checked><span id=\"questionoptiond" + i + "\" contenteditable=\"true\">" + questionoptiond + "</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime" + i + "\" contenteditable=\"true\">" + questiontime + "</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave" + i + "\" value=\"" + ID + "\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew" + i + "\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete" + i + "\" value=\"" + ID + "\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
+                                        break;
+                                }
+                            }
+                        } else {
+                            questioncontent = tmp[i]['question_Content'];
+                            questionoptiona = tmp[i]['question_Optiona'];
+                            questionoptionb = tmp[i]['question_Optionb'];
+                            questionans = tmp[i]['question_Answer'];
+                            questiontime = tmp[i]['question_Time'];
+                            questiontitle = tmp[i]['question_Content'].slice(0, 20);
+                            ID = tmp[i]['question_Id'];
+                            //-display the result of the array
+                            var el = document.getElementById('insertHere');
+                            //el.innerHTML =el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo"+ i +"\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo"+ i +"\" href=\"#collapseFour"+ i +"\">" + questiontitle +"</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour"+ i +"\"> <div class=\"panel-body\"><span id=\"questioncontent"+ i +"\" contenteditable=\"true\">"+ questioncontent +"</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><span id=\"questionoptiona"+ i +"\" contenteditable=\"true\">"+ questionoptiona +"</span></li> <li class=\"list-group-item\"><span id=\"questionoptionb"+ i +"\" contenteditable=\"true\">"+ questionoptionb +"</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime"+ i +"\" contenteditable=\"true\">"+ questiontime +"</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" name=\"editsave\">儲存</button> <button class=\"btn\" type=\"button\" name=\"saveasnew\">另存為新題目</button></li></div> </div> </div> </div>";
+                            {
+                                switch (questionans) {
+                                    case '1':
+                                        el.innerHTML = el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo" + i + "\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo" + i + "\" href=\"#collapseFour" + i + "\">" + questiontitle + "</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour" + i + "\"> <div class=\"panel-body\"><span id=\"questioncontent" + i + "\" contenteditable=\"true\">" + questioncontent + "</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption" + i + "\" value=\"1\" checked><span id=\"questionoptiona" + i + "\" contenteditable=\"true\">" + questionoptiona + "</span></li> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption" + i + "\" value=\"2\"><span id=\"questionoptionb" + i + "\" contenteditable=\"true\">" + questionoptionb + "</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime" + i + "\" contenteditable=\"true\">" + questiontime + "</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave" + i + "\" value=\"" + ID + "\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew" + i + "\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete" + i + "\" value=\"" + ID + "\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
+                                        break;
+                                    case '2':
+                                        el.innerHTML = el.innerHTML + "<div class=\"panel-group\" id=\"accordionTwo" + i + "\"> <div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordionTwo" + i + "\" href=\"#collapseFour" + i + "\">" + questiontitle + "</a> </h4> </div> <div class=\"panel-collapse collapse in\" id=\"collapseFour" + i + "\"> <div class=\"panel-body\"><span id=\"questioncontent" + i + "\" contenteditable=\"true\">" + questioncontent + "</span></div> <div class=\"list-group\"> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption" + i + "\" value=\"1\"><span id=\"questionoptiona" + i + "\" contenteditable=\"true\">" + questionoptiona + "</span></li> <li class=\"list-group-item\"><input type=\"radio\" id=\"questionOption1\" name=\"radioOption" + i + "\" value=\"2\" checked><span id=\"questionoptionb" + i + "\" contenteditable=\"true\">" + questionoptionb + "</span></li> <li class=\"list-group-item\">作答時間: <span id=\"questiontime" + i + "\" contenteditable=\"true\">" + questiontime + "</span> 分鐘</li> <li class=\"list-group-item\"><button class=\"btn\" type=\"button\" id=\"editsave" + i + "\" value=\"" + ID + "\" onclick=\"editquestionbtn(this)\">儲存</button> <button class=\"btn\" type=\"button\" id=\"saveasnew" + i + "\" onclick=\"saveasnewquestionbtn(this)\">另存為新題目</button> <button class=\"btn\" type=\"button\" id=\"delete" + i + "\" value=\"" + ID + "\" onclick=\"deletequestionbtn(this)\">刪除本題</button></li></div> </div> </div> </div>";
+                                        break;
+                                }
+                            }
+                        }
+                    }
+                },
+                error: function () {
+                    alert("fa");
+                }
             })
-		});
-		//實作立即修改功能string轉成inputbox
-		var spans = document.getElementsByTagName("span"),
-			index,
-			span;
+        });
+        //實作立即修改功能string轉成inputbox
+        var spans = document.getElementsByTagName("span"),
+            index,
+            span;
 
-		for (index = 0; index < spans.length; ++index) {
-			span = spans[index];
-			if (span.contentEditable) {
-				span.onblur = function() {
-					var text = this.innerHTML;
-					text = text.replace(/&/g, "&amp").replace(/</g, "&lt;");
-					console.log("Content committed, span " +
-							(this.id || "anonymous") +
-							": '" +
-							text + "'");
-				};
-			}
-		}
-		//
-		 function editquestionbtn(control)
-		 {
-			 var identity = control.id.slice(8,9);
-			 var selected=0;
-			if($("#selectQuestionType").val()==1 || $("#selectQuestionType").val()==3)
-				selected = $('input[name=radioOption'+ identity +']:checked').val();
-			if($("#selectQuestionType").val()==2){
-				$("[name=multOptiondemo"+ identity +"]:checkbox:checked").each(function(){
-						selected= selected+parseInt($(this).val());
-				   });
-				  }
-			if($("#selectQuestionType").val()==1 || $("#selectQuestionType").val()==2){	
-			//alert(control.value);
-			 $.ajax({
-				url : "question/editquestion",
-				type : "POST",
-						dataType : "text",
-				data : {question_Id : control.value , 
-				question_Content : document.getElementById("questioncontent"+ identity).innerHTML, 
-				question_Optiona : document.getElementById("questionoptiona"+ identity).innerHTML, 
-				question_Optionb : document.getElementById("questionoptionb"+ identity).innerHTML, 
-				question_Optionc : document.getElementById("questionoptionc"+ identity).innerHTML, 
-				question_Optiond : document.getElementById("questionoptiond"+ identity).innerHTML,
-				question_Time : document.getElementById("questiontime"+ identity).innerHTML,
-				question_Answer : selected},	
-				success : function(question_Content){
-					//alert(question_Content);
-				},
-				error : function(){
-					alert("fa");
-					}
-					});
-			}else{
-			 $.ajax({
-				url : "question/editquestion",
-				type : "POST",
-						dataType : "text",
-				data : {question_Id : control.value , 
-				question_Content : document.getElementById("questioncontent"+ identity).innerHTML , 
-				question_Optiona : document.getElementById("questionoptiona"+ identity).innerHTML, 
-				question_Optionb : document.getElementById("questionoptionb"+ identity).innerHTML, 
-				question_Time : document.getElementById("questiontime"+ identity).innerHTML,
-				question_Answer : selected},	
-				success : function(question_Content){
-					//alert("su");
-				},
-				error : function(){
-					alert("fa");
-					}
-					});
-			}
-		 }
-		 function saveasnewquestionbtn(control)
-		 {
-			var identity = control.id.slice(9,10);
-			var selected=0;
-			if($("#selectQuestionType").val()==1 || $("#selectQuestionType").val()==3)
-				selected = $('input[name=radioOption'+ identity +']:checked').val();
-			if($("#selectQuestionType").val()==2){
-				$("[name=multOptiondemo"+ identity +"]:checkbox:checked").each(function(){
-						selected= selected+parseInt($(this).val());
-				   });
-				  }
-			if($("#selectQuestionType").val()!=3){	
-			 $.ajax({
-				url : "question/newquestion",
-				type : "POST",
-						dataType : "text",
-				data : {question_Content : document.getElementById("questioncontent"+ identity).innerHTML ,
-				question_Optiona : document.getElementById("questionoptiona"+ identity).innerHTML,
-				question_Optionb : document.getElementById("questionoptionb"+ identity).innerHTML,
-				question_Optionc : document.getElementById("questionoptionc"+ identity).innerHTML,
-				question_Optiond : document.getElementById("questionoptiond"+ identity).innerHTML,
-				question_Time : document.getElementById("questiontime"+ identity).innerHTML,
-				question_Answer : selected,
-				question_Types : $("#selectQuestionType").val(), 
-				question_Chapter : $("#chapter").val(), 
-				question_Lession : $("#lesson").val()},	
-				success : function(question_Content){
-					//alert("su");
-				},
-				error : function(){
-					alert("fa");
-					}
-					});
-				}else{
-				$.ajax({
-				url : "question/newquestion",
-				type : "POST",
-						dataType : "text",
-				data : {question_Content : document.getElementById("questioncontent"+ identity).innerHTML ,
-				question_Optiona : document.getElementById("questionoptiona"+ identity).innerHTML,
-				question_Optionb : document.getElementById("questionoptionb"+ identity).innerHTML,
-				question_Time : document.getElementById("questiontime"+ identity).innerHTML,
-				question_Answer : selected,
-				question_Types : $("#selectQuestionType").val(), 
-				question_Chapter : $("#chapter").val(), 
-				question_Lession : $("#lesson").val()},	
-				success : function(question_Content){
-					//alert("su");
-					$('#submit').get(0).click();
-				},
-				error : function(){
-					alert("fa");
-					}
-					});
-				}
-				
-		 }
-		function deletequestionbtn(control){
-		$.ajax({
-				url : "question/deletequestion",
-				type : "POST",
-						dataType : "text",
-				data : {question_Id : control.value},	
-				success : function(question_Content){
-					//alert("su");
-					$('#submit').get(0).click();
-				},
-				error : function(){
-					alert("fa");
-					}
-					});
-		}	
-		$.ajax(
-			{
-				type: 'POST',
-				url: 'question/loadlessonandchapter',
-				dataType : 'text',
-				success: function(data){
-					var el = document.getElementById('insertlesson');
-					el.innerHTML = data;
-				},
-				error : function(){
-					alert("fa");
-				}
-			}
-		);
-		function loadTag(courseName){	
-				$.ajax(
-					{
-						type: 'POST',
-						url: 'question/loadquestiontag',
-						dataType : 'text',
-						data : {course_Name : courseName },
-						success: function(data){
-							var el = document.getElementById('insertTag');
-							el.innerHTML = data;
-						},
-						error : function(){
-							alert("fa");
-						}
-					}
-				);
-			};
-	
-			$.ajax({
-					type: "POST",
-					url: "teacherhome/infotohtml",
-					dataType: "json",
-					data: {
-									 
-					},
-					success: function(res) {
-						if (res) {
-							document.getElementById("teaname").innerHTML=res;
-						}                 
-					},
-					error: function(jqXHR) {
-						alert("發生錯誤: " + jqXHR.status);
-					}
-				});
-	</script>
-  </div>
+        for (index = 0; index < spans.length; ++index) {
+            span = spans[index];
+            if (span.contentEditable) {
+                span.onblur = function () {
+                    var text = this.innerHTML;
+                    text = text.replace(/&/g, "&amp").replace(/</g, "&lt;");
+                    console.log("Content committed, span " +
+                        (this.id || "anonymous") +
+                        ": '" +
+                        text + "'");
+                };
+            }
+        }
+
+        //
+        function editquestionbtn(control) {
+            var identity = control.id.slice(8, 9);
+            var selected = 0;
+            if ($("#selectQuestionType").val() == 1 || $("#selectQuestionType").val() == 3)
+                selected = $('input[name=radioOption' + identity + ']:checked').val();
+            if ($("#selectQuestionType").val() == 2) {
+                $("[name=multOptiondemo" + identity + "]:checkbox:checked").each(function () {
+                    selected = selected + parseInt($(this).val());
+                });
+            }
+            if ($("#selectQuestionType").val() == 1 || $("#selectQuestionType").val() == 2) {
+                //alert(control.value);
+                $.ajax({
+                    url: "question/editquestion",
+                    type: "POST",
+                    dataType: "text",
+                    data: {
+                        question_Id: control.value,
+                        question_Content: document.getElementById("questioncontent" + identity).innerHTML,
+                        question_Optiona: document.getElementById("questionoptiona" + identity).innerHTML,
+                        question_Optionb: document.getElementById("questionoptionb" + identity).innerHTML,
+                        question_Optionc: document.getElementById("questionoptionc" + identity).innerHTML,
+                        question_Optiond: document.getElementById("questionoptiond" + identity).innerHTML,
+                        question_Time: document.getElementById("questiontime" + identity).innerHTML,
+                        question_Answer: selected
+                    },
+                    success: function (question_Content) {
+                        //alert(question_Content);
+                    },
+                    error: function () {
+                        alert("fa");
+                    }
+                });
+            } else {
+                $.ajax({
+                    url: "question/editquestion",
+                    type: "POST",
+                    dataType: "text",
+                    data: {
+                        question_Id: control.value,
+                        question_Content: document.getElementById("questioncontent" + identity).innerHTML,
+                        question_Optiona: document.getElementById("questionoptiona" + identity).innerHTML,
+                        question_Optionb: document.getElementById("questionoptionb" + identity).innerHTML,
+                        question_Time: document.getElementById("questiontime" + identity).innerHTML,
+                        question_Answer: selected
+                    },
+                    success: function (question_Content) {
+                        //alert("su");
+                    },
+                    error: function () {
+                        alert("fa");
+                    }
+                });
+            }
+        }
+
+        function saveasnewquestionbtn(control) {
+            var identity = control.id.slice(9, 10);
+            var selected = 0;
+            if ($("#selectQuestionType").val() == 1 || $("#selectQuestionType").val() == 3)
+                selected = $('input[name=radioOption' + identity + ']:checked').val();
+            if ($("#selectQuestionType").val() == 2) {
+                $("[name=multOptiondemo" + identity + "]:checkbox:checked").each(function () {
+                    selected = selected + parseInt($(this).val());
+                });
+            }
+            if ($("#selectQuestionType").val() != 3) {
+                $.ajax({
+                    url: "question/newquestion",
+                    type: "POST",
+                    dataType: "text",
+                    data: {
+                        question_Content: document.getElementById("questioncontent" + identity).innerHTML,
+                        question_Optiona: document.getElementById("questionoptiona" + identity).innerHTML,
+                        question_Optionb: document.getElementById("questionoptionb" + identity).innerHTML,
+                        question_Optionc: document.getElementById("questionoptionc" + identity).innerHTML,
+                        question_Optiond: document.getElementById("questionoptiond" + identity).innerHTML,
+                        question_Time: document.getElementById("questiontime" + identity).innerHTML,
+                        question_Answer: selected,
+                        question_Types: $("#selectQuestionType").val(),
+                        question_Chapter: $("#chapter").val(),
+                        question_Lession: $("#lesson").val()
+                    },
+                    success: function (question_Content) {
+                        //alert("su");
+                    },
+                    error: function () {
+                        alert("fa");
+                    }
+                });
+            } else {
+                $.ajax({
+                    url: "question/newquestion",
+                    type: "POST",
+                    dataType: "text",
+                    data: {
+                        question_Content: document.getElementById("questioncontent" + identity).innerHTML,
+                        question_Optiona: document.getElementById("questionoptiona" + identity).innerHTML,
+                        question_Optionb: document.getElementById("questionoptionb" + identity).innerHTML,
+                        question_Time: document.getElementById("questiontime" + identity).innerHTML,
+                        question_Answer: selected,
+                        question_Types: $("#selectQuestionType").val(),
+                        question_Chapter: $("#chapter").val(),
+                        question_Lession: $("#lesson").val()
+                    },
+                    success: function (question_Content) {
+                        //alert("su");
+                        $('#submit').get(0).click();
+                    },
+                    error: function () {
+                        alert("fa");
+                    }
+                });
+            }
+
+        }
+
+        function deletequestionbtn(control) {
+            $.ajax({
+                url: "question/deletequestion",
+                type: "POST",
+                dataType: "text",
+                data: {question_Id: control.value},
+                success: function (question_Content) {
+                    //alert("su");
+                    $('#submit').get(0).click();
+                },
+                error: function () {
+                    alert("fa");
+                }
+            });
+        }
+
+        $.ajax(
+            {
+                type: 'POST',
+                url: 'question/loadlessonandchapter',
+                dataType: 'text',
+                success: function (data) {
+                    var el = document.getElementById('insertlesson');
+                    el.innerHTML = data;
+                },
+                error: function () {
+                    alert("fa");
+                }
+            }
+        );
+
+        function loadTag(courseName) {
+            $.ajax(
+                {
+                    type: 'POST',
+                    url: 'question/loadquestiontag',
+                    dataType: 'text',
+                    data: {course_Name: courseName},
+                    success: function (data) {
+                        var el = document.getElementById('insertTag');
+                        el.innerHTML = data;
+                    },
+                    error: function () {
+                        alert("fa");
+                    }
+                }
+            );
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "teacherhome/infotohtml",
+            dataType: "json",
+            data: {},
+            success: function (res) {
+                if (res) {
+                    document.getElementById("teaname").innerHTML = res;
+                }
+            },
+            error: function (jqXHR) {
+                alert("發生錯誤: " + jqXHR.status);
+            }
+        });
+    </script>
+</div>
 </body>
 
 </html>

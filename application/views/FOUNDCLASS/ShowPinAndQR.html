@@ -27,46 +27,46 @@
 
 <body class="bg-info">
 <div class="container">
-<div class="row">
-	<div class="col-md-6">
-    <div class="card card-login mx-auto mt-5">
-        <div class="card-header">顯示 QRCODE 與 PIN</div>
-        <div class="card-body">
-            <div class="alert alert-success" role="alert">
-                <strong>等待中!</strong><br>已有10人登入
-            </div>
-        </div>
-        <div class="col-md-12" id="QRShow">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card card-login mx-auto mt-5">
+                <div class="card-header">顯示 QRCODE 與 PIN</div>
+                <div class="card-body">
+                    <div class="alert alert-success" role="alert">
+                        <strong>等待中!</strong><br>已有10人登入
+                    </div>
+                </div>
+                <div class="col-md-12" id="QRShow">
 
-        </div>
-        <div class="alert alert-warning alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
-                    aria-hidden="true"></span></button>
-            <center>
-                <strong>PIN CODE: </strong><span id="Pin"></span>
-            </center>
-        </div>
-        <form class="navbar-form pull-center" action="./startQuiz" method="POST">
-            <div class="form-group" style="display:none">
-                <input class="form-control" id="step" type="text" placeholder="step" name="id">
+                </div>
+                <div class="alert alert-warning alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                            aria-hidden="true"></span></button>
+                    <center>
+                        <strong>PIN CODE: </strong><span id="Pin"></span>
+                    </center>
+                </div>
+                <form class="navbar-form pull-center" action="./startQuiz" method="POST">
+                    <div class="form-group" style="display:none">
+                        <input class="form-control" id="step" type="text" placeholder="step" name="id">
+                    </div>
+                    <input class="btn btn-primary btn-block" type="submit" value="Nextstep" id="Nextbutt"/>
+                </form>
             </div>
-            <input class="btn btn-primary btn-block" type="submit" value="Nextstep" id="Nextbutt"/>
-        </form>
+        </div>
+        <div class="col-md-6">
+            <div class="container">
+                <div class="card card-login mx-auto mt-5">
+                    <div class="card-header">目前登入人</div>
+                    <div class="card-body">
+                        <div class="alert alert-success" role="alert">
+                            <strong id='stumember'></strong><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-	</div>
-<div class="col-md-6">
-<div class="container">
-    <div class="card card-login mx-auto mt-5">
-        <div class="card-header">目前登入人</div>
-			<div class="card-body">
-				<div class="alert alert-success" role="alert">
-					<strong id='stumember'></strong><br>
-				</div>
-			</div>
-	</div>
-</div>
-</div>
-</div>
 </div>
 </div>
 
@@ -78,45 +78,41 @@
 <script src="./recourse/vendor/jquery-easing/jquery.easing.min.js"></script>
 <!-- <script type="text/javascript" src="../recourse/js/PinAndQr.js"></script> -->
 <script type="text/JavaScript">
-	$.ajax({
-		url: "openclass/getPin",
-		type: "POST",
-		dataType : "text",
-		success : function (res) {
-			var Pin = res;
-			document.getElementById("Pin").innerHTML = Pin;
-			document.getElementById("QRShow").innerHTML = "<img src='https://chart.googleapis.com/chart?chs=382x300&cht=qr&chl=" + encodeURIComponent(Pin) + "'/>";
-			//alert("<img src='https://chart.googleapis.com/chart?chs=382x300&cht=qr&chl=" + encodeURIComponent(pin) + "'/>");
-		}
-	});
+    $.ajax({
+        url: "openclass/getPin",
+        type: "POST",
+        dataType: "text",
+        success: function (res) {
+            var Pin = res;
+            document.getElementById("Pin").innerHTML = Pin;
+            document.getElementById("QRShow").innerHTML = "<img src='https://chart.googleapis.com/chart?chs=382x300&cht=qr&chl=" + encodeURIComponent(Pin) + "'/>";
+            //alert("<img src='https://chart.googleapis.com/chart?chs=382x300&cht=qr&chl=" + encodeURIComponent(pin) + "'/>");
+        }
+    });
 
-	var course;
-	var statue=0;
-	$.ajax({
-			type: "POST",
-			url: "openclass/getstuname",
-			dataType: "json",
-			data: {
-							 
-			},
-			success: function(res) {
-				if (res) {
-					var stuattend='';
-					
-					for(var i=0;i<res.length;i++){
-						stuattend+=res[i]+'&nbsp;';
-					}
-					document.getElementById("stumember").innerHTML=stuattend;
-				}                 
-			},
-			error: function(jqXHR) {
-				alert("發生錯誤: " + jqXHR.status);
-			}
-		});
-	
-	
+    var course;
+    var statue = 0;
+    $.ajax({
+        type: "POST",
+        url: "openclass/getstuname",
+        dataType: "json",
+        data: {},
+        success: function (res) {
+            if (res) {
+                var stuattend = '';
 
-	
+                for (var i = 0; i < res.length; i++) {
+                    stuattend += res[i] + '&nbsp;';
+                }
+                document.getElementById("stumember").innerHTML = stuattend;
+            }
+        },
+        error: function (jqXHR) {
+            alert("發生錯誤: " + jqXHR.status);
+        }
+    });
+
+
 </script>
 </body>
 
