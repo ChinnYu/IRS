@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>TeacherHome</title>
+  <!-- Bootstrap core CSS-->
+  <link href="./recourse/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="./recourse/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Page level plugin CSS-->
+  <link href="./recourse/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+  <!-- Custom styles for this template-->
+  <link href="./recourse/css/sb-admin.css" rel="stylesheet">
+  <!--TempStyle-->
+  <style>
+    body {
+      font-family: "Lato", sans-serif;
+    }
+
+    /* Style the tab */
+
+    div.tab {
+      overflow: hidden;
+      border: 1px solid #ccc;
+      background-color: #f1f1f1;
+    }
+
+    /* Style the buttons inside the tab */
+
+    div.tab button {
+      background-color: inherit;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.3s;
+      font-size: 17px;
+    }
+
+    /* Change background color of buttons on hover */
+
+    div.tab button:hover {
+      background-color: #ddd;
+    }
+
+    /* Create an active/current tablink class */
+
+    div.tab button.active {
+      background-color: #ccc;
+    }
+
+    /* Style the tab content */
+
+    .tabcontent {
+      display: none;
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+      border-top: none;
+    }
+  </style>
+  <!--TempStyleEnd-->
+</head>
+
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="./teacherHome">Querisma</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" href="./teacherhome">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">首頁</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+          <a class="nav-link" href="charts.html">
+            <i class="fa fa-fw fa-area-chart"></i>
+            <span class="nav-link-text">測驗分析</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-sitemap"></i>
+            <span class="nav-link-text">個人題庫</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseMulti">
+            <li>
+              <a href="./newquestion">新增題目</a>
+            </li>
+            <li>
+              <a href="./editquestion">題目整理</a>
+            </li>
+            <li>
+              <a href="./newquiz">設計測驗</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+          <a class="nav-link" href="./openclass">
+            <i class="fa fa-fw fa-area-chart"></i>
+            <span class="nav-link-text">開啟教室</span>
+          </a>
+        </li>
+
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-wrench"></i>
+            <span class="nav-link-text">頁面環境設置</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseComponents">
+            <li>
+              <a href="navbar.html">頁面簡化</a>
+            </li>
+            <li>
+              <a href="cards.html">Cards</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+          <a class="nav-link" href="#">
+            <i class="fa fa-fw fa-link"></i>
+            <span class="nav-link-text">Link</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+            <i class="fa fa-fw fa-angle-left"></i>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <div class="row">
+        <div class="col-md-12">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="./teacherhome" id="teaname"></a>
+            </li>
+            <li class="breadcrumb-item active">首頁</li>
+          </ol>
+        </div>
+      </div>
+      <!--MainContent放這裡-->
+      <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'rank')" id="defaultOpen">得分排名</button>
+        <button class="tablinks" onclick="IsExport()">匯出答案</button>
+        <button class="tablinks" onclick="IsExport()">匯出排名</button>
+      </div>
+
+      <div id="rank" class="tabcontent">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="card mb-3">
+              <div class="card-header">
+                本次試題排名</div>
+              <div class="card-body">
+                <div class="row align-self-start">
+                  <div class="col-lg-2">
+                    <i class="fa fa-user fa-5x" style="color:gold;"></i>
+                  </div>
+                  <div class="col-lg-10">
+                    <font size="9"> 1st Student </font>
+                  </div>
+                </div>
+                <div class="row align-self-center">
+                  <div class="col-lg-2">
+                    <i class="fa fa-user fa-4x" style="color:silver;"></i>
+                  </div>
+                  <div class="col-lg-10">
+                    <font size="6"> 2nd Student</font>
+                  </div>
+                </div>
+                <div class="row align-self-end">
+                  <div class="col-lg-2">
+                    <i class="fa fa-user fa-3x" style="color:burlywood"></i>
+                  </div>
+                  <div class="col-lg-10">
+                    <font size="5"> 3rd Student</font>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card mb-3">
+              <div class="card-header">
+                <i class="fa fa-pie-chart"></i> 答題分布圖</div>
+              <div class="card-body">
+                <canvas id="myPieChart" width="50%" height="50%"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3">
+          <div class="card-header">
+            <i class="fa fa-area-chart"></i> 成績分布曲線</div>
+          <div class="card-body">
+            <canvas id="myAreaChart" width="100%" height="20%"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--MainContentEnd-->
+  </div>
+  <!-- /.container-fluid-->
+  <!-- /.content-wrapper-->
+  <footer class="sticky-footer">
+    <div class="container">
+      <div class="text-center">
+        <small>Copyright © Querisma 2017</small>
+      </div>
+    </div>
+  </footer>
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fa fa-angle-up"></i>
+  </a>
+  <!-- Logout Modal-->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">確定退出系統?</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="./logout">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap core JavaScript-->
+  <script src="./recourse/vendor/jquery/jquery.min.js"></script>
+  <script src="./recourse/vendor/popper/popper.min.js"></script>
+  <script src="./recourse/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="./recourse/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- Page level plugin JavaScript-->
+  <script src="./recourse/vendor/chart.js/Chart.min.js"></script>
+  <script src="./recourse/vendor/datatables/jquery.dataTables.js"></script>
+  <script src="./recourse/vendor/datatables/dataTables.bootstrap4.js"></script>
+  <!-- Custom scripts for all pages-->
+  <script src="./recourse/js/sb-admin.min.js"></script>
+  <!-- Custom scripts for this page-->
+  <script src="./recourse/js/sb-admin-datatables.min.js"></script>
+  <script src="./recourse/js/sb-admin-charts.js"></script>
+
+
+
+  <!--TempScript-->
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script>
+    function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+
+    document.getElementById("defaultOpen").click();
+  </script>
+
+  <!--Redirect-->
+  <script>
+    //彈窗確認是否匯出並返回首頁
+    //記得改超連結位置
+    function IsExport() {
+      var r = confirm("是否匯出得分結果？");
+      if (r == true) {
+        createCsvFile();
+        location.href = './logout';
+      }
+      else {
+        location.href = './logout';
+      }
+    }
+  </script>
+
+  <!--CSV-->
+  <SCRIPT language="JavaScript">
+    function createCsvFile() {
+      var fileName = "test.csv";//匯出的檔名
+      var data = getRandomData();
+      var blob = new Blob([data], {
+        type: "application/octet-stream"
+      });
+      var href = URL.createObjectURL(blob);
+      var link = document.createElement("a");
+      document.body.appendChild(link);
+      link.href = href;
+      link.download = fileName;
+      link.click();
+    }
+
+    //隨機產生資料
+    function getRandomData() {
+      var header = "Coum1,Coum2,Coum3,Coum4,Coum5\n";
+      var data = "";
+      for (var i = 0; i < 30; i++) {
+        for (var j = 0; j < 5; j++) {
+          if (j > 0) {
+            data = data + ",";
+          }
+          data = data + "Item" + i + "_" + j;
+        }
+        data = data + "\n";
+      }
+      return header + data;
+    }
+  </SCRIPT>
+
+
+  <!--TempScriptEnd-->
+  </div>
+</body>
+
+</html>
