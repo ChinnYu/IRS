@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CkTest</title>
+    <!--------------------CKSOURCE--------------------->
+    <script src="/libraries/ckeditor/ckeditor.js"></script>
+    <!------------------------------------------------->
+    <!---------------------MATHJAX--------------------->
+    <!--底下為ＭathJax，網頁開始時會先進行Scanner的動作一次-->
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+    <!------------------------------------------------->
+</head>
+<body>
+<textarea id="ckeditor1" rows="10" cols="20">hi</textarea>
+<button onclick="directTransfer2Input('ckeditor1','ckeditor2')">Save this</button>
+<!--使用方法如15 16行 運行onclik事件 將目標輸入編輯器id放置於function內部-->
+<button id="ckeditor2"></button>
+
+<!--JavaScript Core-->
+<script>
+    /**
+     * @CKEDITOR設定方式 如下 給一個id 他會自動切換
+     * 主要設定是 ： CKEDITOR.toolbar樣式('編輯器ＩＤ',{額外設定});
+     * @toolbar顯示 replace:預設格式 inline：浮出方式
+     */
+    CKEDITOR.replace('ckeditor1', {
+        extraPlugins: 'mathjax',
+        height: 350,
+        allowedContent: true,
+        mathJaxLib: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML',
+        mathJaxClass: 'mjx'
+    });
+</script>
+
+<script src="./recourse/js/Ckeditor.js"></script>
+
+</body>
+</html>
