@@ -7,7 +7,8 @@ var ctx = document.getElementById("myAreaChart");
 var myLineChart = new Chart(ctx, {
   type: 'line',
   data: {
-      labels: ["0%", "12.5%", "25%", "37.5%", "50%", "62.5%", "75%", "87.5%", "100%"],
+    labels: ["0%", "12.5%", "25%", "37.5%", "50%", "62.5%", "75%", "87.5%", "100%"],
+    datasets: [{
       label: "Sessions",
       lineTension: 0.3,
       backgroundColor: "rgba(2,117,216,0.2)",
@@ -92,7 +93,7 @@ var myLineChart = new Chart(ctx, {
       display: false
     }
   }
-});*/
+}); */
 // -- Pie Chart Example
 var ctx = document.getElementById("myPieChart");
 var myPieChart = new Chart(ctx, {
@@ -100,8 +101,8 @@ var myPieChart = new Chart(ctx, {
   data: {
     labels: ["A", "B", "C", "D"],
     datasets: [{
-      data: [6, 20 ,3 ,3],
-      backgroundColor:['#F76D55', '#CED2DA', '#FCCF5F', '#A1D770'],
+      data: [6, 20, 3, 3],
+      backgroundColor: ['#F76D55', '#CED2DA', '#FCCF5F', '#A1D770'],
     }],
   },
 });
