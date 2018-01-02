@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>StudentHomePage</title>
+  <!-- Bootstrap core CSS-->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Page level plugin CSS-->
+  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin.css" rel="stylesheet">
+  <!--TempStyle-->
+  <style>
+    body {
+      font-family: "Lato", sans-serif;
+    }
+
+    /* Style the tab */
+
+    div.tab {
+      overflow: hidden;
+      border: 1px solid #ccc;
+      background-color: #f1f1f1;
+    }
+
+    /* Style the buttons inside the tab */
+
+    div.tab button {
+      background-color: inherit;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.3s;
+      font-size: 17px;
+    }
+
+    /* Change background color of buttons on hover */
+
+    div.tab button:hover {
+      background-color: #ddd;
+    }
+
+    /* Create an active/current tablink class */
+
+    div.tab button.active {
+      background-color: #ccc;
+    }
+
+    /* Style the tab content */
+
+    .tabcontent {
+      display: none;
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+      border-top: none;
+    }
+  </style>
+  <link rel="stylesheet" href="css/rating.min.css">
+  <!--TempStyleEnd-->
+</head>
+
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="./teacherHome">Querisma</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" href="./teacherhome">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">首頁</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+          <a class="nav-link" href="charts.html">
+            <i class="fa fa-fw fa-area-chart"></i>
+            <span class="nav-link-text">測驗分析</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-sitemap"></i>
+            <span class="nav-link-text">個人題庫</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseMulti">
+            <li>
+              <a href="./newquestion">新增題目</a>
+            </li>
+            <li>
+              <a href="./editquestion">題目整理</a>
+            </li>
+            <li>
+              <a href="./newquiz">設計測驗</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+          <a class="nav-link" href="./openclass">
+            <i class="fa fa-fw fa-area-chart"></i>
+            <span class="nav-link-text">開啟教室</span>
+          </a>
+        </li>
+
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-wrench"></i>
+            <span class="nav-link-text">頁面環境設置</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseComponents">
+            <li>
+              <a href="navbar.html">頁面簡化</a>
+            </li>
+            <li>
+              <a href="cards.html">Cards</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+          <a class="nav-link" href="#">
+            <i class="fa fa-fw fa-link"></i>
+            <span class="nav-link-text">Link</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+            <i class="fa fa-fw fa-angle-left"></i>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="./teacherhome" id="teaname"></a>
+        </li>
+        <li class="breadcrumb-item active">首頁</li>
+      </ol>
+      <!-- MainContent放這裡-->
+      <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'rankQuiz')" id="defaultOpen">評等此次考試</button>
+      </div>
+      <div id="rankQuiz" class="tabcontent">
+        <div id="RatingQuiz">
+        </div>
+      </div>
+      <!-- MainContentEnd-->
+    </div>
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          <small>Copyright © Querisma 2017</small>
+        </div>
+      </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">確定退出系統?</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="./logout">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="./recourse/vendor/jquery/jquery.min.js"></script>
+    <script src="./recourse/vendor/popper/popper.min.js"></script>
+    <script src="./recourse/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="./recourse/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="./recourse/vendor/chart.js/Chart.min.js"></script>
+    <script src="./recourse/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="./recourse/vendor/datatables/dataTables.bootstrap4.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="./recourse/js/sb-admin.min.js"></script>
+    <!-- Custom scripts for this page-->
+    <script src="./recourse/js/sb-admin-datatables.min.js"></script>
+    <script src="./recourse/js/sb-admin-charts.min.js"></script>
+    <!--TempScript-->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="./recourse/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./recourse/vendor/chart.js/Chart.js"></script>
+    <script>
+      function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+      document.getElementById("defaultOpen").click();
+
+    </script>
+    <!--Rating-->
+    <script src="./recourse/js/rating.js"></script>
+    <script>
+      (function () {
+
+        'use strict';
+
+        // SHOP ELEMENT
+        var RatingQuiz = document.querySelector('#RatingQuiz');
+
+        // DUMMY DATA
+        var data = [
+          {
+            title: "Quiz Feedback",
+            description: "請點選對於此次小考之評星數，謝謝。",
+            rating: 3
+          }
+        ];
+
+        // INITIALIZE
+        (function init() {
+          for (var i = 0; i < data.length; i++) {
+            addRatingWidget(buildShopItem(data[i]), data[i]);
+          }
+        })();
+
+        // BUILD SHOP ITEM
+        function buildShopItem(data) {
+          var shopItem = document.createElement('div');
+
+          var html = '<div class="c-shop-item__img"></div>' +
+            '<div class="c-shop-item__details">' +
+            '<h3 class="c-shop-item__title">' + data.title + '</h3>' +
+            '<p class="c-shop-item__description">' + data.description + '</p>' +
+            '<ul class="c-rating"></ul>' +
+            '</div>';
+
+          shopItem.classList.add('c-shop-item');
+          shopItem.innerHTML = html;
+          RatingQuiz.appendChild(shopItem);
+
+          return shopItem;
+        }
+
+        // ADD RATING WIDGET
+        function addRatingWidget(shopItem, data) {
+          var ratingElement = shopItem.querySelector('.c-rating');
+          var currentRating = data.rating;
+          var maxRating = 5;
+          var callback = function (rating) { alert(rating); };
+          var r = rating(ratingElement, currentRating, maxRating, callback);
+        }
+
+      })();
+    </script>
+    <!-- bootbox code -->
+    <script src="./recourse/js/bootbox.min.js"></script>
+    <script src="./recourse/js/bootboxdemo.js"></script>
+    <!--TempScriptEnd-->
+  </div>
+</body>
+
+</html>
