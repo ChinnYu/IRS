@@ -1,4 +1,15 @@
 /**
+ * @函式名稱  changeMathIntoTex()
+ * @功能      刷新頁面
+ * @觸發方式   呼叫它
+ * @輸入      無
+ * @輸出      無
+ */
+function changeMathIntoTex() {
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, this.formula]); //Rewrite Tex code in Data
+}
+
+/**
  * @函式名稱｜    outputEditorContent
  * @功能    |    Editor的內容存成Data輸出
  * @觸發方式 |    事件呼叫函式 觸發，將Editor內部內容抓出來
