@@ -33,16 +33,16 @@ $config['authentication'] = function () {
 // http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_licenseKey
 
 $config['licenseName'] = '';
-$config['licenseKey']  = '';
+$config['licenseKey'] = '';
 
 /*============================ CKFinder Internal Directory ============================*/
 // http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_privateDir
 
 $config['privateDir'] = array(
     'backend' => 'default',
-    'tags'   => '.ckfinder/tags',
-    'logs'   => '.ckfinder/logs',
-    'cache'  => '.ckfinder/cache',
+    'tags' => '.ckfinder/tags',
+    'logs' => '.ckfinder/logs',
+    'cache' => '.ckfinder/cache',
     'thumbs' => '.ckfinder/cache/thumbs',
 );
 
@@ -50,26 +50,32 @@ $config['privateDir'] = array(
 // http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_images
 
 $config['images'] = array(
-    'maxWidth'  => 1600,
+    'maxWidth' => 1600,
     'maxHeight' => 1200,
-    'quality'   => 80,
+    'quality' => 80,
     'sizes' => array(
-        'small'  => array('width' => 480, 'height' => 320, 'quality' => 80),
+        'small' => array('width' => 480, 'height' => 320, 'quality' => 80),
         'medium' => array('width' => 600, 'height' => 480, 'quality' => 80),
-        'large'  => array('width' => 800, 'height' => 600, 'quality' => 80)
+        'large' => array('width' => 800, 'height' => 600, 'quality' => 80)
     )
 );
 
 /*=================================== Backends ========================================*/
 // http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_backends
-
+$username = "tlogben0709";
 $config['backends'][] = array(
-    'name'         => 'default',
-    'adapter'      => 'local',
-    'baseUrl'      => '/ckfinder/userfiles/',
-//  'root'         => '', // Can be used to explicitly set the CKFinder user files directory.
-    'chmodFiles'   => 0777,
-    'chmodFolders' => 0755,
+    'name'               => 'default',
+    'adapter'            => 'local',
+    /*===============================Here, Change dir plz==================================*/
+    //Plz , Change yours username and "Let UsersFiles be 755 or 777 ?"
+    //baseUrl 關係到你輸出到螢幕
+    'baseUrl'            => 'https://querisma.ccu.edu.tw/~'.$username.'/www/IRS/UsersFiles',
+    //root 是你的物理路徑 關係上傳
+    'root'               => '/home/'.$username.'/public_html/www/IRS/UsersFiles/',
+                            // Can be used to explicitly set the CKFinder user files directory.
+    /*===============================Here, Change dir plz==================================*/
+    'chmodFiles'         => 0777,
+    'chmodFolders'       => 0755,
     'filesystemEncoding' => 'UTF-8',
 );
 
@@ -79,21 +85,21 @@ $config['backends'][] = array(
 $config['defaultResourceTypes'] = '';
 
 $config['resourceTypes'][] = array(
-    'name'              => 'Files', // Single quotes not allowed.
-    'directory'         => 'files',
-    'maxSize'           => 0,
-    'allowedExtensions' => '7z,aiff,asf,avi,bmp,csv,doc,docx,fla,flv,gif,gz,gzip,jpeg,jpg,mid,mov,mp3,mp4,mpc,mpeg,mpg,ods,odt,pdf,png,ppt,pptx,pxd,qt,ram,rar,rm,rmi,rmvb,rtf,sdc,sitd,swf,sxc,sxw,tar,tgz,tif,tiff,txt,vsd,wav,wma,wmv,xls,xlsx,zip',
-    'deniedExtensions'  => '',
-    'backend'           => 'default'
+    'name' => 'Files', // Single quotes not allowed.
+    'directory' => 'files',
+    'maxSize' => 0,
+    'allowedExtensions' => '7z,aiff,asf,avi,csv,doc,docx,fla,flv,gif,gz,gzip,mid,mov,mp3,mp4,mpc,mpeg,mpg,ods,odt,pdf,ppt,pptx,pxd,qt,ram,rar,rm,rmi,rmvb,rtf,sdc,sitd,swf,sxc,sxw,tar,tgz,tif,tiff,txt,vsd,wav,wma,wmv,xls,xlsx,zip',
+    'deniedExtensions' => '',
+    'backend' => 'default'
 );
 
 $config['resourceTypes'][] = array(
-    'name'              => 'Images',
-    'directory'         => 'images',
-    'maxSize'           => 0,
+    'name' => 'Images',
+    'directory' => 'images',
+    'maxSize' => 0,
     'allowedExtensions' => 'bmp,gif,jpeg,jpg,png',
-    'deniedExtensions'  => '',
-    'backend'           => 'default'
+    'deniedExtensions' => '',
+    'backend' => 'default'
 );
 
 /*================================ Access Control =====================================*/
@@ -103,21 +109,21 @@ $config['roleSessionVar'] = 'CKFinder_UserRole';
 
 // http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_accessControl
 $config['accessControl'][] = array(
-    'role'                => '*',
-    'resourceType'        => '*',
-    'folder'              => '/',
+    'role' => '*',
+    'resourceType' => '*',
+    'folder' => '/',
 
-    'FOLDER_VIEW'         => true,
-    'FOLDER_CREATE'       => true,
-    'FOLDER_RENAME'       => true,
-    'FOLDER_DELETE'       => true,
+    'FOLDER_VIEW' => true,
+    'FOLDER_CREATE' => true,
+    'FOLDER_RENAME' => true,
+    'FOLDER_DELETE' => true,
 
-    'FILE_VIEW'           => true,
-    'FILE_CREATE'         => true,
-    'FILE_RENAME'         => true,
-    'FILE_DELETE'         => true,
+    'FILE_VIEW' => true,
+    'FILE_CREATE' => true,
+    'FILE_RENAME' => true,
+    'FILE_DELETE' => true,
 
-    'IMAGE_RESIZE'        => true,
+    'IMAGE_RESIZE' => true,
     'IMAGE_RESIZE_CUSTOM' => true
 );
 
@@ -150,7 +156,7 @@ $config['plugins'] = array();
 
 $config['cache'] = array(
     'imagePreview' => 24 * 3600,
-    'thumbnails'   => 24 * 3600 * 365,
+    'thumbnails' => 24 * 3600 * 365,
     'proxyCommand' => 0
 );
 
