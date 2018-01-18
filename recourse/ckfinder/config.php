@@ -26,7 +26,7 @@ $config = array();
 // http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_authentication
 
 $config['authentication'] = function () {
-    return false;
+    return true;
 };
 
 /*============================ License Key ============================================*/
@@ -50,32 +50,33 @@ $config['privateDir'] = array(
 // http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_images
 
 $config['images'] = array(
-    'maxWidth' => 1600,
-    'maxHeight' => 1200,
-    'quality' => 80,
+    'maxWidth'  => 4096,
+    'maxHeight' => 4096,
+    'quality'   => 100,
     'sizes' => array(
-        'small' => array('width' => 480, 'height' => 320, 'quality' => 80),
+        'small'  => array('width' => 480, 'height' => 320, 'quality' => 80),
         'medium' => array('width' => 600, 'height' => 480, 'quality' => 80),
-        'large' => array('width' => 800, 'height' => 600, 'quality' => 80)
-    )
+        'large'  => array('width' => 800, 'height' => 600, 'quality' => 80)
+    ),
+    'threshold' => array('pixels'=> 80, 'percent' => 10)
 );
 
 /*=================================== Backends ========================================*/
 // http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_backends
 $username = "tlogben0709";
 $config['backends'][] = array(
-    'name'               => 'default',
-    'adapter'            => 'local',
+    'name' => 'default',
+    'adapter' => 'local',
     /*===============================Here, Change dir plz==================================*/
     //Plz , Change yours username and "Let UsersFiles be 755 or 777 ?"
     //baseUrl 關係到你輸出到螢幕
-    'baseUrl'            => 'https://querisma.ccu.edu.tw/~'.$username.'/www/IRS/UsersFiles',
+    'baseUrl' => 'https://querisma.ccu.edu.tw/~' . $username . '/www/Example/UsersFiles/',
     //root 是你的物理路徑 關係上傳
-    'root'               => '/home/'.$username.'/public_html/www/IRS/UsersFiles/',
-                            // Can be used to explicitly set the CKFinder user files directory.
+    'root' => '/home/' . $username . '/public_html/www/Example/UsersFiles/',
+    // Can be used to explicitly set the CKFinder user files directory.
     /*===============================Here, Change dir plz==================================*/
-    'chmodFiles'         => 0777,
-    'chmodFolders'       => 0755,
+    'chmodFiles' => 0777,
+    'chmodFolders' => 0755,
     'filesystemEncoding' => 'UTF-8',
 );
 
@@ -87,8 +88,8 @@ $config['defaultResourceTypes'] = '';
 $config['resourceTypes'][] = array(
     'name' => 'Files', // Single quotes not allowed.
     'directory' => 'files',
-    'maxSize' => 0,
-    'allowedExtensions' => '7z,aiff,asf,avi,csv,doc,docx,fla,flv,gif,gz,gzip,mid,mov,mp3,mp4,mpc,mpeg,mpg,ods,odt,pdf,ppt,pptx,pxd,qt,ram,rar,rm,rmi,rmvb,rtf,sdc,sitd,swf,sxc,sxw,tar,tgz,tif,tiff,txt,vsd,wav,wma,wmv,xls,xlsx,zip',
+    'maxSize' => '25M',
+    'allowedExtensions' => 'bmp,gif,jpeg,jpg,png,7z,aiff,asf,avi,csv,doc,docx,fla,flv,gz,gzip,mid,mov,mp3,mp4,mpc,mpeg,mpg,ods,odt,pdf,ppt,pptx,pxd,qt,ram,rar,rm,rmi,rmvb,rtf,sdc,sitd,swf,sxc,sxw,tar,tgz,tif,tiff,txt,vsd,wav,wma,wmv,xls,xlsx,zip',
     'deniedExtensions' => '',
     'backend' => 'default'
 );
@@ -96,7 +97,7 @@ $config['resourceTypes'][] = array(
 $config['resourceTypes'][] = array(
     'name' => 'Images',
     'directory' => 'images',
-    'maxSize' => 0,
+    'maxSize' => '25M',
     'allowedExtensions' => 'bmp,gif,jpeg,jpg,png',
     'deniedExtensions' => '',
     'backend' => 'default'
@@ -143,7 +144,7 @@ $config['forceAscii'] = false;
 $config['xSendfile'] = false;
 
 // http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_debug
-$config['debug'] = false;
+$config['debug'] = true;
 
 /*==================================== Plugins ========================================*/
 // http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_plugins
