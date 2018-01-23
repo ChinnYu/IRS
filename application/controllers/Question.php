@@ -3,11 +3,13 @@ class Question extends MY_Controller{
 	//新增問題
 	public function newquestion(){
 		$this->load->model('question_model','question');
+		$this->load->model('course_model','course');
+		$res=$this->userinfo;
 		$questiondefault=array(
 			'question_Id'=>'',
-			'user_Id'=>'9',
-			'question_Chapter'=>$_POST['question_Chapter'],
-			'question_Lession'=>$_POST['question_Lession'],
+			'user_Id'=>$res['user_Id'],
+			'course_Tag'=>$_POST['question_Chapter'],
+			'course_Name'=>$_POST['question_Lession'],
 			'question_Content'=>$_POST['question_Content'],
 			'question_Optiona'=>$_POST['question_Optiona'],
 			'question_Optionb'=>$_POST['question_Optionb'],
@@ -15,23 +17,46 @@ class Question extends MY_Controller{
 			'question_Optiond'=>$_POST['question_Optiond'],
 			'question_Answer'=>$_POST['question_Answer'],
 			'question_Types'=>$_POST['question_Types'],
-			'question_Tag'=>'bad',
 			'question_Time'=>$_POST['question_Time'],
 			'used_Times'=>'0'
 		);
-		
+		$alreadyhasthistag = 0;
+			$data=array(
+					'user_Id'=>$res['user_Id'],
+					'course_Name'=>$_POST['question_Lession'],
+					'course_Year'=>106,
+					'course_Term'=>1
+				);
+			$query=$this->course->findCourse($data);
+			foreach ($query as $row)
+			{
+			$coursetagresult = explode('_',$row['course_Tag']);
+			for( $i=0;$i<count($coursetagresult);$i++){
+				if($_POST['question_Chapter']== $coursetagresult[$i])
+					$alreadyhasthistag = 1;
+			}
+			}
+			if($alreadyhasthistag == 0){
+				$coursetag = $query[0]['course_Tag']. '_'. $_POST['question_Chapter'];
+				$updateCourse=array(
+						'user_Id'=>$res['user_Id'],
+						'course_No'=>$query[0]['course_No'],
+						'course_Tag'=>$coursetag,
+						'course_Year'=>106,
+						'course_Term'=>1
+					);
+				$bool2=$this->course->updateCourse($updateCourse);//確認course_Tag有沒有存在資料庫，沒有的話便新增進去
+			}
 		$bool=$this->question->createQuestion($questiondefault);//新增題庫題目
-		//var_dump($bool);
-		//echo $_POST['question_Content'];
-		
-
+		echo $alreadyhasthistag;
 	}
 	//編輯問題頁面 修改問題
 	public function editquestion(){
 		$this->load->model('question_model','question');
+		$res=$this->userinfo;
 		$questiondefault=array(
 			'question_Id'=>$_POST['question_Id'],
-			'user_Id'=>'9',
+			'user_Id'=>$res['user_Id'],
 			'question_Content'=>$_POST['question_Content'],
 			'question_Optiona'=>$_POST['question_Optiona'],
 			'question_Optionb'=>$_POST['question_Optionb'],
@@ -60,10 +85,12 @@ class Question extends MY_Controller{
 	
 	public function newquiz(){//新增測驗
 			$this->load->model('Quiz_model','quiz');
+			$res=$this->userinfo;
 			$data=array(
-				'user_Id'=>'9',
+				'user_Id'=>$res['user_Id'],
+				'course_Name'=>$_POST['course_Name'],
 				'quiz_Name'=>$_POST['quiz_Name'],
-				'irs_Quiz_QuestionI_Id'=>$_POST['irs_Quiz_QuestionI_Id'],	
+				'irs_Quiz_Question_Id'=>$_POST['irs_Quiz_QuestionI_Id'],	
 				'quiz_Time'=>$_POST['quiz_Time']
 			);
 			$res=$this->quiz->createQuiz($data);
@@ -107,7 +134,53 @@ class Question extends MY_Controller{
 				'course_Term'=>1
 			);
 			$query=$this->course->findCourse($data);
-			$temp='<select class="select" id="chapter">';
+			$temp='<select class="radio1" id="chapter" name="for_radio1[]"  disabled="true">';
+			foreach ($query as $row)
+			{
+					 $coursetagresult =explode('_',$row['course_Tag']);
+					 for( $i=0;$i<count($coursetagresult);$i++)
+					 $temp =$temp .'<option >'. $coursetagresult[$i]. '</option>';
+			}
+			$temp =$temp .'</select>';
+			echo $temp;
+	}
+	
+	public function loadquestiontag2(){
+		$this->load->model('Course_model','course');
+		$res=$this->userinfo;
+			$data=array(
+				'user_Id'=>$res['user_Id'],
+				'course_Name'=>$_POST['course_Name'],
+				'course_Year'=>106,
+				'course_Term'=>1
+			);
+			$query=$this->course->findCourse($data);
+			$temp='<label style="margin-top:15px;">選擇Tag :</label> <select class="select" id="chapter" onchange="showTag(this.options[this.selectedIndex].text)"><option>新增Tag</option>';
+			foreach ($query as $row)
+			{
+					 $coursetagresult =explode('_',$row['course_Tag']);
+					 for( $i=0;$i<count($coursetagresult);$i++)
+					 $temp =$temp .'<option >'. $coursetagresult[$i]. '</option>';
+			}
+			$temp =$temp .'</select> 
+											  <div style="margin-top:15px;" id="addtopic">
+												<label>輸入新Tag :</label>
+												<textarea id="tag_new" rows="1" cols="10" style="margin-top:15px;"></textarea>
+											</div>';
+			echo $temp;
+	}
+	
+	public function loadquestiontagforeditquestion(){
+		$this->load->model('Course_model','course');
+		$res=$this->userinfo;
+			$data=array(
+				'user_Id'=>$res['user_Id'],
+				'course_Name'=>$_POST['course_Name'],
+				'course_Year'=>106,
+				'course_Term'=>1
+			);
+			$query=$this->course->findCourse($data);
+			$temp='<select class="select" id="chapter" >';
 			foreach ($query as $row)
 			{
 					 $coursetagresult =explode('_',$row['course_Tag']);
