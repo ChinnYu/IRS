@@ -4,41 +4,57 @@
  * @用法 呼叫他 會轉變成inline編輯器
  */
 function autoTransferInlineEditor(editor_id) {
-	CKEDITOR.inline(editor_id, {
-		extraPlugins: 'mathjax',
-		allowedContent: true,
-		mathJaxLib: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML',
-		mathJaxClass: 'mjx'
-	});
-	let introduction = document.getElementById( editor_id );
-	introduction.setAttribute( 'contenteditable', true );
+    CKEDITOR.inline(editor_id, {
+        toolbar: [
+            {name: 'clipboard', items: ['Undo', 'Redo']},
+            {name: 'paragraph', items: ['NumberedList', 'BulletedList']},
+            {name: 'insert', items: ['Image', 'Table', 'Youtube', 'Mathjax']},
+            {name: 'links', items: ['Link', 'Unlink']},
+            {name: 'document', items: ['Print', 'Source']}
+        ],
+        disallowedContent: 'img{width,height,float}',
+        extraAllowedContent: 'img[width,height,align];span{background}',
+        extraPlugins: 'mathjax,pastefromword',
+        mathJaxLib: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML',
+        mathJaxClass: 'mjx',
+    });
+    let introduction = document.getElementById(editor_id);
+    introduction.setAttribute('contenteditable', true);
 }
 
 /**
- * @函式名稱 autoTransferInlineEditor
- * @param (String)editor_id 想轉變成編輯器的目標ＩＤ
- * @用法 呼叫他 會轉變成replace編輯器
+ *  @函式名稱 autoTransferInlineEditor
+ *  @param (String)editor_id 想轉變成編輯器的目標ＩＤ
+ *  @用法 呼叫他 會轉變成replace編輯器 *
  */
 function autoTransferReplaceEditor(editor_id) {
-	CKEDITOR.replace(editor_id, {
-		extraPlugins: 'mathjax',
-		height: 350,
-		weight: 400,
-		allowedContent: true,
-		mathJaxLib: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML',
-		mathJaxClass: 'mjx'
-	});
+    CKEDITOR.replace(editor_id, {
+        toolbar: [
+            {name: 'clipboard', items: ['Undo', 'Redo']},
+            {name: 'paragraph', items: ['NumberedList', 'BulletedList']},
+            {name: 'insert', items: ['Image', 'Table', 'Youtube', 'Mathjax']},
+            {name: 'links', items: ['Link', 'Unlink']},
+            {name: 'document', items: ['Print', 'Source']}],
+        disallowedContent: 'img{width,height,float}',
+        extraAllowedContent: 'img[width,height,align];span{background}',
+        extraPlugins: 'mathjax,pastefromword',
+        height: 480,
+        width: 640,
+        mathJaxLib: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML',
+        mathJaxClass: 'mjx',
+    });
 }
 
 /**
- * @函式名稱  changeMathIntoTex()
- * @功能      刷新頁面
- * @觸發方式   呼叫它
- * @輸入      無
- * @輸出      無
- */
+ *  @函式名稱  changeMathIntoTex()
+ *  @功能      刷新頁面
+ *  @觸發方式   呼叫它
+ *  @輸入      無
+ *  @輸出      無
+ * */
 function changeMathIntoTex() {
-	MathJax.Hub.Queue(["Typeset", MathJax.Hub, this.formula]); //Rewrite Tex code in Data
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, this.formula]);
+    /*Rewrite Tex code in Data*/
 }
 
 /**
@@ -47,10 +63,10 @@ function changeMathIntoTex() {
  * @觸發方式     事件呼叫函式 觸發，將Editor內部內容抓出來
  * @輸入變數     editor_input : (String) 目標編輯器的id
  * @函式輸出    editor_content : (String) 目標編輯器的內文,Html格式
- */
+ * */
 function outputEditorContent(editor_input) {
-	//Output Data from id = 'ckeditor' editor place(Textarea/Div);
-	return CKEDITOR.instances[editor_input].getData();
+    //Output Data from id = 'ckeditor' editor place(Textarea/Div);
+    return CKEDITOR.instances[editor_input].getData();
 }
 
 /**
@@ -60,10 +76,10 @@ function outputEditorContent(editor_input) {
  * @用法 將內容塞進另一個編輯器內
  */
 function inputOriginalData(editor_output, data_content) {
-	CKEDITOR.instances[editor_output].setData(data_content);
-	CKEDITOR.instances[editor_output].editables = true;
-	let introduction = document.getElementById(editor_output);
-	introduction.setAttribute('contenteditable', true);
+    CKEDITOR.instances[editor_output].setData(data_content);
+    CKEDITOR.instances[editor_output].editables = true;
+    let introduction = document.getElementById(editor_output);
+    introduction.setAttribute('contenteditable', true);
 }
 
 /**
@@ -74,8 +90,8 @@ function inputOriginalData(editor_output, data_content) {
  * @函式輸出     無
  */
 function inputEditorContent(target_id, editor_content) {
-	document.getElementById(target_id).innerHTML = editor_content;//insert What you write in editor
-	changeMathIntoTex();
+    document.getElementById(target_id).innerHTML = editor_content;//insert What you write in editor
+    changeMathIntoTex();
 }
 
 /**
@@ -86,7 +102,7 @@ function inputEditorContent(target_id, editor_content) {
  * @函式輸出     無
  */
 function directTransfer2Input(editor_input, target_id) {
-	inputEditorContent(target_id, outputEditorContent(editor_input));
+    inputEditorContent(target_id, outputEditorContent(editor_input));
 }
 
 /**
@@ -96,5 +112,5 @@ function directTransfer2Input(editor_input, target_id) {
  * @用法 將內容塞進另一個輸入目標位置id內 會轉換目標位置成為inline 然後將值輸入進去
  */
 function directTransfer2Input2(editor_input, editor_output) {
-	inputOriginalData(editor_output, CKEDITOR.instances[editor_input].getData());
+    inputOriginalData(editor_output, CKEDITOR.instances[editor_input].getData());
 }
