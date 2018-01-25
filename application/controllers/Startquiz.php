@@ -11,9 +11,6 @@
 		
 		public function getQuizinfo(){
 			if($_SESSION['user']['user_Identity']==0){
-				//var_dump($_SESSION['course']);
-				//$this->load->model('Quiz_model','quiz');
-				//$this->load->model('Question_model','question');
 				$this->load->library('MP_Cache');
 				$data=array(
 					'quiz_Id'=>(int)$_SESSION['course']['quiz_Id'],
@@ -31,46 +28,18 @@
 				}
 				$cdata_name=$_SESSION['course']['class_Id'].'_'.$data['quiz_Id'];
 				$cdata = $this->mp_cache->set_name($cdata_name)->get();
-				if ($cdata === false)
-				{
-					// example model-function that generates your $data variable
+				if ($cdata === false){
 					$cdata = $cdata_set;
 					$this->mp_cache->write($cdata,$cdata_name,7200);
 				}
 				
 				$cdata_name=$_SESSION['course']['class_Id'].'_'.$data['quiz_Id'].'_'.'ans';
 				$cdata = $this->mp_cache->set_name($cdata_name)->get();
-				if ($cdata === false)
-				{
-					// example model-function that generates your $data variable
+				if ($cdata === false){
 					$cdata = $cdata_ans_set;
 					$this->mp_cache->write($cdata,$cdata_name,7200);
 				}
 				
-				//var_dump($_SESSION['course']);
-				//$this->db->cache_on();
-				//var_dump($data);
-				/* $this->db->cache_on();
-				$res=$this->quiz->findknowedquiz($data);
-				$this->db->cache_off();
-				//var_dump($res);
-				$question_array=explode('/',$res[0]['irs_Quiz_Question_Id']);
-				//var_dump($question_array);
-				$data_question=array();
-				foreach($question_array as $a){
-					if($a!='')
-						array_push($data_question,$a);
-				}
-				//var_dump($data_question);
-				$this->db->cache_on();
-				$result=$this->question->findselectQuestion($data_question);
-				$this->db->cache_off();
-				$data_return=array();
-				foreach($result as $b){
-					array_push($data_return,$b["question_Content"],$b["question_Optiona"],$b["question_Optionb"],$b["question_Optionc"],$b["question_Optiond"],$b["question_Answer"],$b["question_Time"]);
-				}
-				var_dump($data_return); */
-				//var_dump($data_return);
 				echo json_encode($data_return);
 				
 				
@@ -145,24 +114,25 @@
 				'shadow_Quiz_opinion'=>'',//需從前端皆值
 			);
 			$this->shadow_quiz->updateShadow_quiz($data,$opinion);
-			
-			//echo json_encode('OK');
 		}
 		
 		public function checkans(){//學生交卷並閱卷//單題適用
 			$cdata_name=$_SESSION['classandquiz']['class_Id'].'_'.$_SESSION['classandquiz']['quiz_Id'].'_'.'ans';
 			$this->load->library('MP_Cache');
 			$cdata_quiz_ans = $this->mp_cache->set_name($cdata_name)->get();
+			$cdata_name=$_SESSION['classandquiz']['class_Id'].'_time';
+			$cdata_time = $this->mp_cache->set_name($cdata_name)->get();
 			$anspoint;
+			$date=date_create();
+			$checktime=date_timestamp_get($date);
 			if ($cdata_quiz_ans!== false){
-				$anstime=$_POST['anstime'];//學生答題時間
+				$anstime=$checktime-$cdata_time['time'];//學生答題時間
 				$ansalltime=$_POST['ansalltime'];//題目總花時間
 				$ans=$_POST['ans'];
 				$question_num=$_POST['question_num'];
 				if($ans==$cdata_quiz_ans[$question_num]){
-					$anspoint=(1000/$ansalltime)*($ansalltime-$anstime);
-					$anspoint=(int)$anspoint;
-					//echo json_encode($anspoint);
+					$anspoint=(1000/$ansalltime)*($anstime);
+					$anspoint=1000-(int)$anspoint;
 				}
 				else{
 					$anspoint=0;
@@ -177,13 +147,32 @@
 					'student_Quiz_Total_Score'=>$anspoint,
 				);
 				$this->student_quiz->createStudent_quiz($data);
-				//echo json_encode($ans);
 			}
-			
-			
 			echo json_encode($anspoint);
 		}
 		
+		public function setquestiontime(){//設置題目開始時間
+			$this->load->library('MP_Cache');
+			$date=date_create();
+			$date=date_timestamp_get($date);
+			$cdata_name=$_SESSION['course']['class_Id'].'_time';
+			$cdata = $this->mp_cache->set_name($cdata_name)->get();
+			if ($cdata === false){
+				$cdata = array(
+					'time'=>$date,
+				);
+				$this->mp_cache->write($cdata,$cdata_name,7200);
+			}	
+		}
+		
+		public function deletequestiontime(){//刪除題目開始時間_教師用
+			$this->load->library('MP_Cache');
+			$cdata_name=$_SESSION['course']['class_Id'].'_time';
+			$cdata_time = $this->mp_cache->set_name($cdata_name)->get();
+			if ($cdata_time!== false){
+				$this->mp_cache->delete($cdata_name);
+			}
+		}
 		
 		
 		
