@@ -189,7 +189,7 @@
           <div class="modal-body">確定退出系統?</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="./logout">Logout</a>
+            <a class="btn btn-primary" href="./logout" id="logout">Logout</a>
           </div>
         </div>
       </div>
@@ -212,21 +212,60 @@
 	
   </div>
   <script type="text/JavaScript">
-	  $.ajax({
-					type: "POST",
-					url: "studenthome/infotohtml",
-					dataType: "json",
-					data: {
-									 
-					},
-					success: function(res) {
-						if (res) {
-							document.getElementById("stuname").innerHTML=res;
-						}                 
-					},
-					error: function(jqXHR) {
-						alert("發生錯誤: " + jqXHR.status);
+		$.ajax({
+			type: "POST",
+			url: "studenthome/infotohtml",
+			dataType: "json",
+			data: {
+							 
+			},
+			success: function(res) {
+				if (res) {
+					document.getElementById("stuname").innerHTML=res;
+				}                 
+			},
+			error: function(jqXHR) {
+				alert("發生錯誤: " + jqXHR.status);
+			}
+		});
+		$.ajax({
+			type: "POST",
+			url: "studenthome/set_cookie",
+			dataType: "json",
+			data: {
+							 
+			},
+			success: function(res) {
+				if (res) {
+					if(res!=false){
+						setCookie('info',res,30);
 					}
+				}                 
+			},
+			error: function(jqXHR) {
+				alert("發生錯誤: " + jqXHR.status);
+			}
+		});
+		$.ajax({
+			type: "POST",
+			url: "studenthome/check_cookies",
+			dataType: "json",
+			data: {
+							 
+			},
+			success: function(res) {
+				if (res) {
+					if(res!=false){
+						setCookie('info',res,10);
+					}
+				}                 
+			},
+			error: function(jqXHR) {
+				alert("發生錯誤: " + jqXHR.status);
+			}
+		});
+		$("#logout").click(function(){
+			deleteCookie('info');
 		});
 		
 		function relocate_openclass(){
@@ -237,7 +276,34 @@
 		} 
 		function relocate_add(){
 			location.href = "#";
-		} 
+		}
+		function setCookie(c_name,value,expiredays){
+			var exdate=new Date();
+			exdate.setDate(exdate.getDate()+expiredays);
+			document.cookie=c_name+ "=" +escape(value)+
+			((expiredays==null) ? "" : ";expires="+exdate.toGMTString());
+		}
+	
+		function getCookie(c_name){
+			if (document.cookie.length>0){
+				c_start=document.cookie.indexOf(c_name + "=");
+				if (c_start!=-1){ 
+					c_start=c_start + c_name.length+1;
+					c_end=document.cookie.indexOf(";",c_start);
+					if (c_end==-1)
+						c_end=document.cookie.length;
+					return unescape(document.cookie.substring(c_start,c_end));
+				} 
+			}
+			return "";
+		}
+	
+		function deleteCookie(c_name){
+			var exdate = new Date();
+			exdate.setTime(exdate.getTime-1);
+			document.cookie=c_name+ "=;expires="+exdate.toGMTString();
+		}
+			
   </script>
 </body>
 
