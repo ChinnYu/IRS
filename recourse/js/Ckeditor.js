@@ -1,60 +1,57 @@
+const basicUrl = `./additions/`; // Kcfinder的基本Url
+
+const editorConfig = {
+    toolbar: [
+        {name: 'clipboard', items: ['Undo', 'Redo']},
+        {name: 'paragraph', items: ['NumberedList', 'BulletedList']},
+        {name: 'insert', items: ['Image', 'Table', 'Youtube', 'Mathjax']},
+        {name: 'links', items: ['Link', 'Unlink']},
+        // {name: 'document', items: ['Print', 'Source']}
+    ],
+    extraPlugins: 'mathjax,pastefromword',
+    disallowedContent: 'img{width,height,float}',
+    extraAllowedContent: 'img[width,height,align];span{background}',
+    //正式版取消
+    //filebrowserBrowseUrl: `${basicUrl}kcfinder/browse.php?opener=ckeditor&type=files`,
+    // filebrowserImageBrowseUrl: `${basicUrl}/kcfinder/browse.php?opener=ckeditor&type=images`,
+    // filebrowserFlashBrowseUrl: `${basicUrl}/kcfinder/browse.php?opener=ckeditor&type=flash`,
+    //正式版取消
+    filebrowserUploadUrl: `${basicUrl}/kcfinder/upload.php?opener=ckeditor&type=files`,
+    filebrowserImageUploadUrl: `${basicUrl}/kcfinder/upload.php?opener=ckeditor&type=images`,
+    filebrowserFlashUploadUrl: `${basicUrl}/kcfinder/upload.php?opener=ckeditor&type=flash`,
+    mathJaxLib: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML',
+    mathJaxClass: 'mjx'
+};
+
 /**
  * @函式名稱 autoTransferInlineEditor
  * @param (String)editor_id 想轉變成編輯器的目標ＩＤ
  * @用法 呼叫他 會轉變成inline編輯器
  */
 function autoTransferInlineEditor(editor_id) {
-    CKEDITOR.inline(editor_id, {
-        toolbar: [
-            {name: 'clipboard', items: ['Undo', 'Redo']},
-            {name: 'paragraph', items: ['NumberedList', 'BulletedList']},
-            {name: 'insert', items: ['Image', 'Table', 'Youtube', 'Mathjax']},
-            {name: 'links', items: ['Link', 'Unlink']},
-            {name: 'document', items: ['Print', 'Source']}
-        ],
-        disallowedContent: 'img{width,height,float}',
-        extraAllowedContent: 'img[width,height,align];span{background}',
-        extraPlugins: 'mathjax,pastefromword',
-        mathJaxLib: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML',
-        mathJaxClass: 'mjx',
-    });
+    CKEDITOR.inline(editor_id, editorConfig);
     let introduction = document.getElementById(editor_id);
     introduction.setAttribute('contenteditable', true);
 }
 
 /**
- *  @函式名稱 autoTransferInlineEditor
- *  @param (String)editor_id 想轉變成編輯器的目標ＩＤ
- *  @用法 呼叫他 會轉變成replace編輯器 *
+ * @函式名稱 autoTransferInlineEditor
+ * @param (String)editor_id 想轉變成編輯器的目標ＩＤ
+ * @用法 呼叫他 會轉變成replace編輯器
  */
 function autoTransferReplaceEditor(editor_id) {
-    CKEDITOR.replace(editor_id, {
-        toolbar: [
-            {name: 'clipboard', items: ['Undo', 'Redo']},
-            {name: 'paragraph', items: ['NumberedList', 'BulletedList']},
-            {name: 'insert', items: ['Image', 'Table', 'Youtube', 'Mathjax']},
-            {name: 'links', items: ['Link', 'Unlink']},
-            {name: 'document', items: ['Print', 'Source']}],
-        disallowedContent: 'img{width,height,float}',
-        extraAllowedContent: 'img[width,height,align];span{background}',
-        extraPlugins: 'mathjax,pastefromword',
-        height: 480,
-        width: 640,
-        mathJaxLib: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML',
-        mathJaxClass: 'mjx',
-    });
+    CKEDITOR.replace(editor_id, editorConfig);
 }
 
 /**
- *  @函式名稱  changeMathIntoTex()
- *  @功能      刷新頁面
- *  @觸發方式   呼叫它
- *  @輸入      無
- *  @輸出      無
- * */
+ * @函式名稱  changeMathIntoTex()
+ * @功能      刷新頁面
+ * @觸發方式   呼叫它
+ * @輸入      無
+ * @輸出      無
+ */
 function changeMathIntoTex() {
-    MathJax.Hub.Queue(["Typeset", MathJax.Hub, this.formula]);
-    /*Rewrite Tex code in Data*/
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, this.formula]); //Rewrite Tex code in Data
 }
 
 /**
@@ -63,7 +60,7 @@ function changeMathIntoTex() {
  * @觸發方式     事件呼叫函式 觸發，將Editor內部內容抓出來
  * @輸入變數     editor_input : (String) 目標編輯器的id
  * @函式輸出    editor_content : (String) 目標編輯器的內文,Html格式
- * */
+ */
 function outputEditorContent(editor_input) {
     //Output Data from id = 'ckeditor' editor place(Textarea/Div);
     return CKEDITOR.instances[editor_input].getData();
