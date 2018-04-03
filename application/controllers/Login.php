@@ -3,8 +3,40 @@
 		
 		public function index(){
 			$this->load->library('session');
-			if(!isset($_SESSION['user'])){ 
-				$this->load->view('FOUNDCLASS/login.html');
+			if(!isset($_SESSION['user'])){
+				if(empty($_COOKIE['info'])){
+					$this->load->view('FOUNDCLASS/login.html');
+				}else{
+					date_default_timezone_set("Asia/Taipei");
+					$data=base64_decode($_COOKIE['info']);
+					$data=$this->decrypt_cookies($data);
+					$cookie_array=explode("-",$data);
+					$userinfo=array(
+						'user_Id'=>$cookie_array[0]
+					);
+					$this->load->model('User_model','user');
+					$res=$this->user->getFromId($userinfo);
+					$date=mktime(0,0,0,$cookie_array[2],$cookie_array[3],$cookie_array[1]);
+					$date_check=strtotime("now");
+					$date_expire=$date_check-$date;
+					if($date_expire>0){
+						$date_expire=$date_expire/3600/24;
+						$para_coo=1;
+						if($date_expire<7&&$date_expire>6){
+							$this->session->set_userdata('update_coo',$para_coo);
+						}
+					}
+					if(!isset($_SESSION['user'])){ 
+						$user=array('user_Id'=>$res[0]['user_Id'],'user_Name'=>$res[0]['user_Name'],'user_Identity'=>$res[0]['user_Identity']);
+						$this->session->set_userdata('user',$user);
+					}
+					if($_SESSION['user']['user_Identity']==1){
+						header("Location: ./studenthome");
+					}
+					else if($_SESSION['user']['user_Identity']==0){
+						header("Location: ./teacherhome");
+					}
+				}
 			}
 			else{
 				if($_SESSION['user']['user_Identity']==1){
@@ -47,7 +79,7 @@
 					}
 				}
 				else{
-					echo '有登入了,或無權限,';
+					echo '有登入了,但無權限,請洽管理員';
 				}
 			}
 			else{

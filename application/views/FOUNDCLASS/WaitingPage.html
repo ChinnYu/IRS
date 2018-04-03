@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>waitpage</title>
+    <title>waitingPage</title>
     <!-- Bootstrap core CSS-->
     <link href="./recourse/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom fonts for this template-->
@@ -23,7 +23,7 @@
         <div class="card-header">目前學生人數</div>
         <div class="card-body">
             <div class="alert alert-success" role="alert">
-                <strong>等待中!</strong><br>已有10人登入
+                <strong>等待中!</strong><br><p id="response2"> </p>
             </div>
             <!-- <a class="d-block small mt-3" href="QuizPage.html">Quizpage</a> -->
         </div>
@@ -36,13 +36,12 @@
 <!-- Core plugin JavaScript-->
 <script src="./recourse/vendor/jquery-easing/jquery.easing.min.js"></script>
 <script src="./recourse/vendor/LK5.js"></script>
-
-
-<script type="text/JavaScript">
-
-
-</script>
+<script src="./node_modules/socket.io/node_modules/socket.io-client/socket.io.js"></script>
+<!-- <script src="./node_modules/socket.io-client/dist/socket.io.js"></script> -->
+<script src="./recourse/js/waitingstudent.js"></script>
 </body>
+
+
 
 
 </html>

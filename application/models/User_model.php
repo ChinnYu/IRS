@@ -18,7 +18,15 @@
 				return NULL;
 			}
 		}
-		
+		public function getFromId($data){
+			$res=$this->db->where(array('user_Id'=>$data['user_Id']))->get('user');
+			if ($res->num_rows() > 0){
+				return $res->result_array();
+			}
+			else{
+				return NULL;
+			}
+		}
 		public function findHim($data){
 			$res=$this->db->where($data)->get('user');
 			return $res->result_array();

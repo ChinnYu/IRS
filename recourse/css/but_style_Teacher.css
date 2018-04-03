@@ -1,0 +1,83 @@
+.card
+{
+    margin-bottom: 4px;
+    background: rgb(95,176,228);
+	
+}
+.card-header
+{   
+   
+    border: solid 1px grey;
+    border-radius: 4px;
+    padding-left: 5px;
+    background: rgb(51,122,183);
+}
+.card-header a
+{
+    color: white;
+}
+.card-block
+{
+    color: white;
+    padding: 12px;
+}
+a:focus
+{
+    outline:none;
+}
+
+
+
+#tt {
+  margin: 20px auto;
+  width: 1000px;
+  height: 300px;
+}
+.box1, .box2, .box3, .box4 {
+  padding: 10px;
+  width: 90%;
+  height: 500px;
+  margin: 5px;
+  float: center;
+  background: rgba(94, 126, 185, 0.877);
+  border-radius: 10px;
+  border: solid 3px rgb(47, 11, 179);
+  text-shadow: 0 0 5px #333;
+  box-shadow: 0 0 15px #333;
+  transition: margin-top 1000ms, box-shadow 300ms;
+  cursor: pointer;
+}
+
+.box2 {
+  background: rgb(248, 218, 122);
+  border: solid 3px rgb(192, 192, 192);
+}
+.box3 {
+  background: rgba(239, 80, 109, 0.822);
+  border: solid 3px rgb(141, 49, 13);
+}
+.box4 {
+  background: rgb(190, 194, 203);
+  border: solid 3px rgb(69, 69, 71);
+}
+.box1:hover {
+  box-shadow: 0 0 10px #999;
+  margin-top: 10px;
+}
+.box2:hover {
+  box-shadow: 0 0 10px #999;
+  margin-top: 10px;
+}
+.box3:hover {
+  box-shadow: 0 0 10px #999;
+  margin-top: 10px;
+}
+.box4:hover {
+  box-shadow: 0 0 10px #ccc;
+  margin-top: 10px;
+}
+i {
+  font-size: 96px;
+}
+
+

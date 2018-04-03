@@ -98,7 +98,12 @@
 			$times=date("Y/m/d");
 			$time_array=explode("/",$times);
 			$term;
-			$cyear=$time_array[0]-1911;
+			if($time_array[1]<7){
+				$cyear=$time_array[0]-1911-1;
+			}
+			else{
+				$cyear=$time_array[0]-1911;
+			}
 			if($time_array[1]>=2&&$time_array[1]<=8){
 				$term=2;
 			}

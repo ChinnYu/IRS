@@ -231,10 +231,23 @@
         <li class="breadcrumb-item active">新增測驗</li>
       </ol>
 		  <div class="container">
-		  <div class="row">
+		    <ul class="nav nav-tabs" id="myTab" role="tablist">
+			  <li class="nav-item">
+				<a class="nav-link active" data-toggle="tab" href="#home" role="tab" aria-controls="home">新增測驗</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" data-toggle="tab" href="#profile" role="tab" aria-controls="profile">編輯測驗</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" data-toggle="tab" href="#messages" role="tab" aria-controls="messages">刪除測驗</a>
+			  </li>
+			</ul>
+
+			<div class="tab-content">
+			  <div class="tab-pane active" id="home" role="tabpanel"><div class="row">
 		  <div class="col-md-6">
     	<div class="row">
-		    <span id="insertlession"></span>
+		    <span id="insertlesson"></span>
 				
 			<span id="insertTag"></span>
 			<select class="selectpicker" id="selectQuestionType" title="選擇題型">
@@ -294,6 +307,14 @@
 			<input type="button" value="儲存" id="save">
 			</div>
 		</div>
+		
+		</div>
+			  <div class="tab-pane" id="profile" role="tabpanel">..</div>
+			  <div class="tab-pane" id="messages" role="tabpanel">.</div>
+			</div>
+			
+		  
+		  
 	</div>
     </div>
     <!-- /.container-fluid-->
@@ -329,21 +350,21 @@
       </div>
     </div>
     <!-- Bootstrap core JavaScript-->
-    <script src="../recourse/vendor/jquery/jquery.min.js"></script>
-    <script src="../recourse/vendor/popper/popper.min.js"></script>
-    <script src="../recourse/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./recourse/vendor/jquery/jquery.min.js"></script>
+    <script src="./recourse/vendor/popper/popper.min.js"></script>
+    <script src="./recourse/vendor/bootstrap/js/bootstrap.min.js"></script>
     <!-- Core plugin JavaScript-->
-    <script src="../recourse/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="./recourse/vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Page level plugin JavaScript-->
-    <script src="../recourse/vendor/chart.js/Chart.min.js"></script>
-    <script src="../recourse/vendor/datatables/jquery.dataTables.js"></script>
-    <script src="../recourse/vendor/datatables/dataTables.bootstrap4.js"></script>
+    <script src="./recourse/vendor/chart.js/Chart.min.js"></script>
+    <script src="./recourse/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="./recourse/vendor/datatables/dataTables.bootstrap4.js"></script>
     <!-- Custom scripts for all pages-->
-    <script src="../recourse/js/sb-admin.min.js"></script>
+    <script src="./recourse/js/sb-admin.min.js"></script>
     <!-- Custom scripts for this page-->
-    <script src="../recourse/js/sb-admin-datatables.min.js"></script>
-    <script src="../recourse/js/sb-admin-charts.min.js"></script>
-    <script src="../recourse/js/listgroup.min.js"></script>
+    <script src="./recourse/js/sb-admin-datatables.min.js"></script>
+    <script src="./recourse/js/sb-admin-charts.min.js"></script>
+    <script src="./recourse/js/listgroup.min.js"></script>
 	<script type="text/javascript">
 	var tmp;
 	var questionidtotal='q';
@@ -371,6 +392,7 @@
 				el.innerHTML =el.innerHTML +"<li class=\"list-group-item\" id="+ ID +" onclick=\"displayTotal()\">" + questioncontent +"<span class=\"badge badge-secondary\">"+ used_Times +"</span> </li>\n";
 				
 			}
+			
 		},
 		error : function(){
 			alert("fa");
@@ -386,9 +408,9 @@
 		url : "question/newquiz",
 		type : "POST",
         dataType : "text",
-		data : { quiz_Name : $("#quizname").val(), irs_Quiz_QuestionI_Id : questionidtotal, quiz_Time : $("#anstime").val(), user_Id : 9},
+		data : { course_Name : $("#lesson").val(), quiz_Name : $("#quizname").val(), irs_Quiz_QuestionI_Id : questionidtotal, quiz_Time : $("#anstime").val(), user_Id : 9},
 		success :	function($res){
-		alert('su');
+		location.reload();
 		}		
 	})
 	});
@@ -405,7 +427,7 @@
 				url: 'question/loadlessonandchapter',
 				dataType : 'text',
 				success: function(data){
-					var el = document.getElementById('insertlession');
+					var el = document.getElementById('insertlesson');
 					el.innerHTML = data;
 				},
 				error : function(){
@@ -413,11 +435,12 @@
 				}
 			}
 		);
+		
 		function loadTag(courseName){	
 				$.ajax(
 					{
 						type: 'POST',
-						url: 'question/loadquestiontag',
+						url: 'question/loadquestiontagforeditquestion',
 						dataType : 'text',
 						data : {course_Name : courseName },
 						success: function(data){
@@ -430,7 +453,24 @@
 					}
 				);
 			};
-	
+			
+			$.ajax(
+				{
+					type: 'POST',
+					url: 'question/loadlessonandchapter',
+					dataType : 'text',
+					success: function(data){
+						var el = document.getElementById('insertlesson');
+						el.innerHTML = data;
+						var options=$("#lesson option:selected");
+						loadTag(options.text());
+					},
+					error : function(){
+						alert("fa");
+					}
+				}
+			);
+		
 			$.ajax({
 					type: "POST",
 					url: "teacherhome/infotohtml",
