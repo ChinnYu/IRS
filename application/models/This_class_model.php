@@ -29,5 +29,18 @@
 				return $bool;
 			 }
 		}
-		
+		public function findEndclass($data){
+			$res=$this->db->where(array('class_Id'=>$data['class_Id']))->get('this_class');
+			return $res->result_array();
+		}
+		public function updateEndclass($data){
+			$res=$this->db->where(array('PIN'=>$data['PIN']))->get('this_class');
+			$bool=$this->db->update('this_class',array('end_Class'=>1));
+			return $bool;
+		}
+		public function updateEndclassdelete($data){
+			$res=$this->db->where(array('PIN'=>$data['PIN']))->get('this_class');
+			$bool=$this->db->update('this_class',array('end_Class'=>0));
+			return $bool;
+		}
 	}

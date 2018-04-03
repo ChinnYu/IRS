@@ -3,13 +3,14 @@
 Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#292b2c';
 // -- Area Chart Example
+
 var ctx = document.getElementById("myAreaChart");
 var myLineChart = new Chart(ctx, {
   type: 'line',
   data: {
-    labels: ["0%", "12.5%", "25%", "37.5%", "50%", "62.5%", "75%", "87.5%", "100%"],
+    labels: ["0%", "25%", "50%", "75%", "100%"],
     datasets: [{
-      label: "Sessions",
+      label: "Peoples",
       lineTension: 0.3,
       backgroundColor: "rgba(2,117,216,0.2)",
       borderColor: "rgba(2,117,216,1)",
@@ -20,20 +21,20 @@ var myLineChart = new Chart(ctx, {
       pointHoverBackgroundColor: "rgba(2,117,216,1)",
       pointHitRadius: 20,
       pointBorderWidth: 2,
-      data: [0, 0, 2, 5, 6, 9, 7, 3, 1],
+      data: [0, 2, 11, 16, 4],
     }],
   },
   options: {
     scales: {
       xAxes: [{
         time: {
-          unit: 'date'
+          unit: 'percentage of student'
         },
         gridLines: {
           display: false
         },
         ticks: {
-          maxTicksLimit: 9
+          maxTicksLimit: 5
         }
       }],
       yAxes: [{
@@ -105,4 +106,4 @@ var myPieChart = new Chart(ctx, {
       backgroundColor: ['#F76D55', '#CED2DA', '#FCCF5F', '#A1D770'],
     }],
   },
-});
+}); 

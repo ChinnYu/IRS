@@ -68,8 +68,13 @@
 			}
 			return $data_return;
 		}
+		public function endquiz(){
+			$this->load->model('This_class_model','this_class');
+			$res=$this->this_class->updateEndclass($_SESSION['PIN']['PIN_code']);
+		}
 		public function finishaction(){
-			
+			$this->load->model('This_class_model','this_class');
+			$res=$this->this_class->updateEndclassdelete($_SESSION['PIN']['PIN_code']);
 			$cdata_name=$_SESSION['course']['class_Id'].'_'.$_SESSION['course']['quiz_Id'];
 			$this->load->library('MP_Cache');
 			$cdata_quiz = $this->mp_cache->set_name($cdata_name)->get();

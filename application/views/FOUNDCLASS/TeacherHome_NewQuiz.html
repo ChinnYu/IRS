@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>NewQuiz</title>
+  <title>Newquiz</title>
   <!-- Bootstrap core CSS-->
   <link href="./recourse/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
@@ -16,20 +16,12 @@
   <link href="./recourse/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
   <!-- Custom styles for this template-->
   <link href="./recourse/css/sb-admin.css" rel="stylesheet">
-  <!--------------------CKSOURCE--------------------->
-    <script src="./additions/ckeditor/ckeditor.js"></script>
-    <!------------------------------------------------->
-    <!---------------------MATHJAX--------------------->
-    <!--底下為ＭathJax，網頁開始時會先進行Scanner的動作一次-->
-    <script type="text/javascript"
-            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
-    <!------------------------------------------------->
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="./teacherhome">Querisma</a>
+    <a class="navbar-brand" href="TeacherHome.html">FOUNDCLASS</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -243,12 +235,12 @@
 			  <li class="nav-item">
 				<a class="nav-link active" data-toggle="tab" href="#home" role="tab" aria-controls="home">新增測驗</a>
 			  </li>
-			  <!-- <li class="nav-item"> -->
-				<!-- <a class="nav-link" data-toggle="tab" href="#profile" role="tab" aria-controls="profile">編輯測驗</a> -->
-			  <!-- </li> -->
-			  <!-- <li class="nav-item"> -->
-				<!-- <a class="nav-link" data-toggle="tab" href="#messages" role="tab" aria-controls="messages">刪除測驗</a> -->
-			  <!-- </li> -->
+			  <li class="nav-item">
+				<a class="nav-link" data-toggle="tab" href="#profile" role="tab" aria-controls="profile">編輯測驗</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" data-toggle="tab" href="#messages" role="tab" aria-controls="messages">刪除測驗</a>
+			  </li>
 			</ul>
 
 			<div class="tab-content">
@@ -373,12 +365,7 @@
     <script src="./recourse/js/sb-admin-datatables.min.js"></script>
     <script src="./recourse/js/sb-admin-charts.min.js"></script>
     <script src="./recourse/js/listgroup.min.js"></script>
-	<script src="./recourse/js/Ckeditor.js"></script>
 	<script type="text/javascript">
-	//使ckeditor支援span及a標籤
-	CKEDITOR.dtd.$editable.span = 1;
-	CKEDITOR.dtd.$editable.a = 1;
-	
 	var tmp;
 	var questionidtotal='q';
 	var items = document.getElementsByClassName("list-group-item active");
@@ -402,13 +389,10 @@
 					
 				//-display the result of the array
 				var el = document.getElementById('insertHere');
-				el.innerHTML =el.innerHTML +"<li class=\"list-group-item\" id="+ ID +" onclick=\"displayTotal()\"><span id=\"questioncontent"+ i +"\" contenteditable=\"false\">"+ questioncontent +"</span><span class=\"badge badge-secondary\">"+ used_Times +"</span> </li>\n";
+				el.innerHTML =el.innerHTML +"<li class=\"list-group-item\" id="+ ID +" onclick=\"displayTotal()\">" + questioncontent +"<span class=\"badge badge-secondary\">"+ used_Times +"</span> </li>\n";
 				
 			}
-			for(var i = 0 ; i< tmp.length ;i++){
-			autoTransferInlineEditor('questioncontent'+ i);
-			changeMathIntoTex();
-			}
+			
 		},
 		error : function(){
 			alert("fa");
