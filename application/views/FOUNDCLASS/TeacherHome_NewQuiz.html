@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Newquiz</title>
+  <title>NewQuiz</title>
   <!-- Bootstrap core CSS-->
   <link href="./recourse/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
@@ -16,12 +16,20 @@
   <link href="./recourse/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
   <!-- Custom styles for this template-->
   <link href="./recourse/css/sb-admin.css" rel="stylesheet">
+  <!--------------------CKSOURCE--------------------->
+    <script src="./additions/ckeditor/ckeditor.js"></script>
+    <!------------------------------------------------->
+    <!---------------------MATHJAX--------------------->
+    <!--底下為ＭathJax，網頁開始時會先進行Scanner的動作一次-->
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+    <!------------------------------------------------->
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="TeacherHome.html">FOUNDCLASS</a>
+    <a class="navbar-brand" href="./teacherhome">Querisma</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -231,10 +239,23 @@
         <li class="breadcrumb-item active">新增測驗</li>
       </ol>
 		  <div class="container">
-		  <div class="row">
+		    <ul class="nav nav-tabs" id="myTab" role="tablist">
+			  <li class="nav-item">
+				<a class="nav-link active" data-toggle="tab" href="#home" role="tab" aria-controls="home">新增測驗</a>
+			  </li>
+			  <!-- <li class="nav-item"> -->
+				<!-- <a class="nav-link" data-toggle="tab" href="#profile" role="tab" aria-controls="profile">編輯測驗</a> -->
+			  <!-- </li> -->
+			  <!-- <li class="nav-item"> -->
+				<!-- <a class="nav-link" data-toggle="tab" href="#messages" role="tab" aria-controls="messages">刪除測驗</a> -->
+			  <!-- </li> -->
+			</ul>
+
+			<div class="tab-content">
+			  <div class="tab-pane active" id="home" role="tabpanel"><div class="row">
 		  <div class="col-md-6">
     	<div class="row">
-		    <span id="insertlession"></span>
+		    <span id="insertlesson"></span>
 				
 			<span id="insertTag"></span>
 			<select class="selectpicker" id="selectQuestionType" title="選擇題型">
@@ -294,6 +315,14 @@
 			<input type="button" value="儲存" id="save">
 			</div>
 		</div>
+		
+		</div>
+			  <div class="tab-pane" id="profile" role="tabpanel">..</div>
+			  <div class="tab-pane" id="messages" role="tabpanel">.</div>
+			</div>
+			
+		  
+		  
 	</div>
     </div>
     <!-- /.container-fluid-->
@@ -329,22 +358,27 @@
       </div>
     </div>
     <!-- Bootstrap core JavaScript-->
-    <script src="../recourse/vendor/jquery/jquery.min.js"></script>
-    <script src="../recourse/vendor/popper/popper.min.js"></script>
-    <script src="../recourse/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./recourse/vendor/jquery/jquery.min.js"></script>
+    <script src="./recourse/vendor/popper/popper.min.js"></script>
+    <script src="./recourse/vendor/bootstrap/js/bootstrap.min.js"></script>
     <!-- Core plugin JavaScript-->
-    <script src="../recourse/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="./recourse/vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Page level plugin JavaScript-->
-    <script src="../recourse/vendor/chart.js/Chart.min.js"></script>
-    <script src="../recourse/vendor/datatables/jquery.dataTables.js"></script>
-    <script src="../recourse/vendor/datatables/dataTables.bootstrap4.js"></script>
+    <script src="./recourse/vendor/chart.js/Chart.min.js"></script>
+    <script src="./recourse/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="./recourse/vendor/datatables/dataTables.bootstrap4.js"></script>
     <!-- Custom scripts for all pages-->
-    <script src="../recourse/js/sb-admin.min.js"></script>
+    <script src="./recourse/js/sb-admin.min.js"></script>
     <!-- Custom scripts for this page-->
-    <script src="../recourse/js/sb-admin-datatables.min.js"></script>
-    <script src="../recourse/js/sb-admin-charts.min.js"></script>
-    <script src="../recourse/js/listgroup.min.js"></script>
+    <script src="./recourse/js/sb-admin-datatables.min.js"></script>
+    <script src="./recourse/js/sb-admin-charts.min.js"></script>
+    <script src="./recourse/js/listgroup.min.js"></script>
+	<script src="./recourse/js/Ckeditor.js"></script>
 	<script type="text/javascript">
+	//使ckeditor支援span及a標籤
+	CKEDITOR.dtd.$editable.span = 1;
+	CKEDITOR.dtd.$editable.a = 1;
+	
 	var tmp;
 	var questionidtotal='q';
 	var items = document.getElementsByClassName("list-group-item active");
@@ -368,8 +402,12 @@
 					
 				//-display the result of the array
 				var el = document.getElementById('insertHere');
-				el.innerHTML =el.innerHTML +"<li class=\"list-group-item\" id="+ ID +" onclick=\"displayTotal()\">" + questioncontent +"<span class=\"badge badge-secondary\">"+ used_Times +"</span> </li>\n";
+				el.innerHTML =el.innerHTML +"<li class=\"list-group-item\" id="+ ID +" onclick=\"displayTotal()\"><span id=\"questioncontent"+ i +"\" contenteditable=\"false\">"+ questioncontent +"</span><span class=\"badge badge-secondary\">"+ used_Times +"</span> </li>\n";
 				
+			}
+			for(var i = 0 ; i< tmp.length ;i++){
+			autoTransferInlineEditor('questioncontent'+ i);
+			changeMathIntoTex();
 			}
 		},
 		error : function(){
@@ -386,9 +424,9 @@
 		url : "question/newquiz",
 		type : "POST",
         dataType : "text",
-		data : { quiz_Name : $("#quizname").val(), irs_Quiz_QuestionI_Id : questionidtotal, quiz_Time : $("#anstime").val(), user_Id : 9},
+		data : { course_Name : $("#lesson").val(), quiz_Name : $("#quizname").val(), irs_Quiz_QuestionI_Id : questionidtotal, quiz_Time : $("#anstime").val(), user_Id : 9},
 		success :	function($res){
-		alert('su');
+		location.reload();
 		}		
 	})
 	});
@@ -405,7 +443,7 @@
 				url: 'question/loadlessonandchapter',
 				dataType : 'text',
 				success: function(data){
-					var el = document.getElementById('insertlession');
+					var el = document.getElementById('insertlesson');
 					el.innerHTML = data;
 				},
 				error : function(){
@@ -413,11 +451,12 @@
 				}
 			}
 		);
+		
 		function loadTag(courseName){	
 				$.ajax(
 					{
 						type: 'POST',
-						url: 'question/loadquestiontag',
+						url: 'question/loadquestiontagforeditquestion',
 						dataType : 'text',
 						data : {course_Name : courseName },
 						success: function(data){
@@ -430,7 +469,24 @@
 					}
 				);
 			};
-	
+			
+			$.ajax(
+				{
+					type: 'POST',
+					url: 'question/loadlessonandchapter',
+					dataType : 'text',
+					success: function(data){
+						var el = document.getElementById('insertlesson');
+						el.innerHTML = data;
+						var options=$("#lesson option:selected");
+						loadTag(options.text());
+					},
+					error : function(){
+						alert("fa");
+					}
+				}
+			);
+		
 			$.ajax({
 					type: "POST",
 					url: "teacherhome/infotohtml",
