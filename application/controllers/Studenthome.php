@@ -56,5 +56,20 @@
 			}
 			
 		}
-		
+		public function getHistory(){
+			$infoofuser=$this->userinfo;
+			$this->load->model('Result_model','student_quiz');
+			$infoofHR=$this->student_quiz->findQuizHistoryResult($infoofuser);
+			for($i=0;$i<count($infoofHR);$i++){
+				$this->load->model('Course_model','course');
+				$resofcourse=$this->course->findCourse(array('course_num'=>$infoofHR[$i]['class_Id']));
+				$infoofHR[$i]['class_Id']=$resofcourse[0]['course_Name'];
+			}
+			for($i=0;$i<count($infoofHR);$i++){
+				$this->load->model('Quiz_model','quiz');
+				$resofquiz=$this->quiz->findknowedquiz(array('quiz_Id'=>$infoofHR[$i]['quiz_Id']));
+				$infoofHR[$i]['quiz_Id']=$resofquiz[0]['quiz_Name'];
+			}
+			echo json_encode($infoofHR);
+		}
 	}

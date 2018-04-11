@@ -1,7 +1,7 @@
 <?php
-class quizforteacherview extends CI_Controller {
+class Quizforteacherview extends MY_Controller {
 
-	function index()
+	public function index()
 	{
 		$this->load->view('FOUNDCLASS/QuizForTeacherView.html');
 	}
