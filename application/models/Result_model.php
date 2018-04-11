@@ -9,6 +9,15 @@ class Result_model extends CI_Model{
 			if ($res->num_rows() > 0)
 				return $res->result_array();
 		}
+		
+		public function findQuizHistoryResult($data){
+			$this->db->where(array('user_Id'=>$data['user_Id']));
+			$this->db->select('class_Id, quiz_Id, answer_List, student_Quiz_Total_Score, datetime');
+			$this->db->order_by("datetime","desc");
+			$res=$this->db->get('student_quiz');
+			if ($res->num_rows() > 0)
+				return $res->result_array();
+		}		
 
 		public function findThisPerson($data){
 			$this->db->where('user_Id', $data['user_Id']);
