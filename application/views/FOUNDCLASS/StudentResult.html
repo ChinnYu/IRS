@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>StudentHomePage</title>
+    <!-- Bootstrap core CSS-->
+    <link href="./recourse/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template-->
+    <link href="./recourse/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Page level plugin CSS-->
+    <link href="./recourse/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="./recourse/css/sb-admin.css" rel="stylesheet">
+    <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+</head>
+
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+        <a class="navbar-brand" href="./studenthome">Querisma</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                    <a class="nav-link" href="./studenthome">
+                        <i class="fa fa-fw fa-dashboard"></i>
+                        <span class="nav-link-text">首頁</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-fw fa-area-chart"></i>
+                        <span class="nav-link-text">過往成績</span>
+                    </a>
+                </li>
+                <!--    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+          <a class="nav-link" href="tables.html">
+            <i class="fa fa-fw fa-table"></i>
+            <span class="nav-link-text">Tables</span>
+          </a>
+        </li>
+	-->
+                <!--
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-file"></i>
+            <span class="nav-link-text">Example Pages</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseExamplePages">
+            <li>
+              <a href="login.html">Login Page</a>
+            </li>
+            <li>
+              <a href="register.html">Registration Page</a>
+            </li>
+            <li>
+              <a href="forgot-password.html">Forgot Password Page</a>
+            </li>
+            <li>
+              <a href="blank.html">Blank Page</a>
+            </li>
+          </ul>
+        </li>
+	-->
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+                    <a class="nav-link" href="./scanQR">
+                        <i class="fa fa-fw fa-area-chart"></i>
+                        <span class="nav-link-text">進入教室</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-fw fa-area-chart"></i>
+                        <span class="nav-link-text">討論區</span>
+                    </a>
+                </li>
+                <!--	
+		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-wrench"></i>
+            <span class="nav-link-text">頁面環境設置</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseComponents">
+            <li>
+              <a href="navbar.html">頁面簡化</a>
+            </li>
+            <li>
+              <a href="cards.html">Cards</a>
+            </li>
+          </ul>
+        </li>
+	-->
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-fw fa-link"></i>
+                        <span class="nav-link-text">Link</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav sidenav-toggler">
+                <li class="nav-item">
+                    <a class="nav-link text-center" id="sidenavToggler">
+                        <i class="fa fa-fw fa-angle-left"></i>
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+
+
+
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+                        <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="content-wrapper">
+        <div class="container-fluid">
+            <!-- Breadcrumbs-->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+
+                    <a href="./studenthome" id="stuname"></a>
+                </li>
+                <li class="breadcrumb-item active">首頁</li>
+            </ol>
+            <div id="totalRank" class="tabcontent">
+                <div class="card mb-3">
+                    <div class="card-header">歷史成績</div>
+                    <div class="card-body">
+                        <table width="25%" border="1" id="HistoryScore"></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+    <footer class="sticky-footer">
+        <div class="container">
+            <div class="text-center">
+                <small>Copyright © Querisma 2017</small>
+            </div>
+        </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">確定退出系統?</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="./logout" id="logout">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="./recourse/vendor/jquery/jquery.min.js"></script>
+    <script src="./recourse/vendor/popper/popper.min.js"></script>
+    <script src="./recourse/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="./recourse/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="./recourse/vendor/chart.js/Chart.min.js"></script>
+    <script src="./recourse/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="./recourse/vendor/datatables/dataTables.bootstrap4.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="./recourse/js/sb-admin.min.js"></script>
+    <!-- Custom scripts for this page-->
+    <script src="./recourse/js/sb-admin-datatables.min.js"></script>
+
+
+    </div>
+    <script type="text/JavaScript">
+    /* var displayScoreOnTab = '<tr><th class="text-center">ClassName</th><th class="text-center">QuizName</th><th class="text-center">Your Answer</th><th class="text-center">Your Score</th><th class="text-center">Quiz Time</th></tr>'; */
+    var displayScoreOnTab = '<tr><th class="text-center">ClassName</th><th class="text-center">QuizName</th><th class="text-center">Your Score</th><th class="text-center">Quiz Time</th></tr>';
+		$.ajax({
+			type: "POST",
+			url: "studenthome/infotohtml",
+			dataType: "json",
+			data: {
+							 
+			},
+			success: function(res) {
+				if (res) {
+					document.getElementById("stuname").innerHTML=res;
+				}                 
+			},
+			error: function(jqXHR) {
+				alert("發生錯誤: " + jqXHR.status);
+			}
+		});
+		$.ajax({
+			type: "POST",
+			url: "studenthome/set_cookie",
+			dataType: "json",
+			data: {
+							 
+			},
+			success: function(res) {
+				if (res) {
+					if(res!=false){
+						setCookie('info',res,30);
+					}
+				}                 
+			},
+			error: function(jqXHR) {
+				alert("發生錯誤: " + jqXHR.status);
+			}
+		});
+		$.ajax({
+			type: "POST",
+			url: "studenthome/check_cookies",
+			dataType: "json",
+			data: {
+							 
+			},
+			success: function(res) {
+				if (res) {
+					if(res!=false){
+						setCookie('info',res,10);
+					}
+				}                 
+			},
+			error: function(jqXHR) {
+				alert("發生錯誤: " + jqXHR.status);
+			}
+        });
+        
+        $.ajax({
+			type: "POST",
+			url: "studenthome/getHistory",
+			dataType: "json",
+			data: {
+							 
+			},
+			success: function(res) {
+				if (res) {
+                    console.log(res);
+                    for (var i = 0; i < res.length; i++) {
+                        for (var j = 0; j < 5; j++) {
+                            if (j == 0) {
+                                displayScoreOnTab = displayScoreOnTab + '<tr align="center"><td>' + res[i]['class_Id'] + '</td>';
+                                }
+                            if (j == 1) {
+                                displayScoreOnTab = displayScoreOnTab + '<td>' + res[i]['quiz_Id'] + '</td>';
+                                }
+                                if (j == 2) {
+                                    /* if (res[i]['answer_List'] == '1') {
+                                        displayScoreOnTab = displayScoreOnTab + '<td>' + 'a' + '</td>';
+                                    }
+                                    if (res[i]['answer_List'] == '2') {
+                                        displayScoreOnTab = displayScoreOnTab + '<td>' + 'b' + '</td>';
+                                    }
+                                    if (res[i]['answer_List'] == '4') {
+                                        displayScoreOnTab = displayScoreOnTab + '<td>' + 'c' + '</td>';
+                                    }
+                                    if (res[i]['answer_List'] == '8') {
+                                        displayScoreOnTab = displayScoreOnTab + '<td>' + 'd' + '</td>';
+                                    } */
+                                }
+                                if (j == 3) {
+                                    displayScoreOnTab = displayScoreOnTab + '<td>' + res[i]['student_Quiz_Total_Score'] + '</td>';
+                                }
+                                if (j == 4) {
+                                    displayScoreOnTab = displayScoreOnTab + '<td>' + res[i]['datetime'] + '</td></tr>';
+                                }
+                            }
+                        }
+                        document.getElementById('HistoryScore').innerHTML = displayScoreOnTab;
+                    }
+                },
+			error: function(jqXHR) {
+				alert("發生錯誤: " + jqXHR.status);
+			}
+		});
+
+		$("#logout").click(function(){
+			deleteCookie('info');
+		});
+		
+		function relocate_openclass(){
+			location.href = "./scanQR";
+		} 
+		function relocate_test(){
+			location.href = "#";
+		} 
+		function relocate_add(){
+			location.href = "#";
+		}
+		function setCookie(c_name,value,expiredays){
+			var exdate=new Date();
+			exdate.setDate(exdate.getDate()+expiredays);
+			document.cookie=c_name+ "=" +escape(value)+
+			((expiredays==null) ? "" : ";expires="+exdate.toGMTString());
+		}
+	
+		function getCookie(c_name){
+			if (document.cookie.length>0){
+				c_start=document.cookie.indexOf(c_name + "=");
+				if (c_start!=-1){ 
+					c_start=c_start + c_name.length+1;
+					c_end=document.cookie.indexOf(";",c_start);
+					if (c_end==-1)
+						c_end=document.cookie.length;
+					return unescape(document.cookie.substring(c_start,c_end));
+				} 
+			}
+			return "";
+		}
+	
+		function deleteCookie(c_name){
+			var exdate = new Date();
+			exdate.setTime(exdate.getTime-1);
+			document.cookie=c_name+ "=;expires="+exdate.toGMTString();
+		}
+			
+  </script>
+</body>
+
+</html>
