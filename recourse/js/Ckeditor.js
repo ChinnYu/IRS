@@ -86,7 +86,7 @@ function inputOriginalData(editor_output, data_content) {
  * @備註			使用此function並不會使目標區域變成可編輯;不會使目標區域便編輯器
  */
 function inputEditorContent(target_id, editor_content) {
-	document.getElementById(target_id).innerText = editor_content;//insert What you write in editor
+	document.getElementById(target_id).innerHTML = editor_content;//insert What you write in editor
 	changeMathIntoTex();
 }
 
