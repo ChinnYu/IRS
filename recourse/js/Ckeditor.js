@@ -122,3 +122,15 @@ function switchReadonlyMode(target_id) {
 	let introduction = document.getElementById(target_id);
 	introduction.setAttribute('contenteditable', false);
 }
+
+/**
+ * @函式名稱 autoTurnMath
+ * @param target_id
+ * @用法 輸入target_id 會自動將target_id區域內的math equation 轉換
+ * @備註 此方法轉換後 目標區域一定無法編輯
+ */
+function autoTurnMath(target_id) {
+	switchReadonlyMode(target_id,'off');
+	changeMathIntoTex();
+	switchReadonlyMode(target_id,'on');
+}
