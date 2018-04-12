@@ -134,7 +134,7 @@ function switchReadonlyMode(opinion, target_id) {
 
 /**
  * @函式名稱 autoTurnMath
- * @param target_id
+ * @param target_id 目標區域id
  * @用法 輸入target_id 會自動將target_id區域內的math equation 轉換
  * @備註 此方法轉換後 目標區域一定無法編輯
  */
