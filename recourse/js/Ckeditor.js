@@ -12,9 +12,9 @@ const editorConfig = {
 	disallowedContent: 'img{width,height,float}',
 	extraAllowedContent: 'img[width,height,align];span{background}',
 	//正式版取消
-	//filebrowserBrowseUrl: `${basicUrl}kcfinder/browse.php?opener=ckeditor&type=files`,
-	// filebrowserImageBrowseUrl: `${basicUrl}/kcfinder/browse.php?opener=ckeditor&type=images`,
-	// filebrowserFlashBrowseUrl: `${basicUrl}/kcfinder/browse.php?opener=ckeditor&type=flash`,
+	filebrowserBrowseUrl: `${basicUrl}kcfinder/browse.php?opener=ckeditor&type=files`,
+	filebrowserImageBrowseUrl: `${basicUrl}/kcfinder/browse.php?opener=ckeditor&type=images`,
+	filebrowserFlashBrowseUrl: `${basicUrl}/kcfinder/browse.php?opener=ckeditor&type=flash`,
 	//正式版取消
 	filebrowserUploadUrl: `${basicUrl}/kcfinder/upload.php?opener=ckeditor&type=files`,
 	filebrowserImageUploadUrl: `${basicUrl}/kcfinder/upload.php?opener=ckeditor&type=images`,
@@ -25,18 +25,17 @@ const editorConfig = {
 
 /**
  * @函式名稱 autoTransferInlineEditor
- * @param (String)editor_id 想轉變成編輯器的目標ＩＤ
+ * @param editor_id 想轉變成編輯器的目標ＩＤ
  * @用法 呼叫他 會轉變成inline編輯器
  */
 function autoTransferInlineEditor(editor_id) {
 	CKEDITOR.inline(editor_id, editorConfig);
-	let introduction = document.getElementById(editor_id);
-	introduction.setAttribute('contenteditable', true);
+	switchReadonlyMode(editor_id);
 }
 
 /**
  * @函式名稱 autoTransferInlineEditor
- * @param (String)editor_id 想轉變成編輯器的目標ＩＤ
+ * @param editor_id 想轉變成編輯器的目標ＩＤ
  * @用法 呼叫他 會轉變成replace編輯器
  */
 function autoTransferReplaceEditor(editor_id) {
@@ -49,6 +48,7 @@ function autoTransferReplaceEditor(editor_id) {
  * @觸發方式   呼叫它
  * @輸入      無
  * @輸出      無
+ * @備註		不需要管是否該區域能不能編輯
  */
 function changeMathIntoTex() {
 	MathJax.Hub.Queue(["Typeset", MathJax.Hub, this.formula]); //Rewrite Tex code in Data
@@ -74,9 +74,8 @@ function outputEditorContent(editor_input) {
  */
 function inputOriginalData(editor_output, data_content) {
 	CKEDITOR.instances[editor_output].setData(data_content);
-	CKEDITOR.instances[editor_output].editables = true;
-	let introduction = document.getElementById(editor_output);
-	introduction.setAttribute('contenteditable', true);
+	CKEDITOR.instances[editor_output].setReadOnly(false);
+	switchReadonlyMode(editor_output);
 }
 
 /**
@@ -85,6 +84,7 @@ function inputOriginalData(editor_output, data_content) {
  * @觸發方式     事件呼叫函式 觸發，將Data內部內容部署到目標位置
  * @輸入變數     target_id : (String) 要部署的id | editor_content : (String) 目標資料
  * @函式輸出     無
+ * @備註            使用此function並不會使目標區域變成可編輯;不會使目標區域便編輯器
  */
 function inputEditorContent(target_id, editor_content) {
 	document.getElementById(target_id).innerHTML = editor_content;//insert What you write in editor
@@ -114,23 +114,10 @@ function directTransfer2Input2(editor_input, editor_output) {
 
 /**
  * @函式名稱 switchReadonlyMode
- * @param opinion 開關選擇(in/off)
  * @param target_id 輸出目標區塊的id
- * @用法 將想修改的區域 id 輸入開ReadOnly 該區域是否能夠編輯
+ * @用法 將想修改的區域 id 輸入,轉成ReadOnly
  */
 function switchReadonlyMode(target_id) {
 	let introduction = document.getElementById(target_id);
-	introduction.setAttribute('contenteditable', false);
-}
-
-/**
- * @函式名稱 autoTurnMath
- * @param target_id 目標區域id
- * @用法 輸入target_id 會自動將target_id區域內的math equation 轉換
- * @備註 此方法轉換後 目標區域一定無法編輯
- */
-function autoTurnMath(target_id) {
-	switchReadonlyMode(target_id,'off');
-	changeMathIntoTex();
-	switchReadonlyMode(target_id,'on');
+	introduction.setAttribute("contenteditable", false);
 }
