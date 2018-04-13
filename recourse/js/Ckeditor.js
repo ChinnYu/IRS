@@ -11,11 +11,6 @@ const editorConfig = {
 	extraPlugins: 'mathjax,pastefromword',
 	disallowedContent: 'img{width,height,float}',
 	extraAllowedContent: 'img[width,height,align];span{background}',
-	//正式版取消
-	filebrowserBrowseUrl: `${basicUrl}kcfinder/browse.php?opener=ckeditor&type=files`,
-	filebrowserImageBrowseUrl: `${basicUrl}/kcfinder/browse.php?opener=ckeditor&type=images`,
-	filebrowserFlashBrowseUrl: `${basicUrl}/kcfinder/browse.php?opener=ckeditor&type=flash`,
-	//正式版取消
 	filebrowserUploadUrl: `${basicUrl}/kcfinder/upload.php?opener=ckeditor&type=files`,
 	filebrowserImageUploadUrl: `${basicUrl}/kcfinder/upload.php?opener=ckeditor&type=images`,
 	filebrowserFlashUploadUrl: `${basicUrl}/kcfinder/upload.php?opener=ckeditor&type=flash`,
