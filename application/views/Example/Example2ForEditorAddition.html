@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>CkTest</title>
-    <script src="./additions/ckeditor/ckeditor.js"></script>
-    <script type="text/javascript"
-            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
-    <!------------------------------------------------->
+	<meta charset="UTF-8">
+	<title>CkTest</title>
+	<script src="../../../additions/ckeditor/ckeditor.js"></script>
+	<script type="text/javascript"
+			src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+	<!------------------------------------------------->
 </head>
 <body>
-<textarea id="ckeditor1" rows="10" cols="20">hi</textarea>
-<button onclick="directTransfer2Input2('ckeditor1','ckeditor2')">Save this</button>
+<textarea id="ckeditor1" rows="10" cols="20"></textarea>
+<button onclick="dododo('ckeditor2')">Save this</button>
 <div id="ckeditor2"></div>
 
 
-<script src="./recourse/js/Ckeditor.js"></script>
+<script src="../../../recourse/js/Ckeditor.js"></script>
 <script>
-    //auto 方式
-    CKFinder.setupCKEditor();
-    autoTransferInlineEditor("ckeditor2");
-    autoTransferReplaceEditor("ckeditor1");
+	function dododo(ededed) {
+		directTransfer2Input("ckeditor1","ckeditor2");
+		//autoTurnMath("ckeditor2");
+	}
+</script>
+<script>
+	autoTransferReplaceEditor("ckeditor1");
+	autoTransferInlineEditor("ckeditor2");
 </script>
 
 
