@@ -27,7 +27,11 @@
 			else {
 				$bool=$this->db->update('this_class',$pin_pass,array('user_Id'=>$data['user_Id'],'course_No' =>$data['course_No'],'course_Year'=>$data['course_Year'],'course_Term'=>$data['course_Term']));
 				return $bool;
-			 }
+			}
+		}
+		public function clearPin($data){
+			$bool=$this->db->update('this_class',array('PIN' =>$data['PIN'],'quiz_Id' =>$data['quiz_Id']),array('user_Id' =>$data['user_Id'],'class_Id' =>$data['class_Id']));
+			return $bool;
 		}
 		
 	}
