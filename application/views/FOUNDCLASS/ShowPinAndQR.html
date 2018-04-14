@@ -79,38 +79,17 @@
 <!-- <script type="text/javascript" src="../recourse/js/PinAndQr.js"></script> -->
 <script type="text/JavaScript">
     $.ajax({
-        url: "openclass/getPin",
-        type: "POST",
-        dataType: "text",
-        success: function (res) {
-            var Pin = res;
-            document.getElementById("Pin").innerHTML = Pin;
-            document.getElementById("QRShow").innerHTML = "<img src='https://chart.googleapis.com/chart?chs=382x300&cht=qr&chl=" + encodeURIComponent(Pin) + "'/>";
-            //alert("<img src='https://chart.googleapis.com/chart?chs=382x300&cht=qr&chl=" + encodeURIComponent(pin) + "'/>");
-        }
-    });
-
-    var course;
-    var statue = 0;
-    $.ajax({
-        type: "POST",
-        url: "openclass/getstuname",
-        dataType: "json",
-        data: {},
-        success: function (res) {
-            if (res) {
-                var stuattend = '';
-
-                for (var i = 0; i < res.length; i++) {
-                    stuattend += res[i] + '&nbsp;';
-                }
-                document.getElementById("stumember").innerHTML = stuattend;
-            }
-        },
-        error: function (jqXHR) {
-            alert("發生錯誤: " + jqXHR.status);
-        }
-    });
+		url: "openclass/getPin",
+		type: "POST",
+		dataType : "text",
+		success : function (res) {
+			var Pin = res;
+			let Pin_url = "http://localhost/www/scanqr/pin/" + encodeURIComponent(Pin);<!--hostname要記得改，scanqr(包含)後固定別動-->
+			document.getElementById("Pin").innerHTML = Pin;
+			document.getElementById("QRShow").innerHTML = "<img src='https://chart.googleapis.com/chart?chs=382x300&cht=qr&chl=" + encodeURIComponent(Pin_url) + "'/>";
+			//alert("<img src='https://chart.googleapis.com/chart?chs=382x300&cht=qr&chl=" + encodeURIComponent(pin) + "'/>");
+		}
+	});
 
 
 </script>

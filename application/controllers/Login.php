@@ -48,11 +48,12 @@
 			}
 		}
 		public function setinfo(){
+			$remember=$this->input->post('remember');
 			$user_pass=array(
 				'user_Info'=>$this->input->post('account'),
 				'user_pwd'=>$this->input->post('pwd')
 			);
-			
+			$para_coo=1;
 			$id_pwd = $user_pass['user_Info'].':'.$user_pass['user_pwd'];
 			$enc_arg = $this->encrypt_user($id_pwd);
 			$enc_arg=urlencode($enc_arg);
@@ -70,9 +71,15 @@
 						$user=array('user_Id'=>$res[0]['user_Id'],'user_Name'=>$res[0]['user_Name'],'user_Identity'=>$res[0]['user_Identity']);
 						$this->session->set_userdata('user',$user);
 					}
-					
+					if($remember==1){
+						$this->session->set_userdata('remember',$para_coo);
+					}
 					if($res[0]['user_Identity']==1){
-						header("Location: ./studenthome");
+						if(isset($_SESSION['url'])){
+							header("Location: ./checkqr");
+						}else{
+							header("Location: ./studenthome");		
+						}
 					}
 					else if($res[0]['user_Identity']==0){
 						header("Location: ./teacherhome");
@@ -83,12 +90,15 @@
 				}
 			}
 			else{
-				$this->load->view('FOUNDCLASS/login_error.html');
+				header("Location: ./Login");
 			}
+		}
+		public function loginerror(){
+			$this->load->view('FOUNDCLASS/login_error.html');
 		}
 		public function logout(){
 			$this->load->library('session');
-			unset($_SESSION['user']);
+			session_destroy();
 			header("Location: ./");
 		} 
 		public function encrypt_user($data){

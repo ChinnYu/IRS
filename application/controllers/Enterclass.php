@@ -6,20 +6,45 @@ class Enterclass extends MY_Controller
     {
         $this->load->view('FOUNDCLASS/StudentEnterClass.html');
     }
+	
+	public function loginunusual(){
+		//do nothing because lose this function ,url may broke	
+	}
+	public function showwait(){
+		$this->load->view('FOUNDCLASS/WaitingPage.html');
+	}
+	
     //使用Cache查詢
     public function enterqr()
     {
-        $this->load->library('MP_Cache');
-        $pin_pass = array(
-            'PIN' => $this->input->post('pin')
-        );
-        $cdata = $this->mp_cache->get($pin_pass['PIN']);
-        if ($cdata === false) {
-            $this->load->view('FOUNDCLASS/StudentEnterClass_error.html');
-        } else {
-            $this->setseinfo(array('thingsname' => 'classandquiz', 'class_Id' => $cdata['class_Id'], 'quiz_Id' => $cdata['quiz_Id']));
-            $this->load->view('FOUNDCLASS/WaitingPage.html');
-        }
+        if(isset($_SESSION['url'])){//直接pin跳轉
+			$this->load->library('MP_Cache');
+			$pin_pass=array(
+				'PIN' =>$_SESSION['url']['pin']
+			);
+			$cdata = $this->mp_cache->get($pin_pass['PIN']);
+			if ($cdata === false){
+				$this->load->view('FOUNDCLASS/StudentEnterClass_error.html');
+			}
+			else{
+				$this->setseinfo(array('thingsname' => 'classandquiz', 'class_Id' =>$cdata['class_Id'],'quiz_Id' =>$cdata['quiz_Id'],'PIN' =>$pin_pass['PIN']));
+				unset($_SESSION['url']);
+				header("Location: ./waitpage");
+			}
+		}else{
+			$this->load->library('MP_Cache');
+			$pin_pass=array(
+				'PIN' =>$this->input->post('pin')
+			);
+			$cdata = $this->mp_cache->get($pin_pass['PIN']);
+			if ($cdata === false){
+				$this->load->view('FOUNDCLASS/StudentEnterClass_error.html');
+			}
+			else{
+				$this->setseinfo(array('thingsname' => 'classandquiz', 'class_Id' =>$cdata['class_Id'],'quiz_Id' =>$cdata['quiz_Id'],'PIN' =>$pin_pass['PIN']));
+				header("Location: ./waitpage");
+			}
+		}
 
     }
 
