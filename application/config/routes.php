@@ -1,6 +1,5 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 /*
 | -------------------------------------------------------------------------
 | URI ROUTING
@@ -53,6 +52,7 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['login']='login/index';
+$route['Login']='login/loginerror';
 $route['logout']='login/logout';
 $route['studenthome']='studenthome/index';
 $route['teacherhome']='teacherhome/index';
@@ -67,3 +67,5 @@ $route['startQuiz']='startquiz/index';
 $route['scanQR']='enterclass/index';
 $route['checkqr']='enterclass/enterqr';
 $route['quizpage']='startquiz/quizpageforstu';
+$route['scanqr/(:any)/(:any)']='enterclass/loginunusual';
+$route['waitpage']='enterclass/showwait';
