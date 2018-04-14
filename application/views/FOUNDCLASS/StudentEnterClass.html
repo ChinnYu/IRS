@@ -66,7 +66,7 @@
 			},
 			success: function (res) {
 				//url = new URL(res);
-				window.location.href = "./WaitingPage.html";
+				document.getElementById("scannedTextMemo").innerText = Pin;
 			},
 			error: function (res) {
 				console.log("eew" + res);
