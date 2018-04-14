@@ -32,7 +32,7 @@
 						</div>
 					</div>
 				</div>
-				<form class="navbar-form pull-center" action="./checkqr" method="POST">
+				<form id="form_submit" class="navbar-form pull-center" action="./checkqr" method="POST">
 					<div class="form-group" style="margin-top:40px;">
 						<label for="Input">輸入PIN CODE</label>
 						<input class="form-control" id="scannedTextMemo" type="text" placeholder="Enter PINCODE"
@@ -51,25 +51,5 @@
 	<script src="./recourse/vendor/jquery-easing/jquery.easing.min.js"></script>
 	<!-- Scanner -->
 	<script type="text/javascript" src="./recourse/js/JsScanner.js"></script>
-	<script>
-		let Pin = location.href.slice(-4);
-		$.ajax({
-			url: "Enterclass/enterqr",
-			type: "POST",
-			data: {
-				Pin: Pin
-			},
-			success: function (res) {
-				//url = new URL(res);
-				document.getElementById("scannedTextMemo").innerText = Pin;
-			},
-			error: function (res) {
-				console.log("eew" + res);
-			}
-		});
-	</script>
-
-
 </body>
-
 </html>
