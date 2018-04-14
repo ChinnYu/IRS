@@ -20,53 +20,58 @@
 		}
 		
 		public function createQR(){
-			$this->checkMethod_teacher();
-			$this->load->library('MP_Cache');
-			$this->load->model('This_class_model', 'this_class');
-			$courseyt=$this->getCourseyt();
-			$res = $this->userinfo;
-			$data = array(
-				'user_Id' => $res['user_Id'],
-				'course_Name' =>$this->input->post('Course_text'),
-				'course_No' =>$this->input->post('course_No'),
-				'course_Year'=>$courseyt['course_Year'],
-				'course_Term'=>$courseyt['course_Term'],
-				'quiz_Id'=>$this->input->post('quiz_Id'),
-				'PIN' =>''
-			);
-			$pin_pass=array(
-				'PIN' =>'',
-				'quiz_Id'=>$this->input->post('quiz_Id'),
-			);
-			$Pin = null;
-			$if_success=null;
-			while ($if_success == false) {
-				$Pin = str_pad($this->randPin(), 4, "0", STR_PAD_LEFT);
-				$data['PIN'] = $Pin;
-				$pin_pass ['PIN'] = $Pin;
-				$if_success= $this->this_class->updateClass($data,$pin_pass);
-			}
-			$this->setseinfo(array('thingsname' => 'PIN', 'PIN_code' => $Pin));
-			$result=$this->this_class->findclass($pin_pass);
-			$cdata = $this->mp_cache->set_name($Pin)->get();
-			if ($cdata === false){
-				$cdata = array(
-					'class_Id'=>$result[0]['class_Id'],
-					'quiz_Id'=>$result[0]['quiz_Id'],
+			if(!isset($_SESSION['PIN'])){
+				$this->checkMethod_teacher();
+				$this->load->library('MP_Cache');
+				$this->load->model('This_class_model', 'this_class');
+				$courseyt=$this->getCourseyt();
+				$res = $this->userinfo;
+				$data = array(
+					'user_Id' => $res['user_Id'],
+					'course_Name' =>$this->input->post('Course_text'),
+					'course_No' =>$this->input->post('course_No'),
+					'course_Year'=>$courseyt['course_Year'],
+					'course_Term'=>$courseyt['course_Term'],
+					'quiz_Id'=>$this->input->post('quiz_Id'),
+					'PIN' =>''
 				);
-				$this->mp_cache->write($cdata, $Pin,7200);
+				$pin_pass=array(
+					'PIN' =>'',
+					'quiz_Id'=>$this->input->post('quiz_Id'),
+				);
+				$Pin = null;
+				$if_success=null;
+				while ($if_success == false) {
+					$Pin = str_pad($this->randPin(), 4, "0", STR_PAD_LEFT);
+					$data['PIN'] = $Pin;
+					$pin_pass ['PIN'] = $Pin;
+					$if_success= $this->this_class->updateClass($data,$pin_pass);
+				}
+				$this->setseinfo(array('thingsname' => 'PIN', 'PIN_code' => $Pin));
+				$result=$this->this_class->findclass($pin_pass);
+				$cdata = $this->mp_cache->set_name($Pin)->get();
+				if ($cdata === false){
+					$cdata = array(
+						'class_Id'=>$result[0]['class_Id'],
+						'quiz_Id'=>$result[0]['quiz_Id'],
+					);
+					$this->mp_cache->write($cdata, $Pin,7200);
+				}
+				$class_pass=array(
+					'thingsname' => 'course',
+					'class_Id'=>$result[0]['class_Id'],
+					'course_Name'=>$data['course_Name'],
+					'course_No'=>$data['course_No'],
+					'pin'=>$Pin,
+					'quiz_Id'=>$this->input->post('quiz_Id')
+				);
+				$this->setseinfo($class_pass);
+				
+				$this->load->view('FOUNDCLASS/ShowPinAndQR.html');
+			}else{
+				$this->load->view('FOUNDCLASS/ShowPinAndQR.html');
 			}
-			$class_pass=array(
-				'thingsname' => 'course',
-				'class_Id'=>$result[0]['class_Id'],
-				'course_Name'=>$data['course_Name'],
-				'course_No'=>$data['course_No'],
-				'pin'=>$Pin,
-				'quiz_Id'=>$this->input->post('quiz_Id')
-			);
-			$this->setseinfo($class_pass);
 			
-			$this->load->view('FOUNDCLASS/ShowPinAndQR.html');
 		}
 		public function randPin(){
 			return rand(0, 9999);
