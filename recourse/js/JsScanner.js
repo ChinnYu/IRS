@@ -1,8 +1,8 @@
 function onQRCodeScanned(scannedText) {
     var scannedTextMemo = document.getElementById("scannedTextMemo");
     if (scannedTextMemo) {
-    	let url = new  URL(scannedText);
-		let pin = url.searchParams.get("Pin");
+
+		let pin = scannedText.slice(-4);
         scannedTextMemo.value = pin;
     }
 }
