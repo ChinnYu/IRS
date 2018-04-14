@@ -52,12 +52,7 @@
 	<!-- Scanner -->
 	<script type="text/javascript" src="./recourse/js/JsScanner.js"></script>
 	<script>
-		let url = new URL(location.href);
-		let Pin = null;
-		if (location.href.indexOf('?') !== -1) {
-			console.log(url.searchParams.get("Pin"));
-			Pin = url.searchParams.get("Pin");
-		}
+		let Pin = location.href.slice(-4);
 		$.ajax({
 			url: "Enterclass/enterqr",
 			type: "POST",

@@ -96,7 +96,7 @@
 			dataType: "text",
 			success: function (res) {
 				let Pin = res;
-				let Pin_url = "https://querisma.ccu.edu.tw/~johnr2/www/scanQR?Pin=" + encodeURIComponent(Pin);
+				let Pin_url = "https://querisma.ccu.edu.tw/~tlogben/www/www/scanQR/" + encodeURIComponent(Pin);
 				document.getElementById("Pin").innerHTML = Pin;
 				document.getElementById("QRShow").innerHTML = "<img src='https://chart.googleapis.com/chart?chs=546x547&cht=qr&chl=" + Pin_url + "'data-action=\"zoom\"/>";
 			}
