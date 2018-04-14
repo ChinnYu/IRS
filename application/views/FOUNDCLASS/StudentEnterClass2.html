@@ -26,12 +26,12 @@
     <div class="card card-login mx-auto mt-5">
         <div class="card-header">掃描投影機之 QCODE 或輸入 PIN CODE</div>
         <div class="card-body">
-            <center>
+            <div style="text-align: center;">
                 <div class="col-md-6">
                      <div id="scanner"> 
                     </div>
                 </div>
-            </center>
+            </div>
 			<form class="navbar-form pull-center" action="./waitingpage" method="POST">
                 <div class="form-group" style="margin-top:40px;">
                     <label>輸入PIN CODE</label>
@@ -51,16 +51,6 @@
 <!-- Scanner -->
 <script type="text/javascript" src="./recourse/js/JsScanner.js"></script>
 <!-- Submit -->
-<script type="text/javascript">
-   <!-- <!--  $('#butt').click(function () { -->
-        <!-- $.ajax({ -->
-            <!-- url: "GetInClass/waitingPage", -->
-            <!-- type: "POST", -->
-            <!-- datatype: "text", -->
-            <!-- data: {pin: $("#scannedTextMemo").val()} -->
-        <!-- }) -->
-    <!-- }); --> -->
-</script>
 </body>
 
 </html>
