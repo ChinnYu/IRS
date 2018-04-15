@@ -1,3 +1,4 @@
+//will change to intascan
 function onQRCodeScanned(scannedText) {
     let scannedTextMemo = document.getElementById("scannedTextMemo");
     if (scannedTextMemo) {
