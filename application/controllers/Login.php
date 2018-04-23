@@ -27,13 +27,17 @@
 						}
 					}
 					if(!isset($_SESSION['user'])){ 
-						$user=array('user_Id'=>$res[0]['user_Id'],'user_Name'=>$res[0]['user_Name'],'user_Identity'=>$res[0]['user_Identity']);
+						$user=array('user_Id'=>$res[0]['user_Id'],'user_Name'=>$res[0]['user_Name'],'user_Identity'=>$res[0]['user_Identity'],'user_Info'=>$res[0]['user_Info']);
 						$this->session->set_userdata('user',$user);
 					}
-					if($_SESSION['user']['user_Identity']==1){
-						header("Location: ./studenthome");
+					if($res[0]['user_Identity']==1){
+						if(isset($_SESSION['url'])){
+							header("Location: ./checkqr");
+						}else{
+							header("Location: ./studenthome");		
+						}
 					}
-					else if($_SESSION['user']['user_Identity']==0){
+					else if($res[0]['user_Identity']==0){
 						header("Location: ./teacherhome");
 					}
 				}
@@ -68,7 +72,7 @@
 					$this->load->library('session');
 					$this->load->helper('url');
 					if(!isset($_SESSION['user'])){ 
-						$user=array('user_Id'=>$res[0]['user_Id'],'user_Name'=>$res[0]['user_Name'],'user_Identity'=>$res[0]['user_Identity']);
+						$user=array('user_Id'=>$res[0]['user_Id'],'user_Name'=>$res[0]['user_Name'],'user_Identity'=>$res[0]['user_Identity'],'user_Info'=>$res[0]['user_Info']);
 						$this->session->set_userdata('user',$user);
 					}
 					if($remember==1){
