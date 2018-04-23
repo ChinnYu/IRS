@@ -73,6 +73,8 @@
 		}
 
 		public function endquiz(){
+			$this->recordusetime();
+			$this->correctans();
 			$this->load->library('MP_Cache');
 
 			$cdata = array(
@@ -100,6 +102,7 @@
 			if ($cdata_quiz_ans!== false){
 				$this->mp_cache->delete($cdata_name);
 			}
+			sleep(3);
 			$cdata=$_SESSION['course']['class_Id'].'_endclass';//刪除endclass cache
 			$cdata_endclss= $this->mp_cache->set_name($cdata)->get();
 			if ($cdata_endclss!== false){
@@ -108,14 +111,14 @@
 			$this->deletequestiontime();
 		}
 		
-		public function setopinion(){//設置shadow_quiz評價和刪除session
+		public function setopinion($opinion_from_student){//設置shadow_quiz評價和刪除session
 			$this->load->model('Shadow_quiz_model','shadow_quiz');
 			$data=array(
 				'shadow_Quiz_Id' =>$_SESSION['quizstatue']['shadow_Quiz_Id'],
 			);
 			$opinion=array(
 				'current_Pin'=>null,
-				'shadow_Quiz_opinion'=>5,//需從前端皆值
+				'shadow_Quiz_opinion'=>$opinion_from_student,//需從前端皆值
 			);
 			$this->shadow_quiz->updateShadow_quiz($data,$opinion);
 			$res=$this->clearforfinish();
