@@ -1,5 +1,5 @@
 <?php
-class Newquiz extends CI_Controller {
+class Newquiz extends MY_Controller {
 
 	function index()
 	{

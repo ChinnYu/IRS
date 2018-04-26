@@ -1,5 +1,5 @@
 <?php
-class editquestion extends CI_Controller {
+class editquestion extends MY_Controller {
 
 	function index()
 	{
