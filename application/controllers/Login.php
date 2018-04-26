@@ -112,6 +112,19 @@
 			$encrypted = openssl_encrypt($data, 'aes-256-cbc', $encryption_key, 0, $iv);
 			return base64_encode($encrypted . '::' . $iv);
 		}
+		public function decrypt_cookies($data){
+			$this->load->library('encryption');
+			//$key = $this->encryption->create_key(16);
+			$this->encryption->initialize(
+				array(
+					'cipher' => 'aes-128',
+					'mode' => 'cbc',
+					'key' => '8888',
+				)
+			);
+			return $this->encryption->decrypt($data);
+		}
+		
 		public function curl($enc_arg){
 			$curl = curl_init();
 			curl_setopt($curl,CURLOPT_URL,"https://ecourse.ccu.edu.tw/php/api/irs.php?action=verifyUser&arg=".$enc_arg);
