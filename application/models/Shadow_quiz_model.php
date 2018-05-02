@@ -22,7 +22,7 @@
 			}
 		}
 		public function updateShadow_quiz($data,$opinion){
-			$bool=$this->db->update('shadow_quiz',$opinion,array('quiz_Id'=>$data['quiz_Id'],'class_Id' =>$data['class_Id']));
+			$bool=$this->db->update('shadow_quiz',$opinion,array('shadow_Quiz_Id'=>$data['quiz_Id'],'class_Id' =>$data['class_Id']));
 			return $bool;
 		}
 		
