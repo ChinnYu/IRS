@@ -167,7 +167,7 @@
 						$this->grade_record->deleteRecord($data);
 						$data_reset=array(
 							'class_Id'=>$b['class_Id'],
-							'current_Pin'=>$b['PIN'],
+							//'current_Pin'=>$b['PIN'],
 						);
 						$this->shadow_quiz->deleteshadow($data_reset);
 						

@@ -32,7 +32,7 @@
 		}
 		
 		public function deleteRecord($data){
-			$bool=$this->db->delete('grade_record',array('class_Id'=>$data['class_Id'],'current_Pin'=>$data['current_Pin']));
+			$bool=$this->db->delete('grade_record',array('class_Id'=>$data['class_Id']));//,'current_Pin'=>$data['current_Pin']));
 			return $bool;
 		}
 	
